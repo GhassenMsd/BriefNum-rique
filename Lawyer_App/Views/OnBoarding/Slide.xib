@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Questv1-Bold.otf">
+            <string>Questv1-Bold</string>
+        </array>
+        <array key="Samim.ttf">
+            <string>Samim</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Slide" customModule="Lawyer_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjV-ze-cf0">
+                    <rect key="frame" x="0.0" y="0.0" width="413" height="407"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Groupe 15" translatesAutoresizingMaskIntoConstraints="NO" id="V8g-J4-Kgi">
+                    <rect key="frame" x="47.5" y="61" width="318" height="290"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="au9-pp-5Xl">
+                    <rect key="frame" x="179.5" y="383.5" width="56" height="56"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أدخل بريدك الإلكتروني وسيرسل لك تعليمات حول كيفية إعادة تعيينه" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n63-Jp-1WL">
+                    <rect key="frame" x="69" y="579.5" width="278.5" height="60.5"/>
+                    <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل الدخول" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PB-bg-ysl">
+                    <rect key="frame" x="20" y="495" width="374" height="54"/>
+                    <fontDescription key="fontDescription" name="Questv1-Bold" family="Questv1" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.22745098039215686" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4PB-bg-ysl" secondAttribute="trailing" constant="20" id="111-ld-WaS"/>
+                <constraint firstItem="n63-Jp-1WL" firstAttribute="top" secondItem="V8g-J4-Kgi" secondAttribute="bottom" constant="228.5" id="6Os-he-ydi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IjV-ze-cf0" secondAttribute="trailing" constant="1" id="6zF-e5-Wnj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="au9-pp-5Xl" secondAttribute="trailing" constant="178.5" id="CfK-qw-zSm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="IjV-ze-cf0" secondAttribute="top" constant="44" id="FK9-Hj-h3T"/>
+                <constraint firstItem="au9-pp-5Xl" firstAttribute="top" secondItem="V8g-J4-Kgi" secondAttribute="bottom" constant="32.5" id="JEn-Vu-BiB"/>
+                <constraint firstItem="4PB-bg-ysl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="KKO-sr-0Ve"/>
+                <constraint firstItem="au9-pp-5Xl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="179.5" id="P64-SU-AGs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="IjV-ze-cf0" secondAttribute="bottom" constant="455" id="Ybo-LI-ooj"/>
+                <constraint firstItem="V8g-J4-Kgi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="47.5" id="Ycd-bO-wjC"/>
+                <constraint firstItem="n63-Jp-1WL" firstAttribute="top" secondItem="au9-pp-5Xl" secondAttribute="bottom" constant="140" id="YpG-a5-nAN"/>
+                <constraint firstItem="4PB-bg-ysl" firstAttribute="top" secondItem="au9-pp-5Xl" secondAttribute="bottom" constant="55" id="d7Y-JQ-gCc"/>
+                <constraint firstItem="4PB-bg-ysl" firstAttribute="top" secondItem="V8g-J4-Kgi" secondAttribute="bottom" constant="143.5" id="dtR-7E-F8T"/>
+                <constraint firstItem="IjV-ze-cf0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ep8-Ys-AAh"/>
+                <constraint firstItem="au9-pp-5Xl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="339.5" id="guW-NB-hMq"/>
+                <constraint firstItem="V8g-J4-Kgi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="17" id="pQc-GH-BH9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="n63-Jp-1WL" secondAttribute="bottom" constant="222" id="qKA-OC-xAl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V8g-J4-Kgi" secondAttribute="trailing" constant="48.5" id="r2a-La-4Sx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="n63-Jp-1WL" secondAttribute="leading" constant="-69" id="xfW-OQ-Xpf"/>
+                <constraint firstItem="n63-Jp-1WL" firstAttribute="top" secondItem="4PB-bg-ysl" secondAttribute="bottom" constant="31" id="z9C-eT-ygc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="n63-Jp-1WL" secondAttribute="trailing" constant="66.5" id="zQv-f5-UMj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionText" destination="n63-Jp-1WL" id="jhb-Hx-wtQ"/>
+                <outlet property="iconImage" destination="au9-pp-5Xl" id="Fp4-wy-Y24"/>
+                <outlet property="image" destination="V8g-J4-Kgi" id="0eG-XK-nbh"/>
+                <outlet property="titleText" destination="4PB-bg-ysl" id="Axe-K6-CKs"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Groupe 15" width="318" height="290.5"/>
+        <image name="Icon" width="56" height="56"/>
+    </resources>
+</document>
