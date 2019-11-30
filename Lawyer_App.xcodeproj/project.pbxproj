@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85A7451023918A4C00BCE149 /* Samim-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7450F23918A4700BCE149 /* Samim-Bold.ttf */; };
 		85A7451323918AC800BCE149 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451123918AC800BCE149 /* SignUp.swift */; };
 		85A7451423918AC800BCE149 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451223918AC800BCE149 /* Login.swift */; };
-		85A7451623918AFF00BCE149 /* samim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7451523918AFE00BCE149 /* samim.ttf */; };
+		8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */; };
+		8F3305692391EA66001A0DAD /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3305682391EA66001A0DAD /* ShadowView.swift */; };
+		8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */; };
+		8F33056C2391F282001A0DAD /* Questv1-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F33056423919864001A0DAD /* Questv1-Bold.otf */; };
+		8F33056D2391F286001A0DAD /* Samim-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7450F23918A4700BCE149 /* Samim-Bold.ttf */; };
+		8F33056E2391F28B001A0DAD /* samim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7451523918AFE00BCE149 /* samim.ttf */; };
 		8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98800B23901CDB00A44379 /* AppDelegate.swift */; };
 		8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98800D23901CDB00A44379 /* SceneDelegate.swift */; };
 		8F98801023901CDB00A44379 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98800F23901CDB00A44379 /* ViewController.swift */; };
@@ -19,7 +23,6 @@
 		8F98801823901CE900A44379 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F98801723901CE900A44379 /* Assets.xcassets */; };
 		8F98801B23901CE900A44379 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F98801923901CE900A44379 /* LaunchScreen.storyboard */; };
 		8F988023239021D200A44379 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F988022239021D200A44379 /* OnBoarding.storyboard */; };
-		8F9880282390259500A44379 /* Questv1-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F9880252390257A00A44379 /* Questv1-Bold.otf */; };
 		8F98802D23902C2300A44379 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98802C23902C2300A44379 /* OnBoardingViewController.swift */; };
 		8F98802F23902F9100A44379 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F98802E23902F9100A44379 /* Slide.xib */; };
 		8F9880312390330400A44379 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9880302390330400A44379 /* Slide.swift */; };
@@ -30,6 +33,10 @@
 		85A7451123918AC800BCE149 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		85A7451223918AC800BCE149 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		85A7451523918AFE00BCE149 /* samim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = samim.ttf; sourceTree = "<group>"; };
+		8F33056423919864001A0DAD /* Questv1-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Questv1-Bold.otf"; sourceTree = "<group>"; };
+		8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		8F3305682391EA66001A0DAD /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffairesListViewController.swift; sourceTree = "<group>"; };
 		8F98800823901CDA00A44379 /* Lawyer_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lawyer_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F98800B23901CDB00A44379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F98800D23901CDB00A44379 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +47,6 @@
 		8F98801A23901CE900A44379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F98801C23901CE900A44379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F988022239021D200A44379 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
-		8F9880252390257A00A44379 /* Questv1-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Questv1-Bold.otf"; path = "../../../../Downloads/Questv1-Bold.otf"; sourceTree = "<group>"; };
 		8F98802C23902C2300A44379 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8F98802E23902F9100A44379 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		8F9880302390330400A44379 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
@@ -94,9 +100,9 @@
 		8F9880242390256000A44379 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				8F33056423919864001A0DAD /* Questv1-Bold.otf */,
 				85A7450F23918A4700BCE149 /* Samim-Bold.ttf */,
 				85A7451523918AFE00BCE149 /* samim.ttf */,
-				8F9880252390257A00A44379 /* Questv1-Bold.otf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -125,6 +131,9 @@
 				8F9880302390330400A44379 /* Slide.swift */,
 				85A7451223918AC800BCE149 /* Login.swift */,
 				85A7451123918AC800BCE149 /* SignUp.swift */,
+				8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */,
+				8F3305682391EA66001A0DAD /* ShadowView.swift */,
+				8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,14 +197,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F9880282390259500A44379 /* Questv1-Bold.otf in Resources */,
 				8F98801B23901CE900A44379 /* LaunchScreen.storyboard in Resources */,
 				8F98802F23902F9100A44379 /* Slide.xib in Resources */,
 				8F98801823901CE900A44379 /* Assets.xcassets in Resources */,
-				85A7451623918AFF00BCE149 /* samim.ttf in Resources */,
 				8F98801323901CDC00A44379 /* Main.storyboard in Resources */,
+				8F33056E2391F28B001A0DAD /* samim.ttf in Resources */,
 				8F988023239021D200A44379 /* OnBoarding.storyboard in Resources */,
-				85A7451023918A4C00BCE149 /* Samim-Bold.ttf in Resources */,
+				8F33056C2391F282001A0DAD /* Questv1-Bold.otf in Resources */,
+				8F33056D2391F286001A0DAD /* Samim-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */,
 				85A7451323918AC800BCE149 /* SignUp.swift in Sources */,
 				8F98801023901CDB00A44379 /* ViewController.swift in Sources */,
+				8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */,
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
+				8F3305692391EA66001A0DAD /* ShadowView.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
 				8F98801623901CDC00A44379 /* Lawyer_App.xcdatamodeld in Sources */,

@@ -10,7 +10,7 @@
         <array key="Questv1-Bold.otf">
             <string>Questv1-Bold</string>
         </array>
-        <array key="Samim.ttf">
+        <array key="samim.ttf">
             <string>Samim</string>
         </array>
     </customFonts>
@@ -38,7 +38,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل الدخول" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PB-bg-ysl">
-                    <rect key="frame" x="20" y="495" width="374" height="54"/>
+                    <rect key="frame" x="20" y="494.5" width="374" height="54"/>
                     <fontDescription key="fontDescription" name="Questv1-Bold" family="Questv1" pointSize="40"/>
                     <color key="textColor" red="0.0" green="0.22745098039215686" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -46,6 +46,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4PB-bg-ysl" secondAttribute="trailing" constant="20" id="111-ld-WaS"/>
+                <constraint firstItem="au9-pp-5Xl" firstAttribute="top" secondItem="IjV-ze-cf0" secondAttribute="bottom" constant="-23.5" id="5Lu-nL-wjF"/>
                 <constraint firstItem="n63-Jp-1WL" firstAttribute="top" secondItem="V8g-J4-Kgi" secondAttribute="bottom" constant="228.5" id="6Os-he-ydi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IjV-ze-cf0" secondAttribute="trailing" constant="1" id="6zF-e5-Wnj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="au9-pp-5Xl" secondAttribute="trailing" constant="178.5" id="CfK-qw-zSm"/>
@@ -53,13 +54,14 @@
                 <constraint firstItem="au9-pp-5Xl" firstAttribute="top" secondItem="V8g-J4-Kgi" secondAttribute="bottom" constant="32.5" id="JEn-Vu-BiB"/>
                 <constraint firstItem="4PB-bg-ysl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="KKO-sr-0Ve"/>
                 <constraint firstItem="au9-pp-5Xl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="179.5" id="P64-SU-AGs"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="IjV-ze-cf0" secondAttribute="bottom" constant="455" id="Ybo-LI-ooj"/>
                 <constraint firstItem="V8g-J4-Kgi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="47.5" id="Ycd-bO-wjC"/>
                 <constraint firstItem="n63-Jp-1WL" firstAttribute="top" secondItem="au9-pp-5Xl" secondAttribute="bottom" constant="140" id="YpG-a5-nAN"/>
                 <constraint firstItem="4PB-bg-ysl" firstAttribute="top" secondItem="au9-pp-5Xl" secondAttribute="bottom" constant="55" id="d7Y-JQ-gCc"/>
                 <constraint firstItem="4PB-bg-ysl" firstAttribute="top" secondItem="V8g-J4-Kgi" secondAttribute="bottom" constant="143.5" id="dtR-7E-F8T"/>
                 <constraint firstItem="IjV-ze-cf0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ep8-Ys-AAh"/>
                 <constraint firstItem="au9-pp-5Xl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="339.5" id="guW-NB-hMq"/>
+                <constraint firstItem="4PB-bg-ysl" firstAttribute="top" secondItem="IjV-ze-cf0" secondAttribute="bottom" constant="87.5" id="nTS-8X-36r"/>
+                <constraint firstItem="n63-Jp-1WL" firstAttribute="top" secondItem="IjV-ze-cf0" secondAttribute="bottom" constant="172.5" id="o0N-Hc-vsP"/>
                 <constraint firstItem="V8g-J4-Kgi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="17" id="pQc-GH-BH9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="n63-Jp-1WL" secondAttribute="bottom" constant="222" id="qKA-OC-xAl"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V8g-J4-Kgi" secondAttribute="trailing" constant="48.5" id="r2a-La-4Sx"/>
