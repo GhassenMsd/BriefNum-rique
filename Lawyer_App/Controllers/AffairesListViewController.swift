@@ -24,11 +24,9 @@ class AffairesListViewController: UIViewController, UITableViewDataSource {
         let numAffaire = contentView?.viewWithTag(5) as! UILabel
         let tribunal = contentView?.viewWithTag(6) as! UILabel
         let cercle = contentView?.viewWithTag(7) as! UILabel
-        let view = contentView?.viewWithTag(1) as! UIView
+        let view = contentView?.viewWithTag(1)!
 
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.1
-        view.layer.shadowOffset = CGSize.init(width: 0, height: 3)
+        view!.addShadowView()
 
         
         
@@ -40,10 +38,12 @@ class AffairesListViewController: UIViewController, UITableViewDataSource {
 
     }
     
-
+    @IBOutlet weak var AffairesTableView: UITableView!
+    @IBOutlet weak var ViewSearch: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ViewSearch.addShadowView()
         // Do any additional setup after loading the view.
     }
     

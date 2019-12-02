@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2448F3DF2FEE0A2594A8B5D1 /* Pods_Lawyer_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */; };
 		85A7451323918AC800BCE149 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451123918AC800BCE149 /* SignUp.swift */; };
 		85A7451423918AC800BCE149 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451223918AC800BCE149 /* Login.swift */; };
+		8F094EB9239487D800491F57 /* dropDownBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F094EB8239487D800491F57 /* dropDownBtn.swift */; };
+		8F094EBB2394883E00491F57 /* dropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F094EBA2394883E00491F57 /* dropDownView.swift */; };
+		8F094EBD23949A8E00491F57 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F094EBC23949A8E00491F57 /* iOSDropDown.framework */; };
 		8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */; };
 		8F3305692391EA66001A0DAD /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3305682391EA66001A0DAD /* ShadowView.swift */; };
 		8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */; };
 		8F33056C2391F282001A0DAD /* Questv1-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F33056423919864001A0DAD /* Questv1-Bold.otf */; };
 		8F33056D2391F286001A0DAD /* Samim-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7450F23918A4700BCE149 /* Samim-Bold.ttf */; };
 		8F33056E2391F28B001A0DAD /* samim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7451523918AFE00BCE149 /* samim.ttf */; };
+		8F33057023942AEA001A0DAD /* AffaireAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33056F23942AEA001A0DAD /* AffaireAddViewController.swift */; };
 		8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98800B23901CDB00A44379 /* AppDelegate.swift */; };
 		8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98800D23901CDB00A44379 /* SceneDelegate.swift */; };
 		8F98801023901CDB00A44379 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98800F23901CDB00A44379 /* ViewController.swift */; };
@@ -29,14 +34,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28B534695AD7B99AFC3950FB /* Pods-Lawyer_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lawyer_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App.debug.xcconfig"; sourceTree = "<group>"; };
+		620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lawyer_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A7450F23918A4700BCE149 /* Samim-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Samim-Bold.ttf"; sourceTree = "<group>"; };
 		85A7451123918AC800BCE149 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		85A7451223918AC800BCE149 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		85A7451523918AFE00BCE149 /* samim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = samim.ttf; sourceTree = "<group>"; };
+		8F094EB8239487D800491F57 /* dropDownBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownBtn.swift; sourceTree = "<group>"; };
+		8F094EBA2394883E00491F57 /* dropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownView.swift; sourceTree = "<group>"; };
+		8F094EBC23949A8E00491F57 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F33056423919864001A0DAD /* Questv1-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Questv1-Bold.otf"; sourceTree = "<group>"; };
 		8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8F3305682391EA66001A0DAD /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffairesListViewController.swift; sourceTree = "<group>"; };
+		8F33056F23942AEA001A0DAD /* AffaireAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffaireAddViewController.swift; sourceTree = "<group>"; };
 		8F98800823901CDA00A44379 /* Lawyer_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lawyer_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F98800B23901CDB00A44379 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F98800D23901CDB00A44379 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +61,7 @@
 		8F98802C23902C2300A44379 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8F98802E23902F9100A44379 /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		8F9880302390330400A44379 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		94369205D7F64445187074F2 /* Pods-Lawyer_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lawyer_App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +69,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F094EBD23949A8E00491F57 /* iOSDropDown.framework in Frameworks */,
+				2448F3DF2FEE0A2594A8B5D1 /* Pods_Lawyer_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4656C91DEA9ADC577F3F08C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28B534695AD7B99AFC3950FB /* Pods-Lawyer_App.debug.xcconfig */,
+				94369205D7F64445187074F2 /* Pods-Lawyer_App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8F987FFF23901CD800A44379 = {
 			isa = PBXGroup;
 			children = (
 				8F98800A23901CDA00A44379 /* Lawyer_App */,
 				8F98800923901CDA00A44379 /* Products */,
+				4656C91DEA9ADC577F3F08C1 /* Pods */,
+				E49FDB16522CD1DBA0AE9F14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,8 +159,20 @@
 				8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */,
 				8F3305682391EA66001A0DAD /* ShadowView.swift */,
 				8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */,
+				8F33056F23942AEA001A0DAD /* AffaireAddViewController.swift */,
+				8F094EB8239487D800491F57 /* dropDownBtn.swift */,
+				8F094EBA2394883E00491F57 /* dropDownView.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E49FDB16522CD1DBA0AE9F14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F094EBC23949A8E00491F57 /* iOSDropDown.framework */,
+				620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F98801F23901CE900A44379 /* Build configuration list for PBXNativeTarget "Lawyer_App" */;
 			buildPhases = (
+				C6EDF04CBCEBF583D84FBA8F /* [CP] Check Pods Manifest.lock */,
 				8F98800423901CD900A44379 /* Sources */,
 				8F98800523901CD900A44379 /* Frameworks */,
 				8F98800623901CD900A44379 /* Resources */,
+				8295F04ABAE23099929B0888 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +249,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8295F04ABAE23099929B0888 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6EDF04CBCEBF583D84FBA8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lawyer_App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8F98800423901CD900A44379 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -222,10 +308,13 @@
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
 				8F3305692391EA66001A0DAD /* ShadowView.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
+				8F094EBB2394883E00491F57 /* dropDownView.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
 				8F98801623901CDC00A44379 /* Lawyer_App.xcdatamodeld in Sources */,
 				8F98802D23902C2300A44379 /* OnBoardingViewController.swift in Sources */,
 				85A7451423918AC800BCE149 /* Login.swift in Sources */,
+				8F33057023942AEA001A0DAD /* AffaireAddViewController.swift in Sources */,
+				8F094EB9239487D800491F57 /* dropDownBtn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +456,7 @@
 		};
 		8F98802023901CE900A44379 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28B534695AD7B99AFC3950FB /* Pods-Lawyer_App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -384,6 +474,7 @@
 		};
 		8F98802123901CE900A44379 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94369205D7F64445187074F2 /* Pods-Lawyer_App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
