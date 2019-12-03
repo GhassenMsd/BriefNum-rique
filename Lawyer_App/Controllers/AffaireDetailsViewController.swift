@@ -52,6 +52,11 @@ class AffaireDetailsViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func BackAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

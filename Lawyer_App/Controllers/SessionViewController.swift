@@ -21,7 +21,10 @@ class SessionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func BackAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

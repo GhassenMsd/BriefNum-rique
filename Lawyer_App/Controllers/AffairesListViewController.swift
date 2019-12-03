@@ -42,7 +42,6 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
         
         if segue.identifier == "toDetails"{
             let cell = sender as! UITableViewCell
-            print(cell)
             let index = AffairesTableView.indexPath(for: cell)! as NSIndexPath
             if let affaireDetailsViewController = segue.destination as? AffaireDetailsViewController {
                 affaireDetailsViewController.numAff = dataAffaires[index.row]

@@ -66,128 +66,132 @@ var listClient = ["الحريف 1 ","الحريف 2","الحريف 3"]
 var listAvocat = ["محامي 1","محامي 2","محامي 3"]
 var listEtat = ["الدائرة 1","الدائرة 2","الدائرة 3"]
 
-override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    //DropDownList degree
-    degree.optionArray = list
-    degree.didSelect{(selectedText , index ,id) in
-        self.hiden = true
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //DropDownList degree
+        degree.optionArray = list
+        degree.didSelect{(selectedText , index ,id) in
+            self.hiden = true
+            }
+        degree.listWillAppear {
+            self.hiden = false
         }
-    degree.listWillAppear {
-        self.hiden = false
-    }
-    degree.listWillDisappear {
-        self.hiden = true
-    }
-    
-    // Its Id Values and its optional
-    //dropDown.optionIds = [1,23,54,22]
-    // Image Array its optional
-    //dropDown.ImageArray = [👩🏻‍🦳,🙊,🥞]
-    
-    //DropDownList client
-    client.optionArray = listClient
-    client.didSelect{(selectedText , index ,id) in
-        self.hidenClient = true
+        degree.listWillDisappear {
+            self.hiden = true
         }
-    client.listWillAppear {
-        self.hidenClient = false
-    }
-    client.listWillDisappear {
-        self.hidenClient = true
-    }
-    
-    //DropDownList client
-    etat.optionArray = listEtat
-    etat.didSelect{(selectedText , index ,id) in
-        self.hidenEtat = true
+        
+        // Its Id Values and its optional
+        //dropDown.optionIds = [1,23,54,22]
+        // Image Array its optional
+        //dropDown.ImageArray = [👩🏻‍🦳,🙊,🥞]
+        
+        //DropDownList client
+        client.optionArray = listClient
+        client.didSelect{(selectedText , index ,id) in
+            self.hidenClient = true
+            }
+        client.listWillAppear {
+            self.hidenClient = false
         }
-    etat.listWillAppear {
-        self.hidenEtat = false
-    }
-    etat.listWillDisappear {
-        self.hidenEtat = true
-    }
-    
-    //DropDownList avocat
-    avocat.optionArray = listAvocat
-    avocat.didSelect{(selectedText , index ,id) in
-        self.hidenAvocat = true
+        client.listWillDisappear {
+            self.hidenClient = true
         }
-    avocat.listWillAppear {
-        self.hidenAvocat = false
+        
+        //DropDownList client
+        etat.optionArray = listEtat
+        etat.didSelect{(selectedText , index ,id) in
+            self.hidenEtat = true
+            }
+        etat.listWillAppear {
+            self.hidenEtat = false
+        }
+        etat.listWillDisappear {
+            self.hidenEtat = true
+        }
+        
+        //DropDownList avocat
+        avocat.optionArray = listAvocat
+        avocat.didSelect{(selectedText , index ,id) in
+            self.hidenAvocat = true
+            }
+        avocat.listWillAppear {
+            self.hidenAvocat = false
+        }
+        avocat.listWillDisappear {
+            self.hidenAvocat = true
+        }
+        
+        sujet.delegate = self
+        ViewDegree.addShadowView()
+        ViewClient.addShadowView()
+        ViewAvocat.addShadowView()
+        ViewEtat.addShadowView()
+        ViewSujet.addShadowView()
+        ViewDocument.addShadowView()
+        ViewAdd.addShadowView()
+        // Do any additional setup after loading the view, typically from a nib.
     }
-    avocat.listWillDisappear {
-        self.hidenAvocat = true
-    }
-    
-    sujet.delegate = self
-    ViewDegree.addShadowView()
-    ViewClient.addShadowView()
-    ViewAvocat.addShadowView()
-    ViewEtat.addShadowView()
-    ViewSujet.addShadowView()
-    ViewDocument.addShadowView()
-    ViewAdd.addShadowView()
-    // Do any additional setup after loading the view, typically from a nib.
-}
 
-override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-}
- 
-@IBAction func ToggleDegre(_ sender: Any) {
-    if(hiden){
-        degree.showList()
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    else{
-        degree.hideList()
+     
+    @IBAction func ToggleDegre(_ sender: Any) {
+        if(hiden){
+            degree.showList()
+        }
+        else{
+            degree.hideList()
+        }
     }
-}
 
-@IBAction func ToggleClient(_ sender: Any) {
-    if(hidenClient){
-        client.showList()
+    @IBAction func ToggleClient(_ sender: Any) {
+        if(hidenClient){
+            client.showList()
+        }
+        else{
+            client.hideList()
+        }
     }
-    else{
-        client.hideList()
+        
+    @IBAction func ToggleEtat(_ sender: Any) {
+        if(hidenEtat){
+            etat.showList()
+        }
+        else{
+            etat.hideList()
+        }
     }
-}
-    
-@IBAction func ToggleEtat(_ sender: Any) {
-    if(hidenEtat){
-        etat.showList()
+        
+    @IBAction func ToggleAvocat(_ sender: Any) {
+        if(hidenAvocat){
+            avocat.showList()
+        }
+        else{
+            avocat.hideList()
+        }
     }
-    else{
-        etat.hideList()
+        
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "الموضوع" {
+            textView.text = ""
+            textView.textColor = UIColor(rgb: 0x003A33)
+        }
     }
-}
-    
-@IBAction func ToggleAvocat(_ sender: Any) {
-    if(hidenAvocat){
-        avocat.showList()
-    }
-    else{
-        avocat.hideList()
-    }
-}
-    
-func textViewDidBeginEditing(_ textView: UITextView) {
-    if textView.text == "الموضوع" {
-        textView.text = ""
-        textView.textColor = UIColor(rgb: 0x003A33)
-    }
-}
-    
-func textViewDidEndEditing(_ textView: UITextView) {
+        
+    func textViewDidEndEditing(_ textView: UITextView) {
 
-    if textView.text == "" {
+        if textView.text == "" {
 
-        textView.text = "الموضوع"
-        textView.textColor = UIColor.lightGray
+            textView.text = "الموضوع"
+            textView.textColor = UIColor.lightGray
+        }
     }
-}
+    
+    @IBAction func BackAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
 }

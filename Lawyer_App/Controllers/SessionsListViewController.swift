@@ -10,6 +10,10 @@ import UIKit
 
 class SessionsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBAction func BackAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSessionDate.count
     }
@@ -49,7 +53,7 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
 
-    let dataSession = ["جلسة 2","جلسة 1"]
+    let dataSession = ["جلسة 1","جلسة 2"]
     let dataSessionDate = ["10/01/2019","16/01/2019"]
     
     @IBOutlet weak var AddSession: UIButton!
