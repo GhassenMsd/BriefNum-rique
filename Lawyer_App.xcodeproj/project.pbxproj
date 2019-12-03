@@ -13,6 +13,9 @@
 		8F094EB9239487D800491F57 /* dropDownBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F094EB8239487D800491F57 /* dropDownBtn.swift */; };
 		8F094EBB2394883E00491F57 /* dropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F094EBA2394883E00491F57 /* dropDownView.swift */; };
 		8F094EBD23949A8E00491F57 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F094EBC23949A8E00491F57 /* iOSDropDown.framework */; };
+		8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */; };
+		8F0F62392395D72800301725 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F62382395D72800301725 /* SessionViewController.swift */; };
+		8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623A2395E83500301725 /* SessionsListViewController.swift */; };
 		8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */; };
 		8F3305692391EA66001A0DAD /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3305682391EA66001A0DAD /* ShadowView.swift */; };
 		8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */; };
@@ -43,6 +46,9 @@
 		8F094EB8239487D800491F57 /* dropDownBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownBtn.swift; sourceTree = "<group>"; };
 		8F094EBA2394883E00491F57 /* dropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownView.swift; sourceTree = "<group>"; };
 		8F094EBC23949A8E00491F57 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffaireDetailsViewController.swift; sourceTree = "<group>"; };
+		8F0F62382395D72800301725 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		8F0F623A2395E83500301725 /* SessionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListViewController.swift; sourceTree = "<group>"; };
 		8F33056423919864001A0DAD /* Questv1-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Questv1-Bold.otf"; sourceTree = "<group>"; };
 		8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8F3305682391EA66001A0DAD /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -162,6 +168,9 @@
 				8F33056F23942AEA001A0DAD /* AffaireAddViewController.swift */,
 				8F094EB8239487D800491F57 /* dropDownBtn.swift */,
 				8F094EBA2394883E00491F57 /* dropDownView.swift */,
+				8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */,
+				8F0F62382395D72800301725 /* SessionViewController.swift */,
+				8F0F623A2395E83500301725 /* SessionsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -309,7 +318,10 @@
 				8F3305692391EA66001A0DAD /* ShadowView.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
 				8F094EBB2394883E00491F57 /* dropDownView.swift in Sources */,
+				8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
+				8F0F62392395D72800301725 /* SessionViewController.swift in Sources */,
+				8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */,
 				8F98801623901CDC00A44379 /* Lawyer_App.xcdatamodeld in Sources */,
 				8F98802D23902C2300A44379 /* OnBoardingViewController.swift in Sources */,
 				85A7451423918AC800BCE149 /* Login.swift in Sources */,

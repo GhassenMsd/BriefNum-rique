@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AffairesListViewController: UIViewController, UITableViewDataSource {
+class AffairesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let dataAffaires = ["قضية 1484675477","قضية 0781165477","قضية 0081925477","قضية 0780065103"]
     let dataTribunal = ["محكمة بن عروس","محكمة باب سعدون","محكمة باب سعدون","محكمة بن عروس"]
     let datacercle = ["دائرة تونس 1","دائرة تونس 2","دائرة تونس 2","دائرة تونس 1"]
@@ -36,6 +36,25 @@ class AffairesListViewController: UIViewController, UITableViewDataSource {
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toDetails"{
+            let cell = sender as! UITableViewCell
+            print(cell)
+            let index = AffairesTableView.indexPath(for: cell)! as NSIndexPath
+            if let affaireDetailsViewController = segue.destination as? AffaireDetailsViewController {
+                affaireDetailsViewController.numAff = dataAffaires[index.row]
+            }
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "toDetails", sender: AffairesTableView.cellForRow(at: indexPath))
+        
     }
     
     @IBOutlet weak var AffairesTableView: UITableView!
