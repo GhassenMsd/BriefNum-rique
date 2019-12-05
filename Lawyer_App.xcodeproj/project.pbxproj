@@ -13,6 +13,8 @@
 		8F094EB9239487D800491F57 /* dropDownBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F094EB8239487D800491F57 /* dropDownBtn.swift */; };
 		8F094EBB2394883E00491F57 /* dropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F094EBA2394883E00491F57 /* dropDownView.swift */; };
 		8F094EBD23949A8E00491F57 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F094EBC23949A8E00491F57 /* iOSDropDown.framework */; };
+		8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */; };
+		8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */; };
 		8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */; };
 		8F0F62392395D72800301725 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F62382395D72800301725 /* SessionViewController.swift */; };
 		8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623A2395E83500301725 /* SessionsListViewController.swift */; };
@@ -47,6 +49,8 @@
 		8F094EB8239487D800491F57 /* dropDownBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownBtn.swift; sourceTree = "<group>"; };
 		8F094EBA2394883E00491F57 /* dropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownView.swift; sourceTree = "<group>"; };
 		8F094EBC23949A8E00491F57 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifDetailsViewController.swift; sourceTree = "<group>"; };
+		8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifsListViewController.swift; sourceTree = "<group>"; };
 		8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffaireDetailsViewController.swift; sourceTree = "<group>"; };
 		8F0F62382395D72800301725 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		8F0F623A2395E83500301725 /* SessionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				8F0F62382395D72800301725 /* SessionViewController.swift */,
 				8F0F623A2395E83500301725 /* SessionsListViewController.swift */,
 				8F0F623C239693CC00301725 /* SessionAddViewController.swift */,
+				8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */,
+				8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				85A7451323918AC800BCE149 /* SignUp.swift in Sources */,
 				8F98801023901CDB00A44379 /* ViewController.swift in Sources */,
 				8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */,
+				8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */,
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
 				8F3305692391EA66001A0DAD /* ShadowView.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
@@ -330,6 +337,7 @@
 				8F98802D23902C2300A44379 /* OnBoardingViewController.swift in Sources */,
 				85A7451423918AC800BCE149 /* Login.swift in Sources */,
 				8F33057023942AEA001A0DAD /* AffaireAddViewController.swift in Sources */,
+				8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */,
 				8F094EB9239487D800491F57 /* dropDownBtn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

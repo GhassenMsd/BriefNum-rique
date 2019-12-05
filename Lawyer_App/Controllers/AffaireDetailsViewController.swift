@@ -23,8 +23,13 @@ class AffaireDetailsViewController: UIViewController {
         ViewDemande.addShadowView()
         let tapSession = UITapGestureRecognizer(target: self, action: #selector(tapSession(_:)))
         let tapSessionList = UITapGestureRecognizer(target: self, action: #selector(tapSessionList(_:)))
+        let tapObjectif = UITapGestureRecognizer(target: self, action: #selector(tapObjectif(_:)))
+        let tapObjectifList = UITapGestureRecognizer(target: self, action: #selector(tapObjectifList(_:)))
+
         AllSession.addGestureRecognizer(tapSessionList)
+        AllObjectif.addGestureRecognizer(tapObjectifList)
         ViewAffaire.addGestureRecognizer(tapSession)
+        ViewObjectif.addGestureRecognizer(tapObjectif)
         // Do any additional setup after loading the view.
     }
     
@@ -34,6 +39,8 @@ class AffaireDetailsViewController: UIViewController {
     @IBOutlet weak var ViewDemande: UIView!
     @IBOutlet weak var SessionName: UILabel!
     @IBOutlet weak var AllSession: UILabel!
+    @IBOutlet weak var ObjectifName: UILabel!
+    @IBOutlet weak var AllObjectif: UILabel!
     
     @objc func tapSession(_ gesture:UITapGestureRecognizer) {
         performSegue(withIdentifier: "toSession", sender: SessionName)
@@ -43,12 +50,26 @@ class AffaireDetailsViewController: UIViewController {
         performSegue(withIdentifier: "toListSession", sender: SessionName)
     }
     
+    @objc func tapObjectifList(_ gesture:UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toListObjectif", sender: SessionName)
+    }
+    
+    @objc func tapObjectif(_ gesture:UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toObjectif", sender: ObjectifName)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toSession"{
             let label = sender as! UILabel
             if let sessionViewController = segue.destination as? SessionViewController {
                 sessionViewController.nomSess = label.text!
+            }
+        }
+        else if segue.identifier == "toObjectif"{
+            let label = sender as! UILabel
+            if let objectifDetailsViewController = segue.destination as? ObjectifDetailsViewController {
+                objectifDetailsViewController.Objectiftitle = label.text!
             }
         }
     }

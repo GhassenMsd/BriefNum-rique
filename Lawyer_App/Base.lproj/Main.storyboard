@@ -249,7 +249,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="درجة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-Sx-bye" customClass="DropDown" customModule="iOSDropDown">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="المحكمة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-Sx-bye" customClass="DropDown" customModule="iOSDropDown">
                                 <rect key="frame" x="56" y="126" width="314" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -286,7 +286,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="محامي الضد" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2pT-Tf-U4G" customClass="DropDown" customModule="iOSDropDown">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="الضد" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2pT-Tf-U4G" customClass="DropDown" customModule="iOSDropDown">
                                 <rect key="frame" x="247" y="524" width="137" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -654,7 +654,7 @@
                                                 <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اظهار الكل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXK-Te-wbh">
+                                            <label opaque="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اظهار الكل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXK-Te-wbh">
                                                 <rect key="frame" x="20" y="606" width="71" height="26"/>
                                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
                                                 <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -696,7 +696,7 @@
                                                 <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اظهار الكل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-mh-6Ah">
+                                            <label opaque="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اظهار الكل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-mh-6Ah">
                                                 <rect key="frame" x="20" y="760" width="71" height="26"/>
                                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
                                                 <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -826,7 +826,9 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
+                        <outlet property="AllObjectif" destination="GXK-Te-wbh" id="e8Y-UZ-bYP"/>
                         <outlet property="AllSession" destination="scS-FX-lKb" id="LQl-AN-myo"/>
+                        <outlet property="ObjectifName" destination="BCf-LM-QXb" id="TfH-qf-mU4"/>
                         <outlet property="SessionName" destination="iqu-oQ-Mc4" id="CB4-3a-VNs"/>
                         <outlet property="ViewAffaire" destination="opB-Fs-LeW" id="L0C-0c-O1U"/>
                         <outlet property="ViewDemande" destination="bW7-T5-IPt" id="Q5D-sk-Xdo"/>
@@ -835,11 +837,13 @@
                         <outlet property="numeroAff" destination="Aaq-2x-byt" id="dvW-Ox-0iH"/>
                         <segue destination="ZSX-60-rUf" kind="show" identifier="toSession" id="DUg-SB-qBB"/>
                         <segue destination="7DK-Ur-JFe" kind="show" identifier="toListSession" id="tpx-Z9-KBX"/>
+                        <segue destination="dnt-8h-Hcn" kind="show" identifier="toObjectif" id="c06-de-jGN"/>
+                        <segue destination="Ce0-e6-xBV" kind="show" identifier="toListObjectif" id="GAd-L9-nnh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Mc-WW-fbI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-754" y="1629"/>
+            <point key="canvasLocation" x="-1286" y="1629"/>
         </scene>
         <!--جلسة 1-->
         <scene sceneID="pAS-cQ-vkb">
@@ -950,7 +954,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYQ-cf-jez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="1381"/>
+            <point key="canvasLocation" x="390" y="2106"/>
         </scene>
         <!--إضافة جلسة-->
         <scene sceneID="6BY-vb-y9D">
@@ -1098,7 +1102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKS-6y-s00" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-765.21739130434787" y="2449.21875"/>
+            <point key="canvasLocation" x="1528" y="2116"/>
         </scene>
         <!--جميع السجلات-->
         <scene sceneID="zPM-hB-gZh">
@@ -1197,7 +1201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9o-hy-fRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="2108"/>
+            <point key="canvasLocation" x="635" y="1377"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="d9B-Zt-e6c">
@@ -1612,6 +1616,197 @@
             </objects>
             <point key="canvasLocation" x="-1472" y="800"/>
         </scene>
+        <!--المهمة 1-->
+        <scene sceneID="qCt-TY-B48">
+            <objects>
+                <viewController id="dnt-8h-Hcn" customClass="ObjectifDetailsViewController" customModule="Lawyer_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YgJ-eY-Klb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xA-qy-zmU">
+                                <rect key="frame" x="22" y="111" width="370" height="513"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="date_range-1" translatesAutoresizingMaskIntoConstraints="NO" id="626-XC-VMp">
+                                        <rect key="frame" x="336" y="15" width="18" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="أدخل بريدك الإلكتروني وسيرسل لك تعليمات حول كيفية إعادة تعيينه" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amy-MT-4vi">
+                                        <rect key="frame" x="0.0" y="192.5" width="355" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تاريخ المهمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMq-ol-nGi">
+                                        <rect key="frame" x="220" y="12" width="107" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="supervised_user_circle" translatesAutoresizingMaskIntoConstraints="NO" id="gdt-LE-9BG">
+                                        <rect key="frame" x="334" y="93" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الجهة المعنية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oD6-Ja-r0k">
+                                        <rect key="frame" x="220" y="90" width="108" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view_day" translatesAutoresizingMaskIntoConstraints="NO" id="uKn-wi-XYv">
+                                        <rect key="frame" x="335" y="176" width="19" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13/02/2019" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIN-Jz-RHj">
+                                        <rect key="frame" x="6" y="44.5" width="344" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="أدخل بريدك الإلكتروني" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKT-IF-LHJ">
+                                        <rect key="frame" x="6" y="119.5" width="344" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="نوع المهمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3p-cH-Ted">
+                                        <rect key="frame" x="230" y="166" width="98" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wyE-LL-3eV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="المهمة 1" id="DoI-Cd-lyQ">
+                        <barButtonItem key="leftBarButtonItem" image="add_alert" id="KXa-0Z-t9s">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Arrow" id="dzR-qg-fIv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="BackAction:" destination="dnt-8h-Hcn" id="DB0-Ey-A4k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="DateObjectif" destination="GIN-Jz-RHj" id="xFO-Ka-0IW"/>
+                        <outlet property="ViewObjectif" destination="0xA-qy-zmU" id="rgC-XB-ouR"/>
+                        <outlet property="navBar" destination="DoI-Cd-lyQ" id="52h-Vw-0Tc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0bJ-AO-qAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="2848"/>
+        </scene>
+        <!--جميع المهمات-->
+        <scene sceneID="Jqu-zT-KDx">
+            <objects>
+                <viewController id="Ce0-e6-xBV" customClass="ObjectifsListViewController" customModule="Lawyer_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ytc-Xa-bqf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="99" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pld-ye-CaN">
+                                <rect key="frame" x="0.0" y="104" width="414" height="630"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.94117647059999998" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ObjectifCell" id="p5w-fC-T54">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="99"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p5w-fC-T54" id="dA0-8e-jLx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9D-pD-XQC">
+                                                    <rect key="frame" x="22" y="7" width="370" height="83"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المهمة 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJ0-h1-YOc">
+                                                            <rect key="frame" x="287" y="12" width="65" height="27"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="date_range-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-zf-dJa">
+                                                            <rect key="frame" x="332" y="48" width="18" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تاريخ المهمة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsy-Xr-RuZ">
+                                                            <rect key="frame" x="173" y="45" width="140" height="26"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ce0-e6-xBV" id="nt7-bD-G1D"/>
+                                    <outlet property="delegate" destination="Ce0-e6-xBV" id="RVW-Pv-ObU"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNB-1S-Tct">
+                                <rect key="frame" x="52" y="742" width="311" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
+                                <state key="normal" title="إضافة">
+                                    <color key="titleColor" red="0.8746108413" green="0.66745454069999999" blue="0.31851434709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="aCe-9C-ghH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="جميع المهمات" id="eGW-Pd-Dki">
+                        <barButtonItem key="leftBarButtonItem" image="add_alert" id="BRX-It-jEF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Arrow" id="gvg-XV-NwX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="BackAction:" destination="Ce0-e6-xBV" id="b1Z-Vi-NQ4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ObjectifTableView" destination="pld-ye-CaN" id="wVS-e8-Gcc"/>
+                        <outlet property="addObjectif" destination="TNB-1S-Tct" id="obZ-zx-iA2"/>
+                        <segue destination="dnt-8h-Hcn" kind="show" identifier="toObjectifDetails" id="9rs-lb-AzL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omr-Le-Jw3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-290" y="2848"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Arrow" width="11" height="19"/>
@@ -1646,9 +1841,10 @@
         <image name="toc" width="24" height="24"/>
         <image name="toc-1" width="24" height="24"/>
         <image name="user" width="233" height="232"/>
+        <image name="view_day" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RtC-PJ-CDb"/>
+        <segue reference="9rs-lb-AzL"/>
         <segue reference="4ry-Pr-okA"/>
         <segue reference="vyq-iW-bRT"/>
         <segue reference="f5E-MM-2Ao"/>
