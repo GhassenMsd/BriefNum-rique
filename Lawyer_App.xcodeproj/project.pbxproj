@@ -15,6 +15,8 @@
 		8F094EBD23949A8E00491F57 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F094EBC23949A8E00491F57 /* iOSDropDown.framework */; };
 		8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */; };
 		8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */; };
+		8F0A880A239AA2AE0035B20A /* DemandeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A8809239AA2AE0035B20A /* DemandeDetailsViewController.swift */; };
+		8F0A880C239AA70B0035B20A /* DemandesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A880B239AA70B0035B20A /* DemandesListViewController.swift */; };
 		8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */; };
 		8F0F62392395D72800301725 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F62382395D72800301725 /* SessionViewController.swift */; };
 		8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623A2395E83500301725 /* SessionsListViewController.swift */; };
@@ -51,6 +53,8 @@
 		8F094EBC23949A8E00491F57 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifDetailsViewController.swift; sourceTree = "<group>"; };
 		8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifsListViewController.swift; sourceTree = "<group>"; };
+		8F0A8809239AA2AE0035B20A /* DemandeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandeDetailsViewController.swift; sourceTree = "<group>"; };
+		8F0A880B239AA70B0035B20A /* DemandesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandesListViewController.swift; sourceTree = "<group>"; };
 		8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffaireDetailsViewController.swift; sourceTree = "<group>"; };
 		8F0F62382395D72800301725 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		8F0F623A2395E83500301725 /* SessionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				8F0F623C239693CC00301725 /* SessionAddViewController.swift */,
 				8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */,
 				8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */,
+				8F0A8809239AA2AE0035B20A /* DemandeDetailsViewController.swift */,
+				8F0A880B239AA70B0035B20A /* DemandesListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 				8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */,
 				8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */,
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
+				8F0A880C239AA70B0035B20A /* DemandesListViewController.swift in Sources */,
 				8F3305692391EA66001A0DAD /* ShadowView.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
 				8F094EBB2394883E00491F57 /* dropDownView.swift in Sources */,
@@ -339,6 +346,7 @@
 				8F33057023942AEA001A0DAD /* AffaireAddViewController.swift in Sources */,
 				8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */,
 				8F094EB9239487D800491F57 /* dropDownBtn.swift in Sources */,
+				8F0A880A239AA2AE0035B20A /* DemandeDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

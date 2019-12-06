@@ -41,6 +41,10 @@ class SignUp: UIViewController {
 
     }
     
+    @IBAction func login(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func checkBoxTapped(_ sender: UIButton) {
         UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)

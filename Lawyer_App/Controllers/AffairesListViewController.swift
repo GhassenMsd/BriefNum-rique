@@ -9,7 +9,7 @@
 import UIKit
 
 class AffairesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    let dataAffaires = ["قضية 1484675477","قضية 0781165477","قضية 0081925477","قضية 0780065103"]
+    let dataAffaires = ["قضية 4","قضية 3","قضية 2","قضية 1"]
     let dataTribunal = ["محكمة بن عروس","محكمة باب سعدون","محكمة باب سعدون","محكمة بن عروس"]
     let datacercle = ["دائرة تونس 1","دائرة تونس 2","دائرة تونس 2","دائرة تونس 1"]
     
@@ -44,7 +44,7 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
             let cell = sender as! UITableViewCell
             let index = AffairesTableView.indexPath(for: cell)! as NSIndexPath
             if let affaireDetailsViewController = segue.destination as? AffaireDetailsViewController {
-                affaireDetailsViewController.numAff = dataAffaires[index.row]
+                affaireDetailsViewController.nomAffaire = dataAffaires[index.row]
             }
         }
     }
