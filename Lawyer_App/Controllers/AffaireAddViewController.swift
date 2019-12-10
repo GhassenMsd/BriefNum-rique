@@ -19,7 +19,6 @@ extension UIView {
          self.layer.shadowOpacity = Opacidade
          self.layer.masksToBounds = maskToBounds
     }
-
 }
 
 extension UIColor {
