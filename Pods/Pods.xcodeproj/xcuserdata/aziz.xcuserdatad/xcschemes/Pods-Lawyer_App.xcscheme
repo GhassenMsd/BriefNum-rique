@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "72B9E54218603237314D3DB226D0C833"
+               BlueprintIdentifier = "0DBDBECF816F6D3EA9DD67F68C639548"
                BuildableName = "Pods_Lawyer_App.framework"
                BlueprintName = "Pods-Lawyer_App"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -16,6 +16,10 @@
 		85D0BCE1239FB84100653951 /* ListClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE0239FB84100653951 /* ListClients.swift */; };
 		85D0BCE8239FDCAA00653951 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE7239FDCAA00653951 /* Client.swift */; };
 		85D0BCEA23A0010100653951 /* AjoutClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE923A0010100653951 /* AjoutClient.swift */; };
+		8F08CD8023A5347200636CCC /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD7F23A5347200636CCC /* testViewController.swift */; };
+		8F08CD8223A5BE3D00636CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8123A5BE3D00636CCC /* User.swift */; };
+		8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8423A5C28300636CCC /* LoginService.swift */; };
+		8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8623A5C28300636CCC /* Connexion.swift */; };
 		8F094EBD23949A8E00491F57 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F094EBC23949A8E00491F57 /* iOSDropDown.framework */; };
 		8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */; };
 		8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */; };
@@ -39,6 +43,7 @@
 		8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623A2395E83500301725 /* SessionsListViewController.swift */; };
 		8F0F623D239693CC00301725 /* SessionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623C239693CC00301725 /* SessionAddViewController.swift */; };
 		8F1260FD23A1295600152FF7 /* Affaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1260FC23A1295600152FF7 /* Affaire.swift */; };
+		8F1A018223A5D2CD00D8F209 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A018123A5D2CD00D8F209 /* SessionService.swift */; };
 		8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */; };
 		8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */; };
 		8F33056C2391F282001A0DAD /* Questv1-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F33056423919864001A0DAD /* Questv1-Bold.otf */; };
@@ -71,6 +76,10 @@
 		85D0BCE0239FB84100653951 /* ListClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListClients.swift; sourceTree = "<group>"; };
 		85D0BCE7239FDCAA00653951 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		85D0BCE923A0010100653951 /* AjoutClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjoutClient.swift; sourceTree = "<group>"; };
+		8F08CD7F23A5347200636CCC /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		8F08CD8123A5BE3D00636CCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8F08CD8423A5C28300636CCC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		8F08CD8623A5C28300636CCC /* Connexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connexion.swift; sourceTree = "<group>"; };
 		8F094EBC23949A8E00491F57 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifDetailsViewController.swift; sourceTree = "<group>"; };
 		8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifsListViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +103,7 @@
 		8F0F623A2395E83500301725 /* SessionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListViewController.swift; sourceTree = "<group>"; };
 		8F0F623C239693CC00301725 /* SessionAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAddViewController.swift; sourceTree = "<group>"; };
 		8F1260FC23A1295600152FF7 /* Affaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affaire.swift; sourceTree = "<group>"; };
+		8F1A018123A5D2CD00D8F209 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		8F33056423919864001A0DAD /* Questv1-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Questv1-Bold.otf"; sourceTree = "<group>"; };
 		8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffairesListViewController.swift; sourceTree = "<group>"; };
@@ -154,8 +164,19 @@
 				8F0F5F9F23A1C75F00BC322A /* RendezVous.swift */,
 				8F0F5FA123A1C80500BC322A /* Session.swift */,
 				8F0F5FA323A1C8F500BC322A /* Tribunal.swift */,
+				8F08CD8123A5BE3D00636CCC /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8F08CD8323A5C1C800636CCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8F08CD8423A5C28300636CCC /* LoginService.swift */,
+				8F08CD8623A5C28300636CCC /* Connexion.swift */,
+				8F1A018123A5D2CD00D8F209 /* SessionService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		8F08F99F23A05FA800508F28 /* Affaire */ = {
@@ -245,6 +266,7 @@
 		8F98800A23901CDA00A44379 /* Lawyer_App */ = {
 			isa = PBXGroup;
 			children = (
+				8F08CD8323A5C1C800636CCC /* Services */,
 				85D0BCE2239FD97900653951 /* Models */,
 				8F98802B23902BF500A44379 /* Controllers */,
 				8F98802923902BA400A44379 /* Views */,
@@ -301,6 +323,7 @@
 				8F98802C23902C2300A44379 /* OnBoardingViewController.swift */,
 				8F9880302390330400A44379 /* Slide.swift */,
 				8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */,
+				8F08CD7F23A5347200636CCC /* testViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -398,12 +421,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,17 +482,22 @@
 				8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */,
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
 				8F0F5F9223A1C18100BC322A /* Contrat.swift in Sources */,
+				8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */,
 				8F0A880C239AA70B0035B20A /* DemandesListViewController.swift in Sources */,
 				85D0BCDD239E661100653951 /* CalendarVars.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
 				8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */,
 				8F0F5F8E23A1BD9C00BC322A /* BureauEnquete.swift in Sources */,
+				8F08CD8223A5BE3D00636CCC /* User.swift in Sources */,
+				8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */,
+				8F08CD8023A5347200636CCC /* testViewController.swift in Sources */,
 				8F0F5F9A23A1C56B00BC322A /* HuissierDeJustice.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
 				8F0F5F9023A1BF0F00BC322A /* Cercle.swift in Sources */,
 				8F0F62392395D72800301725 /* SessionViewController.swift in Sources */,
 				8F0F5F8C23A1BC4A00BC322A /* Avocat.swift in Sources */,
 				85D0BCD6239C6F7400653951 /* Home.swift in Sources */,
+				8F1A018223A5D2CD00D8F209 /* SessionService.swift in Sources */,
 				85D0BCEA23A0010100653951 /* AjoutClient.swift in Sources */,
 				8F0F623D239693CC00301725 /* SessionAddViewController.swift in Sources */,
 				8F0F5F9623A1C32500BC322A /* Demande.swift in Sources */,

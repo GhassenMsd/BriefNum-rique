@@ -11,14 +11,14 @@ import UIKit
 class Session: NSObject {
     var id = 0
     var nomSession = ""
-    var date: Date?
+    var date = ""
     var sujet = ""
     var notes = ""
     var Disp_prep = ""
     var Cpt_Rd_Sess = ""
     var id_Aff = ""
     
-    init(id: Int, nomSession: String, date: Date, sujet: String, notes: String, Disp_prep: String, Cpt_Rd_Sess: String, id_Aff: String){
+    init(id: Int, nomSession: String, date: String, sujet: String, notes: String, Disp_prep: String, Cpt_Rd_Sess: String, id_Aff: String){
         self.id = id
         self.nomSession = nomSession
         self.date = date

@@ -1,16 +1,29 @@
 PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
+  - FSCalendar (2.8.1)
   - iOSDropDown (0.2.6)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - FSCalendar
   - iOSDropDown
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - FSCalendar
     - iOSDropDown
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   iOSDropDown: 90608a7270234c503260ef13314907b6703b39aa
 
-PODFILE CHECKSUM: 37b461b49083c1f86ca2471d997d60d0468b824b
+PODFILE CHECKSUM: d32adef89f0e7cbeee2c03856c7a79ae1ef79c13
 
 COCOAPODS: 1.5.3

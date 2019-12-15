@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import AlamofireImage
+import Alamofire
 
 class Login: UIViewController {
 
     @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func loginAction(_ sender: Any) {
+        let email = userName.text!
+        let password = self.password.text!
+        if( email != "" && password != ""){
+            
+            let loginService = LoginService()
+            loginService.login(email: email, password: password){ (user) in
+                if ( user.token == "" ){
+                    print("ma5demch " + user.token)
+                }
+                else{
+                    print(user);
+                    self.performSegue(withIdentifier: "toHome", sender: nil)
+                }
+            }
+
+        }
+    }
+    
     @IBAction func checkBoxTapped(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
