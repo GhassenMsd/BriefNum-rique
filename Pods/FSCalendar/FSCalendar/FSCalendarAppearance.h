@@ -206,6 +206,9 @@ typedef NS_OPTIONS(NSUInteger, FSCalendarCaseOptions) {
  */
 @property (assign, nonatomic) FSCalendarSeparators separators;
 
+
+
+
 #if TARGET_INTERFACE_BUILDER
 
 // For preview only

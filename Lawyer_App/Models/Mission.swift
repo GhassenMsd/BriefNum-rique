@@ -12,7 +12,7 @@ class Mission: NSObject {
     
     var id = 0
     var nomMission = ""
-    var date: Date?
+    var date = ""
     var duree = ""
     var partieConsernee = ""
     var adressePartieC = ""
@@ -21,7 +21,7 @@ class Mission: NSObject {
     var notes = ""
     var id_Aff = ""
     
-    init(id: Int, nomMission: String, date: Date,duree: String, partieConsernee: String, adressePartieC: String, type: String, requis: String, notes: String, id_Aff: String){
+    init(id: Int, nomMission: String, date: String,duree: String, partieConsernee: String, adressePartieC: String, type: String, requis: String, notes: String, id_Aff: String){
         self.id = id
         self.nomMission = nomMission
         self.date = date

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,10 @@
 		85D141BD23A6DB63009434A0 /* ObjectifAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D141BC23A6DB63009434A0 /* ObjectifAddViewController.swift */; };
 		85D141BF23A6DBA7009434A0 /* DemandeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D141BE23A6DBA7009434A0 /* DemandeAddViewController.swift */; };
 		85D5789823A7ACEB00E5AB1F /* EncyclopedieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5789723A7ACEB00E5AB1F /* EncyclopedieViewController.swift */; };
+		8F085B2623A80919008A0F71 /* RendezVousService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F085B2323A80919008A0F71 /* RendezVousService.swift */; };
+		8F085B2723A80919008A0F71 /* MissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F085B2423A80919008A0F71 /* MissionService.swift */; };
+		8F085B2823A80919008A0F71 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F085B2523A80919008A0F71 /* SessionService.swift */; };
+		8F085B2A23A8099B008A0F71 /* RendezVous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F085B2923A8099B008A0F71 /* RendezVous.swift */; };
 		8F08CD8223A5BE3D00636CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8123A5BE3D00636CCC /* User.swift */; };
 		8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8423A5C28300636CCC /* LoginService.swift */; };
 		8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8623A5C28300636CCC /* Connexion.swift */; };
@@ -37,7 +41,6 @@
 		8F0F5F9A23A1C56B00BC322A /* HuissierDeJustice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5F9923A1C56B00BC322A /* HuissierDeJustice.swift */; };
 		8F0F5F9C23A1C61400BC322A /* HuissierNotaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5F9B23A1C61400BC322A /* HuissierNotaire.swift */; };
 		8F0F5F9E23A1C64C00BC322A /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5F9D23A1C64C00BC322A /* Mission.swift */; };
-		8F0F5FA023A1C75F00BC322A /* RendezVous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5F9F23A1C75F00BC322A /* RendezVous.swift */; };
 		8F0F5FA223A1C80500BC322A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5FA123A1C80500BC322A /* Session.swift */; };
 		8F0F5FA423A1C8F500BC322A /* Tribunal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5FA323A1C8F500BC322A /* Tribunal.swift */; };
 		8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */; };
@@ -45,7 +48,6 @@
 		8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623A2395E83500301725 /* SessionsListViewController.swift */; };
 		8F0F623D239693CC00301725 /* SessionAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F623C239693CC00301725 /* SessionAddViewController.swift */; };
 		8F1260FD23A1295600152FF7 /* Affaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1260FC23A1295600152FF7 /* Affaire.swift */; };
-		8F1A018223A5D2CD00D8F209 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A018123A5D2CD00D8F209 /* SessionService.swift */; };
 		8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */; };
 		8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */; };
 		8F33056C2391F282001A0DAD /* Questv1-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F33056423919864001A0DAD /* Questv1-Bold.otf */; };
@@ -81,6 +83,10 @@
 		85D141BC23A6DB63009434A0 /* ObjectifAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifAddViewController.swift; sourceTree = "<group>"; };
 		85D141BE23A6DBA7009434A0 /* DemandeAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandeAddViewController.swift; sourceTree = "<group>"; };
 		85D5789723A7ACEB00E5AB1F /* EncyclopedieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyclopedieViewController.swift; sourceTree = "<group>"; };
+		8F085B2323A80919008A0F71 /* RendezVousService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RendezVousService.swift; path = ../../../../BriefNumerique/BriefNumerique/Lawyer_App/Services/RendezVousService.swift; sourceTree = "<group>"; };
+		8F085B2423A80919008A0F71 /* MissionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MissionService.swift; path = ../../../../BriefNumerique/BriefNumerique/Lawyer_App/Services/MissionService.swift; sourceTree = "<group>"; };
+		8F085B2523A80919008A0F71 /* SessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionService.swift; path = ../../../../BriefNumerique/BriefNumerique/Lawyer_App/Services/SessionService.swift; sourceTree = "<group>"; };
+		8F085B2923A8099B008A0F71 /* RendezVous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RendezVous.swift; path = ../../../../BriefNumerique/BriefNumerique/Lawyer_App/Models/RendezVous.swift; sourceTree = "<group>"; };
 		8F08CD8123A5BE3D00636CCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8F08CD8423A5C28300636CCC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		8F08CD8623A5C28300636CCC /* Connexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connexion.swift; sourceTree = "<group>"; };
@@ -99,7 +105,6 @@
 		8F0F5F9923A1C56B00BC322A /* HuissierDeJustice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuissierDeJustice.swift; sourceTree = "<group>"; };
 		8F0F5F9B23A1C61400BC322A /* HuissierNotaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuissierNotaire.swift; sourceTree = "<group>"; };
 		8F0F5F9D23A1C64C00BC322A /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
-		8F0F5F9F23A1C75F00BC322A /* RendezVous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendezVous.swift; sourceTree = "<group>"; };
 		8F0F5FA123A1C80500BC322A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		8F0F5FA323A1C8F500BC322A /* Tribunal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tribunal.swift; sourceTree = "<group>"; };
 		8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffaireDetailsViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +112,6 @@
 		8F0F623A2395E83500301725 /* SessionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListViewController.swift; sourceTree = "<group>"; };
 		8F0F623C239693CC00301725 /* SessionAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionAddViewController.swift; sourceTree = "<group>"; };
 		8F1260FC23A1295600152FF7 /* Affaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affaire.swift; sourceTree = "<group>"; };
-		8F1A018123A5D2CD00D8F209 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		8F33056423919864001A0DAD /* Questv1-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Questv1-Bold.otf"; sourceTree = "<group>"; };
 		8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffairesListViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				8F0F5F8B23A1BC4A00BC322A /* Avocat.swift */,
 				8F0F5F8D23A1BD9C00BC322A /* BureauEnquete.swift */,
 				8F0F5F8F23A1BF0F00BC322A /* Cercle.swift */,
+				8F085B2923A8099B008A0F71 /* RendezVous.swift */,
 				8F0F5F9123A1C18100BC322A /* Contrat.swift */,
 				8F0F5F9323A1C2C000BC322A /* dataAvocat.swift */,
 				8F0F5F9523A1C32500BC322A /* Demande.swift */,
@@ -165,7 +170,6 @@
 				8F0F5F9923A1C56B00BC322A /* HuissierDeJustice.swift */,
 				8F0F5F9B23A1C61400BC322A /* HuissierNotaire.swift */,
 				8F0F5F9D23A1C64C00BC322A /* Mission.swift */,
-				8F0F5F9F23A1C75F00BC322A /* RendezVous.swift */,
 				8F0F5FA123A1C80500BC322A /* Session.swift */,
 				8F0F5FA323A1C8F500BC322A /* Tribunal.swift */,
 				8F08CD8123A5BE3D00636CCC /* User.swift */,
@@ -185,8 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				8F08CD8423A5C28300636CCC /* LoginService.swift */,
+				8F085B2423A80919008A0F71 /* MissionService.swift */,
+				8F085B2323A80919008A0F71 /* RendezVousService.swift */,
+				8F085B2523A80919008A0F71 /* SessionService.swift */,
 				8F08CD8623A5C28300636CCC /* Connexion.swift */,
-				8F1A018123A5D2CD00D8F209 /* SessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -474,7 +480,7 @@
 			files = (
 				8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */,
 				85A7451323918AC800BCE149 /* SignUp.swift in Sources */,
-				8F0F5FA023A1C75F00BC322A /* RendezVous.swift in Sources */,
+				8F085B2823A80919008A0F71 /* SessionService.swift in Sources */,
 				85D0BCE1239FB84100653951 /* ListClients.swift in Sources */,
 				8F0F5F9823A1C47200BC322A /* Expert.swift in Sources */,
 				8F98801023901CDB00A44379 /* ViewController.swift in Sources */,
@@ -482,6 +488,7 @@
 				8F0F5F9E23A1C64C00BC322A /* Mission.swift in Sources */,
 				85D0BCDF239EC99800653951 /* ProfilClient.swift in Sources */,
 				8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */,
+				8F085B2A23A8099B008A0F71 /* RendezVous.swift in Sources */,
 				8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */,
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
 				8F0F5F9223A1C18100BC322A /* Contrat.swift in Sources */,
@@ -496,15 +503,16 @@
 				8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */,
 				85D141BF23A6DBA7009434A0 /* DemandeAddViewController.swift in Sources */,
 				8F0F5F9A23A1C56B00BC322A /* HuissierDeJustice.swift in Sources */,
+				8F085B2623A80919008A0F71 /* RendezVousService.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
 				8F0F5F9023A1BF0F00BC322A /* Cercle.swift in Sources */,
 				8F0F62392395D72800301725 /* SessionViewController.swift in Sources */,
 				8F0F5F8C23A1BC4A00BC322A /* Avocat.swift in Sources */,
 				85D0BCD6239C6F7400653951 /* Home.swift in Sources */,
-				8F1A018223A5D2CD00D8F209 /* SessionService.swift in Sources */,
 				85D0BCEA23A0010100653951 /* AjoutClient.swift in Sources */,
 				8F0F623D239693CC00301725 /* SessionAddViewController.swift in Sources */,
 				8F0F5F9623A1C32500BC322A /* Demande.swift in Sources */,
+				8F085B2723A80919008A0F71 /* MissionService.swift in Sources */,
 				85D141BD23A6DB63009434A0 /* ObjectifAddViewController.swift in Sources */,
 				8F0F5F9423A1C2C000BC322A /* dataAvocat.swift in Sources */,
 				8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */,

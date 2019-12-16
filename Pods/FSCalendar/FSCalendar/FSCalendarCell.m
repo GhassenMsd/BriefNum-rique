@@ -144,12 +144,12 @@
         _shapeLayer.path = path;
     }
     
-    CGFloat eventSize = _shapeLayer.frame.size.height/6.0;
+    CGFloat eventSize = _shapeLayer.frame.size.height/7.0;
     _eventIndicator.frame = CGRectMake(
                                        self.preferredEventOffset.x,
-                                       CGRectGetMaxY(_shapeLayer.frame)+eventSize*0.17+self.preferredEventOffset.y,
+                                       CGRectGetMaxY(_shapeLayer.frame)+eventSize*0.7+self.preferredEventOffset.y,
                                        self.fs_width,
-                                       eventSize*0.83
+                                       eventSize*2
                                       );
     
 }
