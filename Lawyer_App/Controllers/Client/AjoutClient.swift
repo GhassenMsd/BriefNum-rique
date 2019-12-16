@@ -23,6 +23,7 @@ class AjoutClient: UIViewController {
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCin.addShadowView()
@@ -36,11 +37,9 @@ class AjoutClient: UIViewController {
         imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
         imageUser.clipsToBounds = true
         
-
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -50,5 +49,4 @@ class AjoutClient: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

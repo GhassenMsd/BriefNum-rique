@@ -35,12 +35,7 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
         TVRemarque.delegate = self
         datePicker.datePickerMode = .date
         TVDate.inputView = datePicker
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self , action: #selector(doneAction))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([flexSpace,doneButton], animated: true)
-        //TVDate.inputAccessoryView = toolbar
+        
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         let tapDate = UITapGestureRecognizer(target: self, action: #selector(tapDateGuesture))
         self.view.addGestureRecognizer(tapDate)
@@ -55,12 +50,7 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
     @objc func tapDateGuesture(){
         view.endEditing(true)
     }
-    
-    @objc func doneAction(){
-        //getDateFromPicker()
-        view.endEditing(true)
-    }
-    
+
     @objc func dateChanged(){
         getDateFromPicker()
     }

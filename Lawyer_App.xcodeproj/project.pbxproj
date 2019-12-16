@@ -16,6 +16,8 @@
 		85D0BCE1239FB84100653951 /* ListClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE0239FB84100653951 /* ListClients.swift */; };
 		85D0BCE8239FDCAA00653951 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE7239FDCAA00653951 /* Client.swift */; };
 		85D0BCEA23A0010100653951 /* AjoutClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE923A0010100653951 /* AjoutClient.swift */; };
+		85D141BD23A6DB63009434A0 /* ObjectifAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D141BC23A6DB63009434A0 /* ObjectifAddViewController.swift */; };
+		85D141BF23A6DBA7009434A0 /* DemandeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D141BE23A6DBA7009434A0 /* DemandeAddViewController.swift */; };
 		8F08CD8023A5347200636CCC /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD7F23A5347200636CCC /* testViewController.swift */; };
 		8F08CD8223A5BE3D00636CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8123A5BE3D00636CCC /* User.swift */; };
 		8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8423A5C28300636CCC /* LoginService.swift */; };
@@ -76,6 +78,8 @@
 		85D0BCE0239FB84100653951 /* ListClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListClients.swift; sourceTree = "<group>"; };
 		85D0BCE7239FDCAA00653951 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		85D0BCE923A0010100653951 /* AjoutClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjoutClient.swift; sourceTree = "<group>"; };
+		85D141BC23A6DB63009434A0 /* ObjectifAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifAddViewController.swift; sourceTree = "<group>"; };
+		85D141BE23A6DBA7009434A0 /* DemandeAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandeAddViewController.swift; sourceTree = "<group>"; };
 		8F08CD7F23A5347200636CCC /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		8F08CD8123A5BE3D00636CCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8F08CD8423A5C28300636CCC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			children = (
 				8F0A8809239AA2AE0035B20A /* DemandeDetailsViewController.swift */,
 				8F0A880B239AA70B0035B20A /* DemandesListViewController.swift */,
+				85D141BE23A6DBA7009434A0 /* DemandeAddViewController.swift */,
 			);
 			path = Demande;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 			children = (
 				8F0A880523994EFB0035B20A /* ObjectifDetailsViewController.swift */,
 				8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */,
+				85D141BC23A6DB63009434A0 /* ObjectifAddViewController.swift */,
 			);
 			path = Objectif;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				8F0F5F8E23A1BD9C00BC322A /* BureauEnquete.swift in Sources */,
 				8F08CD8223A5BE3D00636CCC /* User.swift in Sources */,
 				8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */,
+				85D141BF23A6DBA7009434A0 /* DemandeAddViewController.swift in Sources */,
 				8F08CD8023A5347200636CCC /* testViewController.swift in Sources */,
 				8F0F5F9A23A1C56B00BC322A /* HuissierDeJustice.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
@@ -501,6 +508,7 @@
 				85D0BCEA23A0010100653951 /* AjoutClient.swift in Sources */,
 				8F0F623D239693CC00301725 /* SessionAddViewController.swift in Sources */,
 				8F0F5F9623A1C32500BC322A /* Demande.swift in Sources */,
+				85D141BD23A6DB63009434A0 /* ObjectifAddViewController.swift in Sources */,
 				8F0F5F9423A1C2C000BC322A /* dataAvocat.swift in Sources */,
 				8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */,
 				8F0F5F9C23A1C61400BC322A /* HuissierNotaire.swift in Sources */,
