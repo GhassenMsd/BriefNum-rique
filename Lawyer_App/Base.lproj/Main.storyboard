@@ -1317,52 +1317,165 @@
             </objects>
             <point key="canvasLocation" x="4778.2608695652179" y="675"/>
         </scene>
-        <!--Data Source-->
+        <!--الموسوعة القانونية الرقمية-->
         <scene sceneID="ASc-0a-0P1">
             <objects>
-                <viewController id="wXc-QV-4jA" customClass="testViewController" customModule="Lawyer_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wXc-QV-4jA" customClass="EncyclopedieViewController" customModule="Lawyer_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cjy-SU-Afw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOo-BG-1dh" customClass="FSCalendar">
-                                <rect key="frame" x="20" y="147" width="374" height="288"/>
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPA-pp-oKt">
+                                <rect key="frame" x="22" y="111" width="370" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Groupe 1076" translatesAutoresizingMaskIntoConstraints="NO" id="D8G-qN-k2d">
+                                        <rect key="frame" x="333" y="13" width="20" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nA-eY-KsI">
+                                        <rect key="frame" x="8" y="13" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="outline-code"/>
+                                        <connections>
+                                            <action selector="DropListEncy:" destination="wXc-QV-4jA" eventType="touchUpInside" id="l9z-46-bSu"/>
+                                            <action selector="ToggleDegre:" destination="2rR-yx-Qit" eventType="touchUpInside" id="SJb-Gg-k4W"/>
+                                            <action selector="dropListAffaires:" destination="LIe-tQ-5Rr" eventType="touchUpInside" id="JXf-XV-gWS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bo6-H1-wcU">
+                                <rect key="frame" x="22" y="231" width="370" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="library_books-1" translatesAutoresizingMaskIntoConstraints="NO" id="6hy-eK-cKU">
+                                        <rect key="frame" x="20" y="16" width="21" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="ZM9-Kc-Voz">
+                                        <rect key="frame" x="20" y="47" width="337" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <string key="text">تمت المصادقة على إعادة تنظيم أحكام "مجلة الالتزامات والعقود التونسية" وصياغتها تحت عنوان "مجلة الالتزامات والعقود" الملحقة بهذا القانون</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مجلة الإلتزامات والعقود , الفصل 01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfS-ZM-2Qh">
+                                        <rect key="frame" x="80" y="16" width="277" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsZ-1K-1kd">
+                                <rect key="frame" x="22" y="428" width="370" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="toc" translatesAutoresizingMaskIntoConstraints="NO" id="UTt-vJ-bTr">
+                                        <rect key="frame" x="333" y="22" width="21" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="التعليق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfy-ha-8Ix">
+                                        <rect key="frame" x="246" y="22" width="79" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="هنا يظهر التعليق على الفصل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wD-L1-id5">
+                                        <rect key="frame" x="50" y="51" width="304" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRY-r2-Zcz">
+                                <rect key="frame" x="22" y="171" width="370" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="view_day" translatesAutoresizingMaskIntoConstraints="NO" id="hhg-U8-L7O">
+                                        <rect key="frame" x="333" y="13" width="20" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g6-hG-ENl">
+                                        <rect key="frame" x="8" y="13" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="outline-code"/>
+                                        <connections>
+                                            <action selector="DropListFasl:" destination="wXc-QV-4jA" eventType="touchUpInside" id="UxT-LW-XL6"/>
+                                            <action selector="ToggleDegre:" destination="2rR-yx-Qit" eventType="touchUpInside" id="yte-OF-P3P"/>
+                                            <action selector="dropListAffaires:" destination="LIe-tQ-5Rr" eventType="touchUpInside" id="q6l-6I-b06"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اختار عدد الفصل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DDF-L1-GqQ" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="66" y="183" width="285" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
-                                        <integer key="value" value="1"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                        <color key="value" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
-                                        <real key="value" value="50"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayHeight">
-                                        <real key="value" value="50"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="wXc-QV-4jA" id="gJG-SX-6yk"/>
-                                    <outlet property="delegate" destination="wXc-QV-4jA" id="obc-g2-57o"/>
-                                </connections>
-                            </view>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اختار المجلة القانونية" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5d-U4-Teu" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="65" y="123" width="285" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                        <color key="value" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.92549019607843142" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="cx8-cB-rD8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="library_books" selectedImage="library_books" id="NIS-u9-ziq"/>
+                    <navigationItem key="navigationItem" title="الموسوعة القانونية الرقمية" id="dvA-jA-Q6Q">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="add_alert" id="Kco-Qn-U1r">
+                            <color key="tintColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="calendar" destination="dOo-BG-1dh" id="CTy-6O-lRg"/>
+                        <outlet property="EncyText" destination="L5d-U4-Teu" id="DNf-Tb-vpx"/>
+                        <outlet property="EncyView" destination="KPA-pp-oKt" id="ioF-Xc-N1c"/>
+                        <outlet property="FaslText" destination="DDF-L1-GqQ" id="aZN-QJ-LXo"/>
+                        <outlet property="FaslView" destination="nRY-r2-Zcz" id="MUw-8d-Na4"/>
+                        <outlet property="View1" destination="bo6-H1-wcU" id="npE-pe-h6h"/>
+                        <outlet property="View2" destination="lsZ-1K-1kd" id="7qS-eO-mPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxb-AB-dre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2957.971014492754" y="4.6875"/>
+            <point key="canvasLocation" x="-1101.449275362319" y="3561.8303571428569"/>
         </scene>
         <!--إضافة قضية-->
         <scene sceneID="Ftc-0g-rLd">
@@ -1620,6 +1733,7 @@
         <!--القضايا-->
         <scene sceneID="kKd-v4-jKp">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zr1-Po-Rd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="MOX-qY-dxJ" customClass="AffairesListViewController" customModule="Lawyer_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Li8-bf-Xt4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1743,9 +1857,8 @@
                         <segue destination="c0h-8U-4af" kind="show" identifier="toDetails" id="RZZ-7Z-JvX"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zr1-Po-Rd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2052" y="1528"/>
+            <point key="canvasLocation" x="-2052.1739130434785" y="1527.4553571428571"/>
         </scene>
         <!--قضية 01-->
         <scene sceneID="U09-kh-wbF">
@@ -1977,6 +2090,19 @@
                                                 <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PSp-yt-kPp" customClass="Floaty" customModule="Floaty">
+                                                <rect key="frame" x="334" y="733" width="56" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.94117647059999998" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="plusColor">
+                                                        <color key="value" red="0.87058823529999996" green="0.6705882353" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -2078,6 +2204,7 @@
                         <outlet property="ViewDemande" destination="bW7-T5-IPt" id="Q5D-sk-Xdo"/>
                         <outlet property="ViewInfo" destination="Hro-4E-2yN" id="8Uc-P0-W1t"/>
                         <outlet property="ViewObjectif" destination="UnT-R3-bc8" id="edQ-AD-XWn"/>
+                        <outlet property="floaty" destination="PSp-yt-kPp" id="7qT-Yu-OZT"/>
                         <outlet property="navbar" destination="Jbq-Vk-WLb" id="F0Z-Jy-NHG"/>
                         <outlet property="numeroAff" destination="Aaq-2x-byt" id="dvW-Ox-0iH"/>
                         <segue destination="ZSX-60-rUf" kind="show" identifier="toSession" id="DUg-SB-qBB"/>
@@ -2086,6 +2213,9 @@
                         <segue destination="Ce0-e6-xBV" kind="show" identifier="toListObjectif" id="GAd-L9-nnh"/>
                         <segue destination="zXV-FY-HiR" kind="show" identifier="toDemande" id="0i1-Ld-KYm"/>
                         <segue destination="liR-DB-DjU" kind="show" identifier="toListDemande" id="HKW-Oj-8lR"/>
+                        <segue destination="LIe-tQ-5Rr" kind="show" identifier="AjoutDemande" id="Xoq-Ji-Ow9"/>
+                        <segue destination="9uZ-Jx-GHt" kind="show" identifier="AjoutMission" id="xIe-Ch-UhR"/>
+                        <segue destination="Erk-JB-NTL" kind="show" identifier="AjoutSession" id="Lyj-T2-np4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Mc-WW-fbI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2478,7 +2608,7 @@
                         <segue destination="NUy-UB-hy3" kind="relationship" relationship="viewControllers" id="wN0-kf-G7K"/>
                         <segue destination="mb9-uD-WMS" kind="relationship" relationship="viewControllers" id="npt-22-C4W"/>
                         <segue destination="YYo-2f-mG2" kind="relationship" relationship="viewControllers" id="B9C-vA-kDd"/>
-                        <segue destination="wXc-QV-4jA" kind="relationship" relationship="viewControllers" id="IO6-WE-iZm"/>
+                        <segue destination="jLz-tH-UJF" kind="relationship" relationship="viewControllers" id="IO6-WE-iZm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2c-zu-K6i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3238,7 +3368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFM-x9-59Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1139.1304347826087" y="3561.8303571428569"/>
+            <point key="canvasLocation" x="544.92753623188412" y="3561.8303571428569"/>
         </scene>
         <!--المطلب 1-->
         <scene sceneID="ilD-pO-8Aw">
@@ -3621,7 +3751,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9f5-9y-VAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1962.3188405797102" y="3561.8303571428569"/>
+            <point key="canvasLocation" x="-3448" y="3597"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4nE-WU-k1V">
@@ -3647,11 +3777,35 @@
             </objects>
             <point key="canvasLocation" x="1788" y="1229"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZGh-nS-6cA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jLz-tH-UJF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="library_books" selectedImage="library_books" id="NIS-u9-ziq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SUv-14-1RF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wXc-QV-4jA" kind="relationship" relationship="rootViewController" id="aIc-un-Ddp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hS-cc-i1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1165" y="4349"/>
+        </scene>
     </scenes>
     <resources>
         <image name="3" width="128" height="128"/>
         <image name="Arrow" width="11" height="19"/>
         <image name="Checkbox" width="60" height="60"/>
+        <image name="Groupe 1076" width="21" height="21"/>
         <image name="Groupe 582" width="40" height="40"/>
         <image name="Groupe 583" width="40" height="40"/>
         <image name="Groupe 584" width="40" height="40"/>
@@ -3693,6 +3847,7 @@
         <image name="laptop" width="24" height="24"/>
         <image name="laptop-1" width="24" height="24"/>
         <image name="library_books" width="30" height="30"/>
+        <image name="library_books-1" width="21" height="21"/>
         <image name="list_alt" width="24" height="24"/>
         <image name="mail" width="18" height="14"/>
         <image name="markunread" width="24" height="24"/>
@@ -3712,9 +3867,12 @@
         <image name="view_module" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tUp-XD-Uif"/>
-        <segue reference="9rs-lb-AzL"/>
+        <segue reference="Xoq-Ji-Ow9"/>
+        <segue reference="0i1-Ld-KYm"/>
+        <segue reference="xIe-Ch-UhR"/>
+        <segue reference="c06-de-jGN"/>
         <segue reference="svv-qu-fUV"/>
-        <segue reference="f5E-MM-2Ao"/>
+        <segue reference="Lyj-T2-np4"/>
+        <segue reference="DUg-SB-qBB"/>
     </inferredMetricsTieBreakers>
 </document>

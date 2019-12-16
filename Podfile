@@ -8,6 +8,9 @@ target 'Lawyer_App' do
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'FSCalendar'
+  pod 'Floaty', :git => 'https://github.com/jesster2k10/Floaty.git', :branch => 'swift4.0'
+
+
   # Pods for Lawyer_App
 
 end

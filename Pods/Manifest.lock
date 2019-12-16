@@ -2,28 +2,41 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
+  - Floaty (4.0.0)
   - FSCalendar (2.8.1)
-  - iOSDropDown (0.2.6)
+  - iOSDropDown (0.3.4)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - Floaty (from `https://github.com/jesster2k10/Floaty.git`, branch `swift4.0`)
   - FSCalendar
   - iOSDropDown
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - AlamofireImage
     - FSCalendar
     - iOSDropDown
 
+EXTERNAL SOURCES:
+  Floaty:
+    :branch: swift4.0
+    :git: https://github.com/jesster2k10/Floaty.git
+
+CHECKOUT OPTIONS:
+  Floaty:
+    :commit: 3dc040c7486bcf9d9671c6b388398cee0c0174d1
+    :git: https://github.com/jesster2k10/Floaty.git
+
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  Floaty: df27b72d9ed1e58d48aa3717327ffdb857268c63
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
-  iOSDropDown: 90608a7270234c503260ef13314907b6703b39aa
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
 
-PODFILE CHECKSUM: d32adef89f0e7cbeee2c03856c7a79ae1ef79c13
+PODFILE CHECKSUM: 2d14e41b850dd49ced6222d1f095bf76d11111de
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

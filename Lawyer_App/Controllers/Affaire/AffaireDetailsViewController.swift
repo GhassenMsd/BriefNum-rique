@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Floaty
 
 class AffaireDetailsViewController: UIViewController {
 
     @IBOutlet weak var numeroAff: UILabel!
+    @IBOutlet var floaty: Floaty!
     
     var nomAffaire = ""
     
@@ -28,12 +30,27 @@ class AffaireDetailsViewController: UIViewController {
         let tapDemande = UITapGestureRecognizer(target: self, action: #selector(tapDemande(_:)))
         let tapDemandeList = UITapGestureRecognizer(target: self, action: #selector(tapDemandeList(_:)))
 
+        
         AllSession.addGestureRecognizer(tapSessionList)
         AllObjectif.addGestureRecognizer(tapObjectifList)
         ViewAffaire.addGestureRecognizer(tapSession)
         ViewObjectif.addGestureRecognizer(tapObjectif)
         AllDemande.addGestureRecognizer(tapDemandeList)
         ViewDemande.addGestureRecognizer(tapDemande)
+        
+        
+        floaty.addItem("إضافة مهمة", icon: UIImage(named: "Groupe 584")!,handler: { _ in
+            self.performSegue(withIdentifier: "AjoutMission", sender: self)
+        })
+        floaty.addItem("إضافة مطلب", icon: UIImage(named: "Groupe 583")!,handler: { _ in
+            self.performSegue(withIdentifier: "AjoutDemande", sender: self)
+        })
+        floaty.addItem("إضافة جلسة", icon: UIImage(named: "Groupe 582")!,handler: { _ in
+            self.performSegue(withIdentifier: "AjoutSession", sender: self)
+        })
+
+        self.view.addSubview(floaty)
+
         // Do any additional setup after loading the view.
     }
     

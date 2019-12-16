@@ -9,6 +9,8 @@
 import UIKit
 
 class AffairesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
+    
     let dataAffaires = ["قضية 4","قضية 3","قضية 2","قضية 1"]
     let dataTribunal = ["محكمة بن عروس","محكمة باب سعدون","محكمة باب سعدون","محكمة بن عروس"]
     let datacercle = ["دائرة تونس 1","دائرة تونس 2","دائرة تونس 2","دائرة تونس 1"]
@@ -62,7 +64,9 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         ViewSearch.addShadowView()
-        // Do any additional setup after loading the view.
+        
+
+        
     }
     
 

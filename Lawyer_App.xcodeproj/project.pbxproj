@@ -18,7 +18,7 @@
 		85D0BCEA23A0010100653951 /* AjoutClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE923A0010100653951 /* AjoutClient.swift */; };
 		85D141BD23A6DB63009434A0 /* ObjectifAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D141BC23A6DB63009434A0 /* ObjectifAddViewController.swift */; };
 		85D141BF23A6DBA7009434A0 /* DemandeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D141BE23A6DBA7009434A0 /* DemandeAddViewController.swift */; };
-		8F08CD8023A5347200636CCC /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD7F23A5347200636CCC /* testViewController.swift */; };
+		85D5789823A7ACEB00E5AB1F /* EncyclopedieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5789723A7ACEB00E5AB1F /* EncyclopedieViewController.swift */; };
 		8F08CD8223A5BE3D00636CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8123A5BE3D00636CCC /* User.swift */; };
 		8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8423A5C28300636CCC /* LoginService.swift */; };
 		8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8623A5C28300636CCC /* Connexion.swift */; };
@@ -80,7 +80,7 @@
 		85D0BCE923A0010100653951 /* AjoutClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjoutClient.swift; sourceTree = "<group>"; };
 		85D141BC23A6DB63009434A0 /* ObjectifAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifAddViewController.swift; sourceTree = "<group>"; };
 		85D141BE23A6DBA7009434A0 /* DemandeAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandeAddViewController.swift; sourceTree = "<group>"; };
-		8F08CD7F23A5347200636CCC /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		85D5789723A7ACEB00E5AB1F /* EncyclopedieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyclopedieViewController.swift; sourceTree = "<group>"; };
 		8F08CD8123A5BE3D00636CCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8F08CD8423A5C28300636CCC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		8F08CD8623A5C28300636CCC /* Connexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connexion.swift; sourceTree = "<group>"; };
@@ -171,6 +171,14 @@
 				8F08CD8123A5BE3D00636CCC /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		85D5789623A7ACB200E5AB1F /* Encyclopedie */ = {
+			isa = PBXGroup;
+			children = (
+				85D5789723A7ACEB00E5AB1F /* EncyclopedieViewController.swift */,
+			);
+			path = Encyclopedie;
 			sourceTree = "<group>";
 		};
 		8F08CD8323A5C1C800636CCC /* Services */ = {
@@ -319,6 +327,7 @@
 		8F98802B23902BF500A44379 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				85D5789623A7ACB200E5AB1F /* Encyclopedie */,
 				8F08F9A523A0605B00508F28 /* User */,
 				8F08F9A423A0605B00508F28 /* Home */,
 				8F08F9A323A0605B00508F28 /* Client */,
@@ -329,7 +338,6 @@
 				8F98802C23902C2300A44379 /* OnBoardingViewController.swift */,
 				8F9880302390330400A44379 /* Slide.swift */,
 				8F3305662391DBBC001A0DAD /* BaseTabBarController.swift */,
-				8F08CD7F23A5347200636CCC /* testViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -424,26 +432,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C6EDF04CBCEBF583D84FBA8F /* [CP] Check Pods Manifest.lock */ = {
@@ -489,6 +486,7 @@
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
 				8F0F5F9223A1C18100BC322A /* Contrat.swift in Sources */,
 				8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */,
+				85D5789823A7ACEB00E5AB1F /* EncyclopedieViewController.swift in Sources */,
 				8F0A880C239AA70B0035B20A /* DemandesListViewController.swift in Sources */,
 				85D0BCDD239E661100653951 /* CalendarVars.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
@@ -497,7 +495,6 @@
 				8F08CD8223A5BE3D00636CCC /* User.swift in Sources */,
 				8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */,
 				85D141BF23A6DBA7009434A0 /* DemandeAddViewController.swift in Sources */,
-				8F08CD8023A5347200636CCC /* testViewController.swift in Sources */,
 				8F0F5F9A23A1C56B00BC322A /* HuissierDeJustice.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
 				8F0F5F9023A1BF0F00BC322A /* Cercle.swift in Sources */,
