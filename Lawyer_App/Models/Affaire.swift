@@ -14,15 +14,16 @@ class Affaire: NSObject {
     var numAff = ""
     var degre = ""
     var sujet = ""
-    var date: Date?
+    var date = ""
     var etat = ""
     var idClt = 0
     var idCrl = 0
     var numCasPrec = ""
     var numAvCont = ""
     var etatAvCont = 0
+    var cercle = ""
     
-    init(nameAff: String, numAff: String, degre: String, sujet: String,date: Date, etat: String, idClt: Int, idCrl: Int, numCasPrec: String, numAvCont: String, etatAvCont: Int){
+    init(nameAff: String, numAff: String, degre: String, sujet: String,date: String, etat: String, idClt: Int, idCrl: Int, numCasPrec: String, numAvCont: String, etatAvCont: Int,cercle: String){
         self.numAff = numAff ;
         self.nameAff = nameAff;
         self.degre = degre;
@@ -34,5 +35,6 @@ class Affaire: NSObject {
         self.numCasPrec = numCasPrec;
         self.numAvCont = numAvCont;
         self.etatAvCont = etatAvCont;
+        self.cercle = cercle;
     }
 }

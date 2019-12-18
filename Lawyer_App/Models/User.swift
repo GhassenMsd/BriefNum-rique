@@ -8,7 +8,7 @@
 
 import UIKit
 
-class User: NSObject {
+class User: NSObject,Encodable {
     
     var id = 0
     var nomComplet = ""

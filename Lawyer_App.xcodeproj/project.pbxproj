@@ -11,7 +11,6 @@
 		85A7451323918AC800BCE149 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451123918AC800BCE149 /* SignUp.swift */; };
 		85A7451423918AC800BCE149 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451223918AC800BCE149 /* Login.swift */; };
 		85D0BCD6239C6F7400653951 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCD5239C6F7400653951 /* Home.swift */; };
-		85D0BCDD239E661100653951 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCDC239E661100653951 /* CalendarVars.swift */; };
 		85D0BCDF239EC99800653951 /* ProfilClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCDE239EC99800653951 /* ProfilClient.swift */; };
 		85D0BCE1239FB84100653951 /* ListClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE0239FB84100653951 /* ListClients.swift */; };
 		85D0BCE8239FDCAA00653951 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE7239FDCAA00653951 /* Client.swift */; };
@@ -23,6 +22,7 @@
 		85D5789C23A81F2500E5AB1F /* RendezVouzService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5789B23A81F2500E5AB1F /* RendezVouzService.swift */; };
 		85D5789E23A81F7100E5AB1F /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5789D23A81F7100E5AB1F /* SessionService.swift */; };
 		85D578A023A8200A00E5AB1F /* RendezVous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5789F23A8200A00E5AB1F /* RendezVous.swift */; };
+		85D578A223A82AB000E5AB1F /* AffaireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D578A123A82AB000E5AB1F /* AffaireService.swift */; };
 		8F08CD8223A5BE3D00636CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8123A5BE3D00636CCC /* User.swift */; };
 		8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8423A5C28300636CCC /* LoginService.swift */; };
 		8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8623A5C28300636CCC /* Connexion.swift */; };
@@ -75,7 +75,6 @@
 		85A7451223918AC800BCE149 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		85A7451523918AFE00BCE149 /* samim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = samim.ttf; sourceTree = "<group>"; };
 		85D0BCD5239C6F7400653951 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		85D0BCDC239E661100653951 /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		85D0BCDE239EC99800653951 /* ProfilClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilClient.swift; sourceTree = "<group>"; };
 		85D0BCE0239FB84100653951 /* ListClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListClients.swift; sourceTree = "<group>"; };
 		85D0BCE7239FDCAA00653951 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		85D5789B23A81F2500E5AB1F /* RendezVouzService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendezVouzService.swift; sourceTree = "<group>"; };
 		85D5789D23A81F7100E5AB1F /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		85D5789F23A8200A00E5AB1F /* RendezVous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendezVous.swift; sourceTree = "<group>"; };
+		85D578A123A82AB000E5AB1F /* AffaireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffaireService.swift; sourceTree = "<group>"; };
 		8F08CD8123A5BE3D00636CCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8F08CD8423A5C28300636CCC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		8F08CD8623A5C28300636CCC /* Connexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connexion.swift; sourceTree = "<group>"; };
@@ -193,6 +193,7 @@
 				85D5789923A81EF000E5AB1F /* MissionService.swift */,
 				85D5789B23A81F2500E5AB1F /* RendezVouzService.swift */,
 				85D5789D23A81F7100E5AB1F /* SessionService.swift */,
+				85D578A123A82AB000E5AB1F /* AffaireService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -251,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				85D0BCD5239C6F7400653951 /* Home.swift */,
-				85D0BCDC239E661100653951 /* CalendarVars.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -494,7 +494,6 @@
 				8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */,
 				85D5789823A7ACEB00E5AB1F /* EncyclopedieViewController.swift in Sources */,
 				8F0A880C239AA70B0035B20A /* DemandesListViewController.swift in Sources */,
-				85D0BCDD239E661100653951 /* CalendarVars.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
 				8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */,
 				8F0F5F8E23A1BD9C00BC322A /* BureauEnquete.swift in Sources */,
@@ -525,6 +524,7 @@
 				8F0F5FA423A1C8F500BC322A /* Tribunal.swift in Sources */,
 				8F33057023942AEA001A0DAD /* AffaireAddViewController.swift in Sources */,
 				8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */,
+				85D578A223A82AB000E5AB1F /* AffaireService.swift in Sources */,
 				8F0A880A239AA2AE0035B20A /* DemandeDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

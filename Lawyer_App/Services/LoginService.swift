@@ -20,10 +20,11 @@ class LoginService : NSObject {
             "email": email,
             "password": password
         ]
+        
         let headers: HTTPHeaders = [
             "Content-Type": "application/x-www-form-urlencoded",
         ]
-
+        
         Alamofire.request(Connexion.adresse + "/api/login", method:.post, parameters:parameters, headers:headers).responseJSON { response in
             print(response.result.value as Any)
             
@@ -34,16 +35,23 @@ class LoginService : NSObject {
             }
             else{
                 let userDict = responseDict["user"] as! Dictionary<String,Any>
-                
+                let user = User(id: userDict["id"] as! Int ,nomComplet: userDict["nomComplet"] as! String,grade: userDict["grade"] as! String ,adresseBureau: userDict["adresseBureau"] as! String ,tel: userDict["tel"] as! String ,img: userDict["img"] as! String ,password: userDict["password"] as! String ,token: responseDict["token"] as! String)
                 let preferences = UserDefaults.standard
+                
+                
+                
                 preferences.setValue(responseDict["token"] as! String, forKey: "token")
+                preferences.setValue(user.id, forKey: "idUser")
+
                 //  Save to disk
                 let didSave = preferences.synchronize()
                 if !didSave {
                     print("matsabbech")
                     //  Couldn't save (I've never seen this happen in real world testing)
                 }
-                completion(User(id: userDict["id"] as! Int ,nomComplet: userDict["nomComplet"] as! String,grade: userDict["grade"] as! String ,adresseBureau: userDict["adresseBureau"] as! String ,tel: userDict["tel"] as! String ,img: userDict["img"] as! String ,password: userDict["password"] as! String ,token: responseDict["token"] as! String))
+                
+        
+                completion(user)
             }
         }
     }

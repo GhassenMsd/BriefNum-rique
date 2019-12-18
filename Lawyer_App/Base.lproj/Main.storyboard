@@ -1691,10 +1691,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwY-yl-vgh">
                                         <rect key="frame" x="2" y="0.0" width="410" height="1337.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Icon-6" translatesAutoresizingMaskIntoConstraints="NO" id="9lc-Y0-uJM">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-6" translatesAutoresizingMaskIntoConstraints="NO" id="9lc-Y0-uJM">
                                                 <rect key="frame" x="352" y="30" width="20" height="20"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="معلومات" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zd-tq-oW7">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معلومات" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zd-tq-oW7">
                                                 <rect key="frame" x="256" y="20" width="86" height="39"/>
                                                 <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2155,7 +2155,7 @@
             <objects>
                 <viewController id="Erk-JB-NTL" customClass="SessionAddViewController" customModule="Lawyer_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NsC-CC-uE8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="925"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMR-E8-sHr">
@@ -2440,7 +2440,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="تسجيل الدخول" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtW-iG-H9V">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="تسجيل الدخول" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtW-iG-H9V">
                                 <rect key="frame" x="93.5" y="98.5" width="243.5" height="66.5"/>
                                 <accessibility key="accessibilityConfiguration" label="تسجيل الدخول"/>
                                 <fontDescription key="fontDescription" name="Questv1-Bold" family="Questv1" pointSize="40"/>
@@ -2448,14 +2448,14 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="-1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="تسجيل الدخول للمتابعة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGC-PY-I2w">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل الدخول للمتابعة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGC-PY-I2w">
                                 <rect key="frame" x="202.5" y="215.5" width="163" height="27"/>
                                 <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H7h-P0-ojg">
-                                <rect key="frame" x="51.5" y="282.5" width="311" height="44"/>
+                                <rect key="frame" x="51.5" y="278.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="mZd-7z-uS4"/>
@@ -2466,7 +2466,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمه مرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ah7-tk-2tg">
-                                <rect key="frame" x="51.5" y="334.5" width="311" height="44"/>
+                                <rect key="frame" x="51.5" y="330.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="TXC-zI-UFT"/>
@@ -2477,7 +2477,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTn-bO-nAf">
-                                <rect key="frame" x="51.5" y="446.5" width="311" height="50"/>
+                                <rect key="frame" x="51.5" y="442.5" width="311" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1RC-2R-Dvi"/>
@@ -2492,19 +2492,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسيت كلمة المرور؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3P-5O-0Sg">
-                                <rect key="frame" x="51" y="404.5" width="93" height="19"/>
+                                <rect key="frame" x="51" y="400.5" width="93" height="19"/>
                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ليس لديك حساب؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUu-P4-Utm">
-                                <rect key="frame" x="170.5" y="693.5" width="73.5" height="15"/>
+                                <rect key="frame" x="161" y="689.5" width="92.5" height="19"/>
                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX4-vL-Ket">
-                                <rect key="frame" x="347.5" y="402.5" width="20" height="20"/>
+                                <rect key="frame" x="347.5" y="398.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="VTA-He-bt3"/>
                                     <constraint firstAttribute="width" constant="20" id="ViR-IT-h3u"/>
@@ -2516,13 +2516,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تذكرنى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf1-9a-BPa">
-                                <rect key="frame" x="287.5" y="401.5" width="82" height="24"/>
+                                <rect key="frame" x="287.5" y="397.5" width="82" height="24"/>
                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wh2-eG-yA9">
-                                <rect key="frame" x="119" y="687" width="46" height="26"/>
+                                <rect key="frame" x="119" y="683" width="46" height="30"/>
                                 <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="12"/>
                                 <state key="normal" title="سجل">
                                     <color key="titleColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2586,26 +2586,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مرحبا" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFQ-07-kl1">
-                                <rect key="frame" x="78.5" y="98.5" width="257" height="47"/>
+                                <rect key="frame" x="78.5" y="98.5" width="257" height="66.5"/>
                                 <fontDescription key="fontDescription" name="Questv1-Bold" family="Questv1" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="kfO-VU-HRJ">
-                                <rect key="frame" x="164" y="162" width="86" height="86"/>
+                                <rect key="frame" x="164" y="181.5" width="86" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="d5H-wT-nCD"/>
                                     <constraint firstAttribute="width" constant="86" id="yrh-bb-eeO"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل الدخول للمتابعة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2m-xH-GCM">
-                                <rect key="frame" x="201.5" y="278" width="162" height="20"/>
+                                <rect key="frame" x="201.5" y="297.5" width="162" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الإسم بالكامل       " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x3g-w2-zEw">
-                                <rect key="frame" x="51.5" y="318.5" width="311" height="44"/>
+                                <rect key="frame" x="51.5" y="344.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="8bY-Tp-3vk"/>
@@ -2616,7 +2616,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="exd-uR-EIu">
-                                <rect key="frame" x="51.5" y="371.5" width="311" height="44"/>
+                                <rect key="frame" x="51.5" y="397.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="iyw-kS-1on"/>
@@ -2627,7 +2627,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="درجتك" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QFB-ch-FZz">
-                                <rect key="frame" x="51.5" y="424.5" width="311" height="44"/>
+                                <rect key="frame" x="51.5" y="450.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="FGE-gQ-RAp"/>
@@ -2638,7 +2638,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="عنوان المكتب" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8V8-ER-STb">
-                                <rect key="frame" x="51.5" y="477.5" width="311" height="44"/>
+                                <rect key="frame" x="51.5" y="503.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Qd8-pm-cPI"/>
@@ -2649,7 +2649,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="عنوان الاقامة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-FW-ObP">
-                                <rect key="frame" x="51.5" y="530.5" width="311" height="44"/>
+                                <rect key="frame" x="51.5" y="556.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Vlk-uO-jbX"/>
@@ -2660,7 +2660,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الهاتف" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R4j-hu-wCp">
-                                <rect key="frame" x="51.5" y="583.5" width="311" height="44"/>
+                                <rect key="frame" x="51.5" y="609.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="7e5-fn-b3F"/>
@@ -2671,7 +2671,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7a-L4-cYQ">
-                                <rect key="frame" x="343" y="648.5" width="20" height="20"/>
+                                <rect key="frame" x="343" y="674.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="4kK-pM-aiH"/>
                                     <constraint firstAttribute="height" constant="20" id="vEu-ck-6cj"/>
@@ -2684,7 +2684,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv2-2G-Dhp">
-                                <rect key="frame" x="52" y="695.5" width="311" height="70.5"/>
+                                <rect key="frame" x="52" y="721.5" width="311" height="39.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
                                 <state key="normal" title="تسجيل الدخول">
@@ -2700,13 +2700,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لديك حساب؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvT-I5-m9g">
-                                <rect key="frame" x="181" y="825" width="67" height="14"/>
+                                <rect key="frame" x="181" y="820" width="67" height="19"/>
                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pp8-xc-Sh6">
-                                <rect key="frame" x="100" y="818" width="86" height="26"/>
+                                <rect key="frame" x="100" y="813" width="86" height="31"/>
                                 <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="12"/>
                                 <state key="normal" title="تسجيل الدخول">
                                     <color key="titleColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2716,7 +2716,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أوافق على شروط الخدمة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZJ-YJ-ARw">
-                                <rect key="frame" x="186" y="645.5" width="183.5" height="23"/>
+                                <rect key="frame" x="186" y="671.5" width="183.5" height="23"/>
                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2786,6 +2786,7 @@
                     <tabBarItem key="tabBarItem" title="" image="gavel" selectedImage="gavel" id="sDs-t6-IFZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qTg-vo-EBD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.22745098039215686" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -3576,6 +3577,7 @@
                     <tabBarItem key="tabBarItem" title="" image="home" id="AYd-rA-aw5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IXm-ZF-fPk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -3599,6 +3601,7 @@
                     <tabBarItem key="tabBarItem" title="" image="library_books" selectedImage="library_books" id="NIS-u9-ziq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SUv-14-1RF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
