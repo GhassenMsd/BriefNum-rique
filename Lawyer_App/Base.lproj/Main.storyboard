@@ -1777,7 +1777,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="أدخل بريدك الإلكتروني" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdH-bV-fMa">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="غسان مساعد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdH-bV-fMa">
                                                         <rect key="frame" x="0.0" y="277.5" width="355" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
@@ -1794,7 +1794,7 @@
                                                 <rect key="frame" x="20" y="484" width="370" height="83"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="جلسة 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqu-oQ-Mc4">
-                                                        <rect key="frame" x="287" y="12" width="65" height="27"/>
+                                                        <rect key="frame" x="157" y="12" width="195" height="27"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1805,7 +1805,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تاريخ الجلسة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O9-6p-YO0">
-                                                        <rect key="frame" x="207" y="45" width="106" height="26"/>
+                                                        <rect key="frame" x="41" y="45" width="272" height="26"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="19"/>
                                                         <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1836,7 +1836,7 @@
                                                 <rect key="frame" x="20" y="639" width="370" height="83"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المهمة 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-LM-QXb">
-                                                        <rect key="frame" x="287" y="12" width="65" height="27"/>
+                                                        <rect key="frame" x="207" y="12" width="145" height="27"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1878,7 +1878,7 @@
                                                 <rect key="frame" x="20" y="793" width="370" height="83"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المطلب 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqi-Aq-JGB">
-                                                        <rect key="frame" x="275" y="12" width="77" height="27"/>
+                                                        <rect key="frame" x="179" y="12" width="173" height="27"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1889,7 +1889,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الجهة المقدم لها" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs9-ze-1MU">
-                                                        <rect key="frame" x="181" y="45" width="132" height="26"/>
+                                                        <rect key="frame" x="8" y="45" width="305" height="26"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="19"/>
                                                         <color key="textColor" red="0.0" green="0.22431954740000001" blue="0.20011559130000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2015,12 +2015,17 @@
                         <outlet property="AllObjectif" destination="GXK-Te-wbh" id="e8Y-UZ-bYP"/>
                         <outlet property="AllSession" destination="scS-FX-lKb" id="LQl-AN-myo"/>
                         <outlet property="DemandeName" destination="xqi-Aq-JGB" id="IG2-7x-rLO"/>
+                        <outlet property="JihaDemande" destination="fs9-ze-1MU" id="Yld-af-rT0"/>
+                        <outlet property="ObjectifDate" destination="6mt-h2-fj4" id="OXR-jp-aOj"/>
                         <outlet property="ObjectifName" destination="BCf-LM-QXb" id="TfH-qf-mU4"/>
+                        <outlet property="SessionDate" destination="4O9-6p-YO0" id="OjG-9F-Sft"/>
                         <outlet property="SessionName" destination="iqu-oQ-Mc4" id="CB4-3a-VNs"/>
+                        <outlet property="SujetAffaire" destination="3N2-aj-aUP" id="03K-DX-znf"/>
                         <outlet property="ViewAffaire" destination="opB-Fs-LeW" id="L0C-0c-O1U"/>
                         <outlet property="ViewDemande" destination="bW7-T5-IPt" id="Q5D-sk-Xdo"/>
                         <outlet property="ViewInfo" destination="Hro-4E-2yN" id="8Uc-P0-W1t"/>
                         <outlet property="ViewObjectif" destination="UnT-R3-bc8" id="edQ-AD-XWn"/>
+                        <outlet property="cercle" destination="RGD-0p-nWH" id="zrb-u5-6Bw"/>
                         <outlet property="floaty" destination="PSp-yt-kPp" id="7qT-Yu-OZT"/>
                         <outlet property="navbar" destination="Jbq-Vk-WLb" id="F0Z-Jy-NHG"/>
                         <outlet property="numeroAff" destination="Aaq-2x-byt" id="dvW-Ox-0iH"/>
@@ -2037,7 +2042,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Mc-WW-fbI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1286.9565217391305" y="1628.5714285714284"/>
+            <point key="canvasLocation" x="-1301.449275362319" y="1601.7857142857142"/>
         </scene>
         <!--جلسة 1-->
         <scene sceneID="pAS-cQ-vkb">

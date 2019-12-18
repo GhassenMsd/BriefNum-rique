@@ -15,11 +15,11 @@ class Demande: NSObject {
     var partieConcernee = ""
     var type = ""
     var sujet = ""
-    var date: Date?
+    var date = ""
     var notes = ""
     var id_Aff = ""
     
-    init(id: Int, nomDomande: String, partieConcernee: String, type: String, sujet: String, date: Date, notes: String, id_Aff: String){
+    init(id: Int, nomDomande: String, partieConcernee: String, type: String, sujet: String, date: String, notes: String, id_Aff: String){
         self.id = id
         self.nomDemande = nomDomande
         self.partieConcernee = partieConcernee

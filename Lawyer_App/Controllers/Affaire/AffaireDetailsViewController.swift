@@ -11,14 +11,66 @@ import Floaty
 
 class AffaireDetailsViewController: UIViewController {
 
-    @IBOutlet weak var numeroAff: UILabel!
     @IBOutlet var floaty: Floaty!
     
-    var nomAffaire = ""
+    @IBOutlet weak var ViewInfo: UIView!
+    @IBOutlet weak var ViewObjectif: UIView!
+    @IBOutlet weak var ViewAffaire: UIView!
+    @IBOutlet weak var ViewDemande: UIView!
+    
+    @IBOutlet var cercle: UILabel!
+    @IBOutlet var SujetAffaire: UITextView!
+    @IBOutlet weak var numeroAff: UILabel!
+    @IBOutlet weak var SessionName: UILabel!
+    @IBOutlet var SessionDate: UILabel!
+    @IBOutlet weak var AllSession: UILabel!
+    @IBOutlet weak var ObjectifName: UILabel!
+    @IBOutlet var ObjectifDate: UILabel!
+    @IBOutlet weak var AllObjectif: UILabel!
+    @IBOutlet weak var DemandeName: UILabel!
+    @IBOutlet var JihaDemande: UILabel!
+    @IBOutlet weak var AllDemande: UILabel!
+    
+    @IBOutlet weak var navbar: UINavigationItem!
+    
+    
+    var affaire = Affaire()
+    let sessionService = SessionService()
+    let missionService = MissionService()
+    let demandeService = DemandeService()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navbar.title = nomAffaire
+        navbar.title = "قظية " + affaire.numAff
+        //detailsAffaire
+        self.numeroAff.text = affaire.numAff
+        self.SujetAffaire.text = affaire.sujet
+        self.cercle.text = affaire.cercle
+        
+        //SessionRecente
+        sessionService.getAllByAffaire(idAffaire: affaire.numAff){ (sessions) in
+            self.SessionName.text = sessions[0].nomSession
+            self.SessionDate.text = sessions[0].date
+        }
+        
+        //MissionRecente
+        missionService.getAllByAffaire(idAffaire: affaire.numAff){ (missions) in
+            self.ObjectifName.text = missions[0].nomMission
+            self.ObjectifDate.text = missions[0].date
+        }
+        
+        //DemandeRecente
+        demandeService.getAllByAffaire(idAffaire: affaire.numAff){ (demandes) in
+            self.DemandeName.text = demandes[0].nomDemande
+            self.JihaDemande.text = demandes[0].partieConcernee
+        }
+        
+        
+        
+        
+        
         ViewInfo.addShadowView()
         ViewAffaire.addShadowView()
         ViewObjectif.addShadowView()
@@ -54,17 +106,7 @@ class AffaireDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var ViewInfo: UIView!
-    @IBOutlet weak var ViewObjectif: UIView!
-    @IBOutlet weak var ViewAffaire: UIView!
-    @IBOutlet weak var ViewDemande: UIView!
-    @IBOutlet weak var SessionName: UILabel!
-    @IBOutlet weak var AllSession: UILabel!
-    @IBOutlet weak var ObjectifName: UILabel!
-    @IBOutlet weak var AllObjectif: UILabel!
-    @IBOutlet weak var navbar: UINavigationItem!
-    @IBOutlet weak var DemandeName: UILabel!
-    @IBOutlet weak var AllDemande: UILabel!
+   
     
     @objc func tapDemande(_ gesture:UITapGestureRecognizer) {
         performSegue(withIdentifier: "toDemande", sender: DemandeName)

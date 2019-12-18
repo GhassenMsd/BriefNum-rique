@@ -23,6 +23,10 @@ class Affaire: NSObject {
     var etatAvCont = 0
     var cercle = ""
     
+    override init() {
+        
+    }
+    
     init(nameAff: String, numAff: String, degre: String, sujet: String,date: String, etat: String, idClt: Int, idCrl: Int, numCasPrec: String, numAvCont: String, etatAvCont: Int,cercle: String){
         self.numAff = numAff ;
         self.nameAff = nameAff;

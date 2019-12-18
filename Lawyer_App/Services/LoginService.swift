@@ -38,8 +38,6 @@ class LoginService : NSObject {
                 let user = User(id: userDict["id"] as! Int ,nomComplet: userDict["nomComplet"] as! String,grade: userDict["grade"] as! String ,adresseBureau: userDict["adresseBureau"] as! String ,tel: userDict["tel"] as! String ,img: userDict["img"] as! String ,password: userDict["password"] as! String ,token: responseDict["token"] as! String)
                 let preferences = UserDefaults.standard
                 
-                
-                
                 preferences.setValue(responseDict["token"] as! String, forKey: "token")
                 preferences.setValue(user.id, forKey: "idUser")
 
@@ -50,7 +48,6 @@ class LoginService : NSObject {
                     //  Couldn't save (I've never seen this happen in real world testing)
                 }
                 
-        
                 completion(user)
             }
         }

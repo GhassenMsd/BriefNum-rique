@@ -18,6 +18,10 @@ class Session: NSObject {
     var Cpt_Rd_Sess = ""
     var id_Aff = ""
     
+    override init() {
+        
+    }
+    
     init(id: Int, nomSession: String, date: String, sujet: String, notes: String, Disp_prep: String, Cpt_Rd_Sess: String, id_Aff: String){
         self.id = id
         self.nomSession = nomSession

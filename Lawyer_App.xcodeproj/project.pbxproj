@@ -23,6 +23,7 @@
 		85D5789E23A81F7100E5AB1F /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5789D23A81F7100E5AB1F /* SessionService.swift */; };
 		85D578A023A8200A00E5AB1F /* RendezVous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5789F23A8200A00E5AB1F /* RendezVous.swift */; };
 		85D578A223A82AB000E5AB1F /* AffaireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D578A123A82AB000E5AB1F /* AffaireService.swift */; };
+		85ECC5A923AA8A53003736F8 /* DemandeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECC5A823AA8A53003736F8 /* DemandeService.swift */; };
 		8F08CD8223A5BE3D00636CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8123A5BE3D00636CCC /* User.swift */; };
 		8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8423A5C28300636CCC /* LoginService.swift */; };
 		8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08CD8623A5C28300636CCC /* Connexion.swift */; };
@@ -87,6 +88,7 @@
 		85D5789D23A81F7100E5AB1F /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		85D5789F23A8200A00E5AB1F /* RendezVous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendezVous.swift; sourceTree = "<group>"; };
 		85D578A123A82AB000E5AB1F /* AffaireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffaireService.swift; sourceTree = "<group>"; };
+		85ECC5A823AA8A53003736F8 /* DemandeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandeService.swift; sourceTree = "<group>"; };
 		8F08CD8123A5BE3D00636CCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8F08CD8423A5C28300636CCC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		8F08CD8623A5C28300636CCC /* Connexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connexion.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				85D5789B23A81F2500E5AB1F /* RendezVouzService.swift */,
 				85D5789D23A81F7100E5AB1F /* SessionService.swift */,
 				85D578A123A82AB000E5AB1F /* AffaireService.swift */,
+				85ECC5A823AA8A53003736F8 /* DemandeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */,
 				85D578A223A82AB000E5AB1F /* AffaireService.swift in Sources */,
 				8F0A880A239AA2AE0035B20A /* DemandeDetailsViewController.swift in Sources */,
+				85ECC5A923AA8A53003736F8 /* DemandeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

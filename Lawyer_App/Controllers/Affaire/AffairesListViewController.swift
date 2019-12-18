@@ -26,7 +26,7 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
             self.affairesList = affaires
             self.AffairesTableView.reloadData()
         }
-        
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +58,7 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
             let cell = sender as! UITableViewCell
             let index = AffairesTableView.indexPath(for: cell)! as NSIndexPath
             if let affaireDetailsViewController = segue.destination as? AffaireDetailsViewController {
-                affaireDetailsViewController.nomAffaire = affairesList[index.row].nameAff
+                affaireDetailsViewController.affaire = affairesList[index.row]
             }
         }
     }
