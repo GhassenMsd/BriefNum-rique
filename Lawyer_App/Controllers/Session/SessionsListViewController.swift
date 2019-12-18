@@ -10,12 +10,17 @@ import UIKit
 
 class SessionsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    let sessionService = SessionService()
+    var sessionsList : Array<Session> = []
+    var idAffaire = ""
+
+
     @IBAction func BackAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSessionDate.count
+        return sessionsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -28,8 +33,8 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
 
         view!.addShadowView()
 
-        SessionName.text = dataSession[indexPath.row]
-        DateSession.text = dataSessionDate[indexPath.row]
+        SessionName.text = sessionsList[indexPath.row].nomSession
+        DateSession.text = sessionsList[indexPath.row].date
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
     }
@@ -41,7 +46,7 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
             print(cell)
             let index = sessionsTableView.indexPath(for: cell)! as NSIndexPath
             if let sessionDetailsViewController = segue.destination as? SessionViewController {
-                sessionDetailsViewController.nomSess = dataSession[index.row]
+                sessionDetailsViewController.session = sessionsList[index.row]
             }
         }
     }
@@ -53,14 +58,15 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
 
-    let dataSession = ["جلسة 1","جلسة 2"]
-    let dataSessionDate = ["10/01/2019","16/01/2019"]
-    
     @IBOutlet weak var AddSession: UIButton!
     @IBOutlet weak var sessionsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         AddSession.addShadowView()
+        sessionService.getAllByAffaire(idAffaire: idAffaire){ (sessions) in
+            self.sessionsList = sessions
+            self.sessionsTableView.reloadData()
+        }
         // Do any additional setup after loading the view.
     }
     

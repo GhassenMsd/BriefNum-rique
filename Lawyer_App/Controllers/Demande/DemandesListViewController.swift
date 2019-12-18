@@ -10,8 +10,12 @@ import UIKit
 
 class DemandesListViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
 
+    let demandeservice = DemandeService()
+    var demandesList : Array<Demande> = []
+    var idAffaire = ""
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataDemande.count
+        return demandesList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -24,8 +28,8 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
 
         view!.addShadowView()
 
-        DemandeName.text = dataDemande[indexPath.row]
-        DemandeClient.text = dataDemandeClient[indexPath.row]
+        DemandeName.text = demandesList[indexPath.row].nomDemande
+        DemandeClient.text = demandesList[indexPath.row].partieConcernee
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
     }
@@ -37,7 +41,7 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
             
             let index = DemandesTableView.indexPath(for: cell)! as NSIndexPath
             if let demandeDetailsViewController = segue.destination as? DemandeDetailsViewController {
-                demandeDetailsViewController.nomDemande = dataDemande[index.row]
+                demandeDetailsViewController.demande = demandesList[index.row]
             }
         }
     }
@@ -48,16 +52,18 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
         performSegue(withIdentifier: "toDemandeDetails", sender: DemandesTableView.cellForRow(at: indexPath))
     }
 
-
-    let dataDemande = ["1 المطلب","المطلب 2","المطلب 3"]
-    let dataDemandeClient = ["6454654654","35454654","4864625"]
-
     @IBOutlet weak var DemandesTableView: UITableView!
     @IBOutlet weak var addDemande: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addDemande.addShadowView()
+        
+        
+        demandeservice.getAllByAffaire(idAffaire: idAffaire){ (demandes) in
+            self.demandesList = demandes
+            self.DemandesTableView.reloadData()
+        }
         // Do any additional setup after loading the view.
     }
     

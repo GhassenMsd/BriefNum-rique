@@ -2147,8 +2147,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="Disp_prepSession" destination="JsY-2u-zah" id="IeR-y0-ukE"/>
                         <outlet property="ViewSession" destination="ny6-48-7fI" id="939-FU-GwG"/>
+                        <outlet property="dateSession" destination="H9M-S1-fkF" id="3NM-eD-maQ"/>
                         <outlet property="navBar" destination="QdH-nY-BXh" id="3Kw-qw-jtP"/>
+                        <outlet property="noteSession" destination="OnG-Kk-M9Y" id="R4j-vg-4VR"/>
+                        <outlet property="sujetSession" destination="AMK-Mq-wNF" id="O0Q-kU-DUi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYQ-cf-jez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2899,8 +2903,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="DateObjectif" destination="GIN-Jz-RHj" id="xFO-Ka-0IW"/>
+                        <outlet property="PartieC" destination="DKT-IF-LHJ" id="Huc-W4-IeI"/>
                         <outlet property="ViewObjectif" destination="0xA-qy-zmU" id="rgC-XB-ouR"/>
                         <outlet property="navBar" destination="DoI-Cd-lyQ" id="52h-Vw-0Tc"/>
+                        <outlet property="type" destination="amy-MT-4vi" id="6eg-YL-4dJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bJ-AO-qAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3295,8 +3301,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="PartieCD" destination="9iX-Zj-jCT" id="ezf-UV-7GZ"/>
                         <outlet property="ViewDemande" destination="VeQ-io-dfe" id="al0-uw-1fZ"/>
+                        <outlet property="dateDemande" destination="3tp-SO-vCU" id="d71-EY-KkK"/>
                         <outlet property="navbar" destination="fJp-jd-KMo" id="5oD-tY-r3g"/>
+                        <outlet property="sujetDemande" destination="5T5-7V-3Ss" id="Ffa-X7-hvN"/>
+                        <outlet property="typeD" destination="HJV-Et-LtW" id="x8D-2i-uKQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhn-nE-P0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

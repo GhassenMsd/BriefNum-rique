@@ -14,13 +14,19 @@ class ObjectifDetailsViewController: UIViewController {
     @IBOutlet weak var DateObjectif: UILabel!
     
     @IBOutlet weak var ViewObjectif: UIView!
-
-    var Objectiftitle = ""
+    @IBOutlet var PartieC: UILabel!
+    @IBOutlet var type: UITextView!
     
+    
+    var mission = Mission()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ViewObjectif.addShadowView()
-        navBar.title = Objectiftitle
+        navBar.title = mission.nomMission
+        self.DateObjectif.text = mission.date
+        self.PartieC.text = mission.partieConsernee
+        self.type.text = mission.type
         // Do any additional setup after loading the view.
     }
     

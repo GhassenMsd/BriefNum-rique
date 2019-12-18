@@ -10,8 +10,12 @@ import UIKit
 
 class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
 
+    let missionsService = MissionService()
+    var missionsList : Array<Mission> = []
+    var idAffaire = ""
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datadataObjectif.count
+        return missionsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -24,8 +28,8 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
 
         view!.addShadowView()
 
-        ObjectifName.text = dataObjectif[indexPath.row]
-        ObjectifSession.text = datadataObjectif[indexPath.row]
+        ObjectifName.text = missionsList[indexPath.row].nomMission
+        ObjectifSession.text = missionsList[indexPath.row].date
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
     }
@@ -37,7 +41,7 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
             
             let index = ObjectifTableView.indexPath(for: cell)! as NSIndexPath
             if let objectifDetailsViewController = segue.destination as? ObjectifDetailsViewController {
-                objectifDetailsViewController.Objectiftitle = dataObjectif[index.row]
+                objectifDetailsViewController.mission = missionsList[index.row]
             }
         }
     }
@@ -49,14 +53,17 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
     }
     
 
-    let dataObjectif = ["المهمة 1","المهمة 2"]
-    let datadataObjectif = ["10/01/2019","16/01/2019"]
-    
     @IBOutlet weak var ObjectifTableView: UITableView!
     @IBOutlet weak var addObjectif: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         addObjectif.addShadowView()
+        
+        missionsService.getAllByAffaire(idAffaire: idAffaire){ (missions) in
+            self.missionsList = missions
+            self.ObjectifTableView.reloadData()
+        }
+        
         // Do any additional setup after loading the view.
     }
     

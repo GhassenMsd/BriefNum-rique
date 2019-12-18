@@ -10,14 +10,25 @@ import UIKit
 
 class SessionViewController: UIViewController {
     
-    var nomSess = ""
+    var session = Session()
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var ViewSession: UIView!
     
+    @IBOutlet var noteSession: UITextView!
+    @IBOutlet var dateSession: UILabel!
+    @IBOutlet var sujetSession: UITextView!
+    @IBOutlet var Disp_prepSession: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.title = nomSess
+        navBar.title = session.nomSession
         ViewSession.addShadowView()
+        
+        self.noteSession.text = session.notes
+        self.dateSession.text = session.date
+        self.sujetSession.text = session.sujet
+        self.Disp_prepSession.text = session.Disp_prep
         // Do any additional setup after loading the view.
     }
     

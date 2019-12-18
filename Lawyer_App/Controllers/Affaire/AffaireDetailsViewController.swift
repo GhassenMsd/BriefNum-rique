@@ -38,6 +38,9 @@ class AffaireDetailsViewController: UIViewController {
     let sessionService = SessionService()
     let missionService = MissionService()
     let demandeService = DemandeService()
+    var sessionS = Session()
+    var missionS = Mission()
+    var demandeS = Demande()
     
     
     
@@ -51,18 +54,21 @@ class AffaireDetailsViewController: UIViewController {
         
         //SessionRecente
         sessionService.getAllByAffaire(idAffaire: affaire.numAff){ (sessions) in
+            self.sessionS = sessions[0]
             self.SessionName.text = sessions[0].nomSession
             self.SessionDate.text = sessions[0].date
         }
         
         //MissionRecente
         missionService.getAllByAffaire(idAffaire: affaire.numAff){ (missions) in
+            self.missionS = missions[0]
             self.ObjectifName.text = missions[0].nomMission
             self.ObjectifDate.text = missions[0].date
         }
         
         //DemandeRecente
         demandeService.getAllByAffaire(idAffaire: affaire.numAff){ (demandes) in
+            self.demandeS = demandes[0]
             self.DemandeName.text = demandes[0].nomDemande
             self.JihaDemande.text = demandes[0].partieConcernee
         }
@@ -135,21 +141,34 @@ class AffaireDetailsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toSession"{
-            let label = sender as! UILabel
             if let sessionViewController = segue.destination as? SessionViewController {
-                sessionViewController.nomSess = label.text!
+                sessionViewController.session = sessionS
             }
         }
         else if segue.identifier == "toObjectif"{
-            let label = sender as! UILabel
             if let objectifDetailsViewController = segue.destination as? ObjectifDetailsViewController {
-                objectifDetailsViewController.Objectiftitle = label.text!
+                objectifDetailsViewController.mission = missionS
             }
         }
         else if segue.identifier == "toDemande"{
-            let label = sender as! UILabel
             if let demandeDetailsViewController = segue.destination as? DemandeDetailsViewController {
-                demandeDetailsViewController.nomDemande = label.text!
+                demandeDetailsViewController.demande = demandeS
+            }
+        }
+        
+        else if segue.identifier == "toListSession"{
+            if let sessionsListViewController = segue.destination as? SessionsListViewController {
+                sessionsListViewController.idAffaire = affaire.numAff
+            }
+        }
+        else if segue.identifier == "toListObjectif"{
+            if let objectifsListViewController = segue.destination as? ObjectifsListViewController {
+                objectifsListViewController.idAffaire = affaire.numAff
+            }
+        }
+        else if segue.identifier == "toListDemande"{
+            if let demandesListViewController = segue.destination as? DemandesListViewController {
+                demandesListViewController.idAffaire = affaire.numAff
             }
         }
     }

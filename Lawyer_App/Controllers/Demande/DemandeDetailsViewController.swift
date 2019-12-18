@@ -10,13 +10,23 @@ import UIKit
 
 class DemandeDetailsViewController: UIViewController {
 
-    var nomDemande = ""
-    
+    var demande = Demande()
+
+    @IBOutlet var dateDemande: UILabel!
+    @IBOutlet var PartieCD: UILabel!
+    @IBOutlet var typeD: UILabel!
     @IBOutlet weak var navbar: UINavigationItem!
+    @IBOutlet var sujetDemande: UITextView!
     @IBOutlet weak var ViewDemande: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        navbar.title = nomDemande
+        navbar.title = demande.nomDemande
+        self.dateDemande.text = demande.date
+        self.PartieCD.text = demande.partieConcernee
+        self.typeD.text = demande.type
+        self.sujetDemande.text = demande.sujet
+        
+        
         ViewDemande.addShadowView()
         // Do any additional setup after loading the view.
     }
