@@ -14,6 +14,7 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
     var missionsList : Array<Mission> = []
     var idAffaire = ""
     
+    @IBOutlet var hideMohema: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return missionsList.count
     }
@@ -34,6 +35,32 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let alert = UIAlertController(title: nil, message: "هل تريد حقاً حذف هذه المهمة ؟", preferredStyle: .alert)
+
+            // yes action
+            let yesAction = UIAlertAction(title: "تأكيد", style: .default) { _ in
+                // replace data variable with your own data array
+                self.missionsService.DeleteMission(id: String(self.missionsList[indexPath.row].id)) { () in
+                    self.missionsList.remove(at: indexPath.row)
+                    self.ObjectifTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                    self.ObjectifTableView.reloadData()
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMohema"), object: nil)
+
+                }
+            }
+            alert.addAction(yesAction)
+
+            // cancel action
+            alert.addAction(UIAlertAction(title: "إلغاء", style: .cancel, handler: nil))
+
+            present(alert, animated: true, completion: nil)
+            
+            
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toObjectifDetails"{
@@ -41,8 +68,14 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
             
             let index = ObjectifTableView.indexPath(for: cell)! as NSIndexPath
             if let objectifDetailsViewController = segue.destination as? ObjectifDetailsViewController {
+                objectifDetailsViewController.idMission = String(missionsList[index.row].id)
                 objectifDetailsViewController.mission = missionsList[index.row]
             }
+        }
+        if segue.identifier == "ToAjoutMission"{
+                if let ajoutMissionn = segue.destination as? ObjectifAddViewController {
+                    ajoutMissionn.idAffaire = self.idAffaire
+                }
         }
     }
     
@@ -58,16 +91,27 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         addObjectif.addShadowView()
-        
-        missionsService.getAllByAffaire(idAffaire: idAffaire){ (missions) in
-            self.missionsList = missions
-            self.ObjectifTableView.reloadData()
-        }
+        fetchMohema()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchMohema), name: NSNotification.Name(rawValue: "fetchMohema"), object: nil)
         
         // Do any additional setup after loading the view.
     }
     
+    @objc func fetchMohema() -> Void {
+        missionsService.getAllByAffaire(idAffaire: idAffaire){ (missions) in
+            if(missions.count == 0){
+                self.hideMohema.text = "ليس لديك مهام"
+            }else{
+                self.missionsList = missions
+                self.ObjectifTableView.reloadData()
+                self.hideMohema.isHidden = true
+            }
+            
+        }
+    }
+    
     @IBAction func BackAction(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMission"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
 

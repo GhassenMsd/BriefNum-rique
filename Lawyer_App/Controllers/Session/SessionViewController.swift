@@ -11,6 +11,7 @@ import UIKit
 class SessionViewController: UIViewController {
     
     var session = Session()
+    var idSession = ""
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var ViewSession: UIView!
     
@@ -19,21 +20,39 @@ class SessionViewController: UIViewController {
     @IBOutlet var sujetSession: UITextView!
     @IBOutlet var Disp_prepSession: UITextView!
     
+    @objc func fetchSessionDetail() -> Void {
+        let sessionServices = SessionService()
+        sessionServices.getSessionById(id: idSession){ (session) in
+            self.navBar.title = session.nomSession
+            self.noteSession.text = session.notes
+            self.dateSession.text = session.date
+            self.sujetSession.text = session.sujet
+            self.Disp_prepSession.text = session.Disp_prep
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.title = session.nomSession
         ViewSession.addShadowView()
+        fetchSessionDetail()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchSessionDetail), name: NSNotification.Name(rawValue: "fetchSessionDetail"), object: nil)
         
-        self.noteSession.text = session.notes
-        self.dateSession.text = session.date
-        self.sujetSession.text = session.sujet
-        self.Disp_prepSession.text = session.Disp_prep
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func BackAction(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchJalsa"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSession"), object: nil)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toUpdateSession"{
+            if let updateSession = segue.destination as? SessionUpdateViewController {
+                updateSession.session = self.session
+            }
+        }
     }
     
     /*

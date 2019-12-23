@@ -7,48 +7,34 @@
 //
 
 import UIKit
-import iOSDropDown
 
 class DemandeAddViewController: UIViewController,UITextViewDelegate {
 
-    @IBOutlet weak var Affaire: DropDown!
-    @IBOutlet weak var AdresseView: UIView!
+    @IBOutlet var NomDemande: UIView!
     @IBOutlet weak var JihaView: UIView!
-    @IBOutlet weak var AffaireView: UIView!
     @IBOutlet weak var TypeDemandeView: UIView!
     @IBOutlet weak var SujetView: UIView!
     @IBOutlet weak var DateDemandeView: UIView!
-    @IBOutlet weak var Sujet: UITextView!
-    @IBOutlet weak var DateDemande: UITextField!
+    
+    var idAffaire = ""
+    var idAffaireFromHome = ""
+
+    
     var datePicker = UIDatePicker()
 
     @IBOutlet weak var AddButton: UIButton!
     
-    var hiden = true
-    var list = ["القضية 1", "القضية 1","القضية 3"]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ShadowViews()
         Sujet.delegate = self
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
         DateDemande.inputView = datePicker
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         let tapDate = UITapGestureRecognizer(target: self, action: #selector(tapDateGuesture))
         self.view.addGestureRecognizer(tapDate)
-        //DropDownList affaires
-        Affaire.optionArray = list
-        Affaire.didSelect{(selectedText , index ,id) in
-            self.hiden = true
-            }
-        Affaire.listWillAppear {
-            self.hiden = false
-        }
-        
-        Affaire.listWillDisappear {
-            self.hiden = true
-        }
         
         // Do any additional setup after loading the view.
     }
@@ -63,7 +49,7 @@ class DemandeAddViewController: UIViewController,UITextViewDelegate {
     
     func getDateFromPicker(){
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "yyyy/MM/dd hh:mm"
         DateDemande.text = formatter.string(from: datePicker.date)
     }
 
@@ -75,37 +61,55 @@ class DemandeAddViewController: UIViewController,UITextViewDelegate {
       }
           
       func textViewDidEndEditing(_ textView: UITextView) {
-
           if textView.text == "" {
 
               textView.text = "الموضوع"
               textView.textColor = UIColor.lightGray
           }
       }
-    
-    @IBAction func dropListAffaires(_ sender: Any) {
-        if(hiden){
-            Affaire.showList()
-        }
-        else{
-            Affaire.hideList()
-        }
-    }
-    
+
     func ShadowViews() -> Void {
-        AdresseView.addShadowView()
         JihaView.addShadowView()
-        AffaireView.addShadowView()
         TypeDemandeView.addShadowView()
         SujetView.addShadowView()
         DateDemandeView.addShadowView()
         AddButton.addShadowView()
+        NomDemande.addShadowView()
     }
     
     @IBAction func Back(_ sender: Any) {
     self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBOutlet weak var Sujet: UITextView!
+    @IBOutlet var PartieCD: UITextField!
 
+    @IBOutlet var NomD: UITextField!
+    @IBOutlet weak var DateDemande: UITextField!
+    @IBOutlet var typeDemande: UITextField!
+    
+    @IBAction func AddDemande(_ sender: Any) {
+        let demandesService = DemandeService()
+        
+        if (self.idAffaire == ""){
+            demandesService.AddDemande(nomDemande: NomD.text!, partieConcernée: PartieCD.text!, type: typeDemande.text!, sujet: Sujet.text!, date: DateDemande.text!,notes: "notes", id_Aff: idAffaireFromHome){ () in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchDemande"), object: nil)
+            }
+        }else if (self.idAffaireFromHome == ""){
+            demandesService.AddDemande(nomDemande: NomD.text!, partieConcernée: PartieCD.text!, type: typeDemande.text!, sujet: Sujet.text!, date: DateDemande.text!,notes: "notes", id_Aff: idAffaire){ () in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMatleb"), object: nil)
+                
+            }
+        }
+        
+        
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

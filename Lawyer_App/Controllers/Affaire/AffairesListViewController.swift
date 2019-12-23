@@ -13,6 +13,7 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
     let affaireService = AffaireService()
     var affairesList : Array<Affaire> = []
 
+    @IBOutlet var KadhayaNon: UILabel!
     @IBOutlet weak var AffairesTableView: UITableView!
     @IBOutlet weak var ViewSearch: UIView!
     
@@ -23,8 +24,12 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
         ViewSearch.addShadowView()
         
         affaireService.getAll() { (affaires) in
-            self.affairesList = affaires
-            self.AffairesTableView.reloadData()
+            if (affaires.count == 0){
+                self.KadhayaNon.text = "ليس لديك قضايا"
+            }else{
+                self.affairesList = affaires
+                self.AffairesTableView.reloadData()
+            }
         }
 
     }
@@ -51,6 +56,12 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
         
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            print("delete")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -14,6 +14,7 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
     var demandesList : Array<Demande> = []
     var idAffaire = ""
     
+    @IBOutlet var hideMatleb: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demandesList.count
     }
@@ -34,6 +35,30 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
         return cell!
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let alert = UIAlertController(title: nil, message: "هل تريد حقاً حذف هذا الطلب ؟", preferredStyle: .alert)
+
+            // yes action
+            let yesAction = UIAlertAction(title: "تأكيد", style: .default) { _ in
+                // replace data variable with your own data array
+                self.demandeservice.DeleteDemande(id: String(self.demandesList[indexPath.row].id)) { () in
+                    self.demandesList.remove(at: indexPath.row)
+                    self.DemandesTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                    self.DemandesTableView.reloadData()
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMatleb"), object: nil)
+                }
+            }
+            alert.addAction(yesAction)
+
+            // cancel action
+            alert.addAction(UIAlertAction(title: "إلغاء", style: .cancel, handler: nil))
+
+            present(alert, animated: true, completion: nil)
+            
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toDemandeDetails"{
@@ -42,7 +67,13 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
             let index = DemandesTableView.indexPath(for: cell)! as NSIndexPath
             if let demandeDetailsViewController = segue.destination as? DemandeDetailsViewController {
                 demandeDetailsViewController.demande = demandesList[index.row]
+                demandeDetailsViewController.idDemande = String(demandesList[index.row].id)
             }
+        }
+        if segue.identifier == "ToAjoutDemande"{
+                if let ajoutDemande = segue.destination as? DemandeAddViewController {
+                    ajoutDemande.idAffaire = self.idAffaire
+                }
         }
     }
 
@@ -58,16 +89,28 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         addDemande.addShadowView()
+        fetchMatleb()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchMatleb), name: NSNotification.Name(rawValue: "fetchMatleb"), object: nil)
         
         
-        demandeservice.getAllByAffaire(idAffaire: idAffaire){ (demandes) in
-            self.demandesList = demandes
-            self.DemandesTableView.reloadData()
-        }
         // Do any additional setup after loading the view.
     }
     
+    @objc func fetchMatleb() -> Void {
+        demandeservice.getAllByAffaire(idAffaire: idAffaire){ (demandes) in
+            if(demandes.count == 0){
+                self.hideMatleb.text = "ليس لديك مطالب"
+            }else{
+                self.demandesList = demandes
+                self.DemandesTableView.reloadData()
+                self.hideMatleb.isHidden = true
+            }
+            
+        }
+    }
+    
     @IBAction func BackAction(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchDemande"), object: nil)
        self.navigationController?.popViewController(animated: true)
     }
 

@@ -1,18 +1,19 @@
 //
-//  SessionAddViewController.swift
+//  SessionUpdateViewController.swift
 //  Lawyer_App
 //
-//  Created by hamadi aziz on 03/12/2019.
+//  Created by Ghassen Msaad on 12/20/19.
 //  Copyright © 2019 hamadi aziz. All rights reserved.
 //
 
 import UIKit
 
-class SessionAddViewController: UIViewController, UITextViewDelegate {
+class SessionUpdateViewController: UIViewController, UITextViewDelegate {
 
-    var idAffaire = ""
-    var idAffaireFromHome = ""
-
+    
+    var session = Session()
+    
+    
     @IBOutlet var viewNom: UIView!
     @IBOutlet weak var ViewDate: UIView!
     @IBOutlet weak var ViewSujet: UIView!
@@ -27,9 +28,16 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
     @IBOutlet var TVAutre: UITextView!
     
     var datePicker = UIDatePicker()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TVNom.text = session.nomSession
+        TVSujet.text = session.sujet
+        TVDate.text = session.date
+        TVRemarque.text = session.notes
+        TVAutre.text = session.Disp_prep
+        
         ViewAdd.addShadowView()
         ViewSujet.addShadowView()
         ViewDate.addShadowView()
@@ -37,7 +45,6 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
         ViewRemarque.addShadowView()
         viewNom.addShadowView()
         
-        print("idAffaire from Add :" + idAffaire)
         TVAutre.delegate = self
         TVSujet.delegate = self
         TVRemarque.delegate = self
@@ -47,33 +54,22 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         let tapDate = UITapGestureRecognizer(target: self, action: #selector(tapDateGuesture))
         self.view.addGestureRecognizer(tapDate)
-        
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func AddSession(_ sender: Any) {
-        let sessionService = SessionService()
-        
-        if (self.idAffaire == ""){
-            sessionService.AddSession(nomSession: TVNom.text!, date: TVDate.text!, sujet: TVSujet.text, notes: TVRemarque.text, Disp_prep: TVAutre.text, Cpt_Rd_Sess: "aaa", id_Aff: Int(idAffaireFromHome)!){ () in
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSession"), object: nil)
-            }
-        }else if (self.idAffaireFromHome == ""){
-            sessionService.AddSession(nomSession: TVNom.text!, date: TVDate.text!, sujet: TVSujet.text, notes: TVRemarque.text, Disp_prep: TVAutre.text, Cpt_Rd_Sess: "aaa", id_Aff: Int(idAffaire)!){ () in
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchJalsa"), object: nil)
-                
-            }
-        }
-        
-        
-        
+    @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-        
     }
     
-    @IBAction func BackAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    
+    
+    @IBAction func UpdateSession(_ sender: Any) {
+        let sessionService = SessionService()
+        sessionService.UpdateSession(id: String(session.id), nomSession: TVNom.text!, date: TVDate.text!, sujet: TVSujet.text!, notes: TVRemarque.text!, Disp_prep: TVAutre.text!, Cpt_Rd_Sess: "0") { () in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSessionDetail"), object: nil)
+            self.navigationController?.popViewController(animated: true)
+        }
+        
     }
     
     @objc func tapDateGuesture(){
@@ -91,15 +87,15 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "الموضوع" {
+        if textView.text == TVSujet.text {
             textView.text = ""
             textView.textColor = UIColor(rgb: 0x003A33)
         }
-        if textView.text == "ملاحظات" {
+        if textView.text == TVRemarque.text {
             textView.text = ""
             textView.textColor = UIColor(rgb: 0x003A33)
         }
-        if textView.text == "أحكام تحضيرية" {
+        if textView.text == TVAutre.text {
             textView.text = ""
             textView.textColor = UIColor(rgb: 0x003A33)
         }
@@ -108,31 +104,21 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
 
         if textView == TVSujet && textView.text == "" {
-
-            textView.text = "الموضوع"
+            textView.text = session.sujet
             textView.textColor = UIColor.lightGray
         }
         if textView == TVRemarque && textView.text == "" {
-
-            textView.text = "ملاحظات"
+            textView.text = session.notes
             textView.textColor = UIColor.lightGray
         }
         if textView == TVAutre && textView.text == "" {
-
-            textView.text = "أحكام تحضيرية"
+            textView.text = session.Disp_prep
             textView.textColor = UIColor.lightGray
         }
     }
     
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "returnSession"{
-            if let sessionsListViewController = segue.destination as? SessionsListViewController {
-                sessionsListViewController.idAffaire = self.idAffaire
-            }
-        }
-    }*/
-
+    
     /*
     // MARK: - Navigation
 

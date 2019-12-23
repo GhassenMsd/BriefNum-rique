@@ -10,6 +10,7 @@ import UIKit
 
 class DemandeDetailsViewController: UIViewController {
 
+    var idDemande = ""
     var demande = Demande()
 
     @IBOutlet var dateDemande: UILabel!
@@ -18,13 +19,22 @@ class DemandeDetailsViewController: UIViewController {
     @IBOutlet weak var navbar: UINavigationItem!
     @IBOutlet var sujetDemande: UITextView!
     @IBOutlet weak var ViewDemande: UIView!
+    
+    @objc func fetchdemandeDetail() -> Void {
+        let demandeservices = DemandeService()
+        demandeservices.getDemandeById(id: idDemande){ (demande) in
+            self.navbar.title = demande.nomDemande
+            self.dateDemande.text = demande.date
+            self.PartieCD.text = demande.partieConcernee
+            self.typeD.text = demande.type
+            self.sujetDemande.text = demande.sujet
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navbar.title = demande.nomDemande
-        self.dateDemande.text = demande.date
-        self.PartieCD.text = demande.partieConcernee
-        self.typeD.text = demande.type
-        self.sujetDemande.text = demande.sujet
+        fetchdemandeDetail()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchdemandeDetail), name: NSNotification.Name(rawValue: "fetchdemandeDetail"), object: nil)
         
         
         ViewDemande.addShadowView()
@@ -32,10 +42,19 @@ class DemandeDetailsViewController: UIViewController {
     }
     
     @IBAction func BackAction(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMatleb"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchDemande"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toUpdateMatleb"{
+                if let updateDemande = segue.destination as? DemandeUpdateViewController {
+                    updateDemande.demande = self.demande
+                }
+        }
+    }
     /*
     // MARK: - Navigation
 

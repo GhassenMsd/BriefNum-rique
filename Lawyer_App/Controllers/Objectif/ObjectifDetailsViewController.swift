@@ -18,20 +18,44 @@ class ObjectifDetailsViewController: UIViewController {
     @IBOutlet var type: UITextView!
     
     
+    var idMission = ""
     var mission = Mission()
 
+    @objc func fetchDetailsMission() -> Void {
+        
+        let missionServices = MissionService()
+        missionServices.getMissionById(id: idMission){ (mission) in
+            self.navBar.title = mission.nomMission
+            self.DateObjectif.text = mission.date
+            self.PartieC.text = mission.partieConsernee
+            self.type.text = mission.type
+        }
+        
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ViewObjectif.addShadowView()
-        navBar.title = mission.nomMission
-        self.DateObjectif.text = mission.date
-        self.PartieC.text = mission.partieConsernee
-        self.type.text = mission.type
+        fetchDetailsMission()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchDetailsMission), name: NSNotification.Name(rawValue: "fetchDetailsMission"), object: nil)
         // Do any additional setup after loading the view.
     }
     
     @IBAction func BackAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMohema"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMission"), object: nil)
+            self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toUpdate"{
+                if let updateMission = segue.destination as? ObjectifUpdateViewController {
+                    updateMission.mission = self.mission
+                }
+        }
     }
 
     /*

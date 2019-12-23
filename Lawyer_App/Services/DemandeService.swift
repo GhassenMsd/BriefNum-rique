@@ -33,4 +33,66 @@ class DemandeService: NSObject {
             }
         }
     }
+    
+    
+    func AddDemande(nomDemande: String, partieConcernée: String,type: String,sujet: String,date: String,notes: String,id_Aff: String, completion: @escaping () -> Void){
+        
+        let preferences = UserDefaults.standard
+        let parameters: Parameters = [
+            "nomDemande": nomDemande,
+            "partieConcernée": partieConcernée,
+            "type": type,
+            "sujet": sujet,
+            "date": date,
+            "notes": notes,
+            "id_Aff": id_Aff
+        ]
+        
+        Alamofire.request(Connexion.adresse + "/api/Demande/AddDemande", method:.post, parameters:parameters, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
+            print(response)
+            completion()
+        }
+    }
+    
+    func DeleteDemande(id: String, completion: @escaping () -> Void){
+        
+        let preferences = UserDefaults.standard
+        
+        Alamofire.request(Connexion.adresse + "/api/Demande/Delete/" + id, method:.put, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
+            completion()
+        }
+    }
+    
+    func UpdateDemande(id: String,nomDemande: String, partieConcernée: String,type: String,sujet: String,date: String,notes: String, completion: @escaping () -> Void){
+        
+        let preferences = UserDefaults.standard
+        let parameters: Parameters = [
+            "id": id,
+            "nomDemande": nomDemande,
+            "partieConcernée": partieConcernée,
+            "type": type,
+            "sujet": sujet,
+            "date": date,
+            "notes": notes
+        ]
+       
+        Alamofire.request(Connexion.adresse + "/api/Demande/Update", method:.put, parameters:parameters, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
+            completion()
+        }
+    }
+    
+    func getDemandeById (id: String,completion: @escaping (Demande) -> Void) {
+    
+    let preferences = UserDefaults.standard
+       
+        Alamofire.request(Connexion.adresse + "/api/Demande/getDemandeById/" + id,encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
+                response in
+                //print(response.result.value as! Array<Dictionary<String,Any>>)
+            let responseDict = response.result.value as! Dictionary<String,Any>
+            let demande = Demande(id: responseDict["id"] as! Int, nomDomande: responseDict["nomDemande"] as! String, partieConcernee: responseDict["partieConcernée"] as! String, type: responseDict["type"] as! String, sujet: responseDict["sujet"] as! String, date: responseDict["date"] as! String, notes: responseDict["notes"] as! String, id_Aff: responseDict["id_Aff"] as! String)
+            completion(demande)
+                
+            }
+        
+    }
 }

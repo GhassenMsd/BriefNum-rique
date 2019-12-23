@@ -9,7 +9,5 @@
 import UIKit
 
 class Connexion: NSObject {
-
-    static let adresse = "http://192.168.1.9:3000"
-    
+    static let adresse = "http://192.168.1.2:3000"
 }
