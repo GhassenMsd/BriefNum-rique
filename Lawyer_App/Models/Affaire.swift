@@ -28,17 +28,17 @@ class Affaire: NSObject {
     }
     
     init(nameAff: String, numAff: String, degre: String, sujet: String,date: String, etat: String, idClt: Int, idCrl: Int, numCasPrec: String, numAvCont: String, etatAvCont: Int,cercle: String){
-        self.numAff = numAff ;
-        self.nameAff = nameAff;
-        self.degre = degre;
-        self.sujet = sujet;
-        self.date = date;
-        self.etat = etat;
-        self.idClt = idClt;
-        self.idCrl = idCrl;
-        self.numCasPrec = numCasPrec;
-        self.numAvCont = numAvCont;
-        self.etatAvCont = etatAvCont;
-        self.cercle = cercle;
+        self.numAff = numAff
+        self.nameAff = nameAff
+        self.degre = degre
+        self.sujet = sujet
+        self.date = date
+        self.etat = etat
+        self.idClt = idClt
+        self.idCrl = idCrl
+        self.numCasPrec = numCasPrec
+        self.numAvCont = numAvCont
+        self.etatAvCont = etatAvCont
+        self.cercle = cercle
     }
 }

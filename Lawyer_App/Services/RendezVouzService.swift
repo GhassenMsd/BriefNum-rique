@@ -26,7 +26,7 @@ class RendezVousService: NSObject {
                 print(response.result.value as Any)
                 var rendezvousArray:Array<RendezVous> = []
                 for rendezvousDict in response.result.value as! Array<Dictionary<String,Any>> {
-                    rendezvousArray.append(RendezVous(id : rendezvousDict["id"] as! Int, date : String((rendezvousDict["date"] as! String).prefix(10)), adresse : rendezvousDict["adresse"] as! String , sujet : rendezvousDict["sujet"] as! String , notes : rendezvousDict["notes"] as! String, id_Av : rendezvousDict["id_Av"] as! Int ))
+                    rendezvousArray.append(RendezVous(id : rendezvousDict["id"] as! Int, date : (rendezvousDict["date"] as! String), adresse : rendezvousDict["adresse"] as! String , sujet : rendezvousDict["sujet"] as! String , notes : rendezvousDict["notes"] as! String, id_Av : rendezvousDict["id_Av"] as! Int ))
                 }
                 completion(rendezvousArray)
                     

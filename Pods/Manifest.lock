@@ -5,6 +5,7 @@ PODS:
   - Floaty (4.0.0)
   - FSCalendar (2.8.1)
   - iOSDropDown (0.3.4)
+  - QVRWeekView (0.13.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - Floaty (from `https://github.com/jesster2k10/Floaty.git`, branch `swift4.0`)
   - FSCalendar
   - iOSDropDown
+  - QVRWeekView
 
 SPEC REPOS:
   trunk:
@@ -19,6 +21,7 @@ SPEC REPOS:
     - AlamofireImage
     - FSCalendar
     - iOSDropDown
+    - QVRWeekView
 
 EXTERNAL SOURCES:
   Floaty:
@@ -36,7 +39,8 @@ SPEC CHECKSUMS:
   Floaty: df27b72d9ed1e58d48aa3717327ffdb857268c63
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  QVRWeekView: d3941741f5c5b324a097d30d4ea8f4c9a2c2c59c
 
-PODFILE CHECKSUM: 2d14e41b850dd49ced6222d1f095bf76d11111de
+PODFILE CHECKSUM: e932c3bb24112e56753822af69700358738ea9ef
 
 COCOAPODS: 1.8.4

@@ -11,16 +11,33 @@ import UIKit
 class Client: NSObject {
     
     var id: Int = 0
-    var name: String?
-    var mail: String?
-    var cin: Int = 0
-    var img: String?
+    var nomComplet = ""
+    var cin_pass = ""
+    var dateEmission = ""
+    var tel = ""
+    var dateNaissance = ""
+    var lieuNaissance = ""
+    var adresse = ""
+    var proffession = ""
+    var mail = ""
+    var id_Av = 0
+    var image = ""
     
+    override init() {
+    }
     
-    init (name: String, mail: String,cin: Int,img: String)  {
-        self.name = name
+    init(id: Int,nomComplet: String,cin_pass: String, dateEmission: String, tel: String, dateNaissance: String, lieuNaissance: String, adresse :String, proffession: String, mail: String, id_Av: Int, image: String) {
+        self.id = id
+        self.nomComplet = nomComplet
+        self.cin_pass = cin_pass
+        self.dateEmission = dateEmission
+        self.tel = tel
+        self.dateNaissance = dateNaissance
+        self.lieuNaissance = lieuNaissance
+        self.adresse = adresse
+        self.proffession = proffession
         self.mail = mail
-        self.cin = cin
-        self.img = img
-       }
+        self.id_Av = id_Av
+        self.image = image
+    }
 }

@@ -8,17 +8,12 @@
 
 import UIKit
 
-var client1 = Client(name: "منذر الجريدي", mail: "Mondher@gmail.com", cin: 12345678,img: "5")
-var client2 = Client(name: "خالد الراشد", mail: "Khaled@gmail.com", cin: 34562819,img: "3")
-var client3 = Client(name: "منى الشادلي", mail: "Mouna@gmail.com", cin: 46590963,img: "4")
-var client4 = Client(name: "خولة بن عمران", mail: "Khawla@gmail.com", cin: 00913267,img: "1")
-var listc = [Client]()
-
-
-
 class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    var clients: Array<Client> = []
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listc.count
+        return Home.clients.count
     }
     
     @IBAction func back(_ sender: Any) {
@@ -38,27 +33,44 @@ class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
         view!.addShadowView()
 
-        cin.text = String(listc[indexPath.row].cin)
-        img.image = UIImage(named: listc[indexPath.row].img!)
+        cin.text = Home.clients[indexPath.row].cin_pass
+        img.af_setImage(withURL:URL(string: Connexion.adresse + "/Ressources/Client/" + Home.clients[indexPath.row].image)!)
         img.addShadowView()
         img.contentMode = UIViewContentMode.scaleAspectFill
         img.clipsToBounds = true
-        mail.text = listc[indexPath.row].mail
-        name.text = listc[indexPath.row].name
+        mail.text = Home.clients[indexPath.row].mail
+        name.text = Home.clients[indexPath.row].nomComplet
         
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDetailsClient", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsClient"{
+            let index = sender as! NSIndexPath
+            if segue.destination is ProfilClient {
+                ProfilClient.client = Home.clients[index.row]
+            }
+        }
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        listc.append(client1)
-        listc.append(client2)
-        listc.append(client3)
-        listc.append(client4)
-        // Do any additional setup after loading the view.
+
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchClients), name: NSNotification.Name(rawValue: "fetchClients"), object: nil)
+
     }
     
+    @IBOutlet weak var ClientTableView: UITableView!
+    
+    
+    @objc func fetchClients(){
+        ClientTableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation

@@ -100,6 +100,7 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
         demandeservice.getAllByAffaire(idAffaire: idAffaire){ (demandes) in
             if(demandes.count == 0){
                 self.hideMatleb.text = "ليس لديك مطالب"
+                self.hideMatleb.isHidden = false
             }else{
                 self.demandesList = demandes
                 self.DemandesTableView.reloadData()

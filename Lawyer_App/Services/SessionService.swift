@@ -27,7 +27,7 @@ class SessionService: NSObject {
                     //print(response.result.value as Any)
                 var sessions:Array<Session> = []
                 for sessionDict in response.result.value as! Array<Dictionary<String,Any>> {
-                    sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : String((sessionDict["date"] as! String).prefix(10)), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! String ))
+                    sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : (sessionDict["date"] as! String), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! String ))
                 }
                 completion(sessions)
                     

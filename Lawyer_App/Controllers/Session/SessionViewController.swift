@@ -15,6 +15,7 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var ViewSession: UIView!
     
+    @IBOutlet var updateBtn: UIButton!
     @IBOutlet var noteSession: UITextView!
     @IBOutlet var dateSession: UILabel!
     @IBOutlet var sujetSession: UITextView!
@@ -35,6 +36,7 @@ class SessionViewController: UIViewController {
         super.viewDidLoad()
         ViewSession.addShadowView()
         fetchSessionDetail()
+        updateBtn.addShadowView()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchSessionDetail), name: NSNotification.Name(rawValue: "fetchSessionDetail"), object: nil)
         
         

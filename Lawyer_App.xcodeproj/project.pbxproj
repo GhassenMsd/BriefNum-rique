@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2448F3DF2FEE0A2594A8B5D1 /* Pods_Lawyer_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */; };
 		852FC47723B116F0000AE8AE /* AhkemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47623B116F0000AE8AE /* AhkemListViewController.swift */; };
+		852FC47923B23D92000AE8AE /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47823B23D92000AE8AE /* ClientService.swift */; };
+		852FC47B23B23F00000AE8AE /* UpdateClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47A23B23F00000AE8AE /* UpdateClientViewController.swift */; };
+		852FC47D23B23F36000AE8AE /* ProfilUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */; };
 		85A7451323918AC800BCE149 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451123918AC800BCE149 /* SignUp.swift */; };
 		85A7451423918AC800BCE149 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451223918AC800BCE149 /* Login.swift */; };
 		85D0BCD6239C6F7400653951 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCD5239C6F7400653951 /* Home.swift */; };
@@ -76,6 +79,9 @@
 		28B534695AD7B99AFC3950FB /* Pods-Lawyer_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lawyer_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App.debug.xcconfig"; sourceTree = "<group>"; };
 		620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lawyer_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		852FC47623B116F0000AE8AE /* AhkemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhkemListViewController.swift; sourceTree = "<group>"; };
+		852FC47823B23D92000AE8AE /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		852FC47A23B23F00000AE8AE /* UpdateClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateClientViewController.swift; sourceTree = "<group>"; };
+		852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilUserViewController.swift; sourceTree = "<group>"; };
 		85A7450F23918A4700BCE149 /* Samim-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Samim-Bold.ttf"; sourceTree = "<group>"; };
 		85A7451123918AC800BCE149 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		85A7451223918AC800BCE149 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 				85D5789D23A81F7100E5AB1F /* SessionService.swift */,
 				85D578A123A82AB000E5AB1F /* AffaireService.swift */,
 				85ECC5A823AA8A53003736F8 /* DemandeService.swift */,
+				852FC47823B23D92000AE8AE /* ClientService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 				85D0BCDE239EC99800653951 /* ProfilClient.swift */,
 				85D0BCE0239FB84100653951 /* ListClients.swift */,
 				85D0BCE923A0010100653951 /* AjoutClient.swift */,
+				852FC47A23B23F00000AE8AE /* UpdateClientViewController.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 			children = (
 				85A7451223918AC800BCE149 /* Login.swift */,
 				85A7451123918AC800BCE149 /* SignUp.swift */,
+				852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -496,6 +505,7 @@
 				8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */,
 				85A7451323918AC800BCE149 /* SignUp.swift in Sources */,
 				85D0BCE1239FB84100653951 /* ListClients.swift in Sources */,
+				852FC47D23B23F36000AE8AE /* ProfilUserViewController.swift in Sources */,
 				852FC47723B116F0000AE8AE /* AhkemListViewController.swift in Sources */,
 				8F0F5F9823A1C47200BC322A /* Expert.swift in Sources */,
 				8F98801023901CDB00A44379 /* ViewController.swift in Sources */,
@@ -513,6 +523,7 @@
 				8F0A880C239AA70B0035B20A /* DemandesListViewController.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
 				85F3893A23AD2162002E8985 /* SessionUpdateViewController.swift in Sources */,
+				852FC47923B23D92000AE8AE /* ClientService.swift in Sources */,
 				8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */,
 				8F0F5F8E23A1BD9C00BC322A /* BureauEnquete.swift in Sources */,
 				8F08CD8223A5BE3D00636CCC /* User.swift in Sources */,
@@ -538,6 +549,7 @@
 				8F98802D23902C2300A44379 /* OnBoardingViewController.swift in Sources */,
 				85A7451423918AC800BCE149 /* Login.swift in Sources */,
 				85F3893823AD214D002E8985 /* DemandeUpdateViewController.swift in Sources */,
+				852FC47B23B23F00000AE8AE /* UpdateClientViewController.swift in Sources */,
 				85D5789A23A81EF000E5AB1F /* MissionService.swift in Sources */,
 				8F1260FD23A1295600152FF7 /* Affaire.swift in Sources */,
 				8F0F5FA423A1C8F500BC322A /* Tribunal.swift in Sources */,

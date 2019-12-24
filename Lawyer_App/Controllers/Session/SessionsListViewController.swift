@@ -108,6 +108,7 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
         sessionService.getAllByAffaire(idAffaire: idAffaire){ (sessions) in
             if (sessions.count == 0){
                 self.hideJalsa.text = "ليس لديك جلسات"
+                self.hideJalsa.isHidden = false
             }else{
                 self.sessionsList = sessions
                 self.sessionsTableView.reloadData()

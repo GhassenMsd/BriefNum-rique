@@ -25,7 +25,11 @@ class AffaireService: NSObject {
                 print(response.result.value as! Array<Dictionary<String,Any>>)
             var affaires:Array<Affaire> = []
             for affaireDict in response.result.value as! Array<Dictionary<String,Any>> {
-                affaires.append(Affaire(nameAff: affaireDict["nomAff"] as! String, numAff: affaireDict["num_Aff"] as! String, degre: affaireDict["degre"] as! String, sujet: affaireDict["sujet"] as! String, date: affaireDict["date"] as! String, etat: affaireDict["etat"] as! String, idClt: affaireDict["id_Clt"] as! Int, idCrl: affaireDict["id_Crl"] as! Int, numCasPrec: affaireDict["num_Cas_Prec"] as! String, numAvCont: affaireDict["num_Av_Cont"] as! String, etatAvCont: affaireDict["etat_Av_Cont"] as! Int,cercle: affaireDict["cercle"] as! String))
+                var numCasPrec = ""
+                if( type(of: affaireDict["num_Cas_Prec"] ) == String.self ){
+                    numCasPrec = affaireDict["num_Cas_Prec"] as! String
+                }
+                affaires.append(Affaire(nameAff: affaireDict["nomAff"] as! String, numAff: affaireDict["num_Aff"] as! String, degre: affaireDict["degre"] as! String, sujet: affaireDict["sujet"] as! String, date: affaireDict["date"] as! String, etat: affaireDict["etat"] as! String, idClt: affaireDict["id_Clt"] as! Int, idCrl: affaireDict["id_Crl"] as! Int, numCasPrec: numCasPrec, numAvCont: affaireDict["num_Av_Cont"] as! String, etatAvCont: affaireDict["etat_Av_Cont"] as! Int,cercle: affaireDict["cercle"] as! String))
             }
             completion(affaires)
             }

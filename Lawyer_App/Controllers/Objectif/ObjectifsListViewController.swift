@@ -101,6 +101,7 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
         missionsService.getAllByAffaire(idAffaire: idAffaire){ (missions) in
             if(missions.count == 0){
                 self.hideMohema.text = "ليس لديك مهام"
+                self.hideMohema.isHidden = false
             }else{
                 self.missionsList = missions
                 self.ObjectifTableView.reloadData()
