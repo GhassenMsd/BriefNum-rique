@@ -31,15 +31,17 @@ class LoginService : NSObject {
             let responseDict = response.result.value as! Dictionary<String,Any>
             
             if( responseDict["token"] as! String == "" ){
-                completion(User(id: 0,nomComplet: "",grade: "",adresseBureau: "",tel: "",img: "",password: "",token: ""))
+                completion(User(id: 0,nomComplet: "",grade: "",adresseBureau: "",tel: "",img: "",password: "",token: "",email: ""))
             }
             else{
                 let userDict = responseDict["user"] as! Dictionary<String,Any>
-                let user = User(id: userDict["id"] as! Int ,nomComplet: userDict["nomComplet"] as! String,grade: userDict["grade"] as! String ,adresseBureau: userDict["adresseBureau"] as! String ,tel: userDict["tel"] as! String ,img: userDict["img"] as! String ,password: userDict["password"] as! String ,token: responseDict["token"] as! String)
+                let user = User(id: userDict["id"] as! Int ,nomComplet: userDict["nomComplet"] as! String,grade: userDict["grade"] as! String ,adresseBureau: userDict["adresseBureau"] as! String ,tel: userDict["tel"] as! String ,img: userDict["img"] as! String ,password: userDict["password"] as! String ,token: responseDict["token"] as! String,email: userDict["email"] as! String)
                 let preferences = UserDefaults.standard
                 
                 preferences.setValue(responseDict["token"] as! String, forKey: "token")
                 preferences.setValue(user.id, forKey: "idUser")
+                let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: user)
+                preferences.setValue(encodedData, forKey: "user")
 
                 //  Save to disk
                 let didSave = preferences.synchronize()

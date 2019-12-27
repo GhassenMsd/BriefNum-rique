@@ -243,7 +243,20 @@ open class WeekView: UIView {
      Method delegates event requests and sends a callback with start and end Date up to the WeekViewDelegate.
      */
     func requestEvents(between startDate: DayDate, and endDate: DayDate) {
-        self.delegate?.eventLoadRequest(in: self, between: startDate.dateObj, and: endDate.dateObj)
+        var dateComponent = DateComponents()
+        dateComponent.day = 0
+        dateComponent.month = 0
+        dateComponent.year = -1
+        var dateComponentEnd = DateComponents()
+        dateComponentEnd.day = 0
+        dateComponentEnd.month = 0
+        dateComponentEnd.year = 1
+        let futureStartDate = Calendar.current.date(byAdding: dateComponent, to: startDate.dateObj)
+        let futureEndDate = Calendar.current.date(byAdding: dateComponentEnd, to: endDate.dateObj)
+        print(futureStartDate!)
+        print("-------------aaaaaaaaaaa---------")
+        print(futureEndDate!)
+        self.delegate?.eventLoadRequest(in: self, between: futureStartDate!, and: futureEndDate!)
     }
 
     // MARK: - INTERNAL FUNCTIONS -

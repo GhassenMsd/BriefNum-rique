@@ -28,7 +28,7 @@
 		<key>Floaty.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Pods-Lawyer_App.xcscheme</key>
 		<dict>
@@ -36,6 +36,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+		<key>QVRWeekView.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>iOSDropDown.xcscheme</key>
 		<dict>

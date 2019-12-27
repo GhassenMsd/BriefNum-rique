@@ -24,7 +24,7 @@ class ClientService: NSObject {
                 response in
             var clients:Array<Client> = []
             for clientDict in response.result.value as! Array<Dictionary<String,Any>> {
-                let client = Client(id:clientDict["id"] as! Int,nomComplet:clientDict["nomComplet"] as! String,cin_pass:clientDict["cin_pass"] as! String,dateEmission:clientDict["dateEmission"] as! String,tel:clientDict["tel"] as! String,dateNaissance:clientDict["dateNaissance"] as! String,lieuNaissance:clientDict["lieuNaissance"] as! String,adresse:clientDict["adresse"] as! String,proffession:clientDict["proffession"] as! String,mail:clientDict["mail"] as! String,id_Av:clientDict["id_Av"] as! Int,image:clientDict["image"] as! String)
+                let client = Client(id:clientDict["id"] as! Int,nomComplet:clientDict["nomComplet"] as! String,cin_pass:clientDict["cin_pass"] as! String,dateEmission:clientDict["dateEmission"] as! String,tel:clientDict["tel"] as! String,dateNaissance:clientDict["dateNaissance"] as! String,lieuNaissance:clientDict["lieuNaissance"] as! String,adresse:clientDict["adresse"] as! String,proffession:clientDict["proffession"] as! String,mail:clientDict["mail"] as! String,id_Av:clientDict["id_Av"] as! Int,image:clientDict["image"] as! String,etat:clientDict["etat"] as! String)
                 clients.append(client)
                 /*let client: Client = Client(dictionary: clientDict)
                 print("-----------")

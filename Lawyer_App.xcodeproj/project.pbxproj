@@ -40,6 +40,7 @@
 		8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */; };
 		8F0A880A239AA2AE0035B20A /* DemandeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A8809239AA2AE0035B20A /* DemandeDetailsViewController.swift */; };
 		8F0A880C239AA70B0035B20A /* DemandesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A880B239AA70B0035B20A /* DemandesListViewController.swift */; };
+		8F0B692E23B3D0830087F246 /* samim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7451523918AFE00BCE149 /* samim.ttf */; };
 		8F0F5F8C23A1BC4A00BC322A /* Avocat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5F8B23A1BC4A00BC322A /* Avocat.swift */; };
 		8F0F5F8E23A1BD9C00BC322A /* BureauEnquete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5F8D23A1BD9C00BC322A /* BureauEnquete.swift */; };
 		8F0F5F9023A1BF0F00BC322A /* Cercle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0F5F8F23A1BF0F00BC322A /* Cercle.swift */; };
@@ -61,7 +62,6 @@
 		8F33056B2391ED5D001A0DAD /* AffairesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */; };
 		8F33056C2391F282001A0DAD /* Questv1-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F33056423919864001A0DAD /* Questv1-Bold.otf */; };
 		8F33056D2391F286001A0DAD /* Samim-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7450F23918A4700BCE149 /* Samim-Bold.ttf */; };
-		8F33056E2391F28B001A0DAD /* samim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A7451523918AFE00BCE149 /* samim.ttf */; };
 		8F33057023942AEA001A0DAD /* AffaireAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33056F23942AEA001A0DAD /* AffaireAddViewController.swift */; };
 		8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98800B23901CDB00A44379 /* AppDelegate.swift */; };
 		8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F98800D23901CDB00A44379 /* SceneDelegate.swift */; };
@@ -207,10 +207,10 @@
 				8F08CD8423A5C28300636CCC /* LoginService.swift */,
 				8F08CD8623A5C28300636CCC /* Connexion.swift */,
 				85D5789923A81EF000E5AB1F /* MissionService.swift */,
-				85D5789B23A81F2500E5AB1F /* RendezVouzService.swift */,
 				85D5789D23A81F7100E5AB1F /* SessionService.swift */,
 				85D578A123A82AB000E5AB1F /* AffaireService.swift */,
 				85ECC5A823AA8A53003736F8 /* DemandeService.swift */,
+				85D5789B23A81F2500E5AB1F /* RendezVouzService.swift */,
 				852FC47823B23D92000AE8AE /* ClientService.swift */,
 			);
 			path = Services;
@@ -446,7 +446,7 @@
 				8F98802F23902F9100A44379 /* Slide.xib in Resources */,
 				8F98801823901CE900A44379 /* Assets.xcassets in Resources */,
 				85F3893423ABEAE3002E8985 /* Main.storyboard in Resources */,
-				8F33056E2391F28B001A0DAD /* samim.ttf in Resources */,
+				8F0B692E23B3D0830087F246 /* samim.ttf in Resources */,
 				8F988023239021D200A44379 /* OnBoarding.storyboard in Resources */,
 				8F33056C2391F282001A0DAD /* Questv1-Bold.otf in Resources */,
 				8F33056D2391F286001A0DAD /* Samim-Bold.ttf in Resources */,

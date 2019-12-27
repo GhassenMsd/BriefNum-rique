@@ -15,33 +15,24 @@ class Cercle: NSObject {
     var num = 0
     var numBureau = 0
     var numSalle = 0
-    var dateSession: Date?
+    var dateSession = ""
     var nomPresident = ""
     var telPresident = ""
-    var nomPremierMembre = ""
-    var telMembreP = ""
-    var nomDeuxiemeMembre = ""
-    var telMembreD = ""
-    var acteurMinisterePublic = ""
-    var telActeur = ""
+    var nomMembre = ""
     var secretaire = ""
     var telSecretaire = ""
     var id_Trib = 0
     
-    init(id: Int, degre: String, num: Int, numBureau: Int, numSalle: Int, dateSession: Date, nomPresident: String, telPresident: String, nomPremierMembre: String, telMembreP: String, nomDeuxiemeMembre: String, telMembreD: String, acteurMinisterePublic: String, telActeur: String, secretaire: String, telSecretaire: String, id_Trib: Int){
+    init(id: Int, degre: String, num: Int, numBureau: Int, numSalle: Int, dateSession: String, nomPresident: String, telPresident: String, nomMembre: String, secretaire: String, telSecretaire: String, id_Trib: Int){
         self.id = id
         self.degre = degre
         self.num = num
         self.numBureau = numBureau
+        self.numSalle = numSalle
         self.dateSession = dateSession
         self.nomPresident = nomPresident
         self.telPresident = telPresident
-        self.nomPremierMembre = nomPremierMembre
-        self.telMembreP = telMembreP
-        self.nomDeuxiemeMembre = nomDeuxiemeMembre
-        self.telMembreD = telMembreD
-        self.acteurMinisterePublic = acteurMinisterePublic
-        self.telActeur = telActeur
+        self.nomMembre = nomMembre
         self.secretaire = secretaire
         self.telSecretaire = telSecretaire
         self.id_Trib = id_Trib

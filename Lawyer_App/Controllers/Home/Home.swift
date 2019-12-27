@@ -187,6 +187,7 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
     }
     
     func eventLoadRequest(in weekView: WeekView, between startDate: Date, and endDate: Date) {
+        
         let dates = DateSupport.getAllDates(between: startDate, and: endDate)
         for (date, events) in eventsSortedByDay where !dates.contains(date) {
             for event in events {

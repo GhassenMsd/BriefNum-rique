@@ -14,19 +14,29 @@ class Tribunal: NSObject {
     var nom = ""
     var degre = ""
     var etat = ""
-    var adresse = ""
-    var tel = ""
     var nomPresident = ""
-    var nomAgentRepublique = ""
+    var nomWakilAwel = ""
+    var telWakilAwel = ""
+    var numBWakilAwel = 0
+    var nomWakilTheni = ""
+    var telWakilTheni = ""
+    var numBWakilTheni = 0
+    var katebOthoun = ""
+    var telKatebOthoun = ""
     
-    init(id: Int, nom: String, degre: String, etat: String, adresse: String, tel: String, nomPresident: String, nomAgentRepublique: String){
+    init(id: Int, nom: String, degre: String, etat: String, nomPresident: String, nomWakilAwel: String, telWakilAwel: String, numBWakilAwel: Int, nomWakilTheni: String, telWakilTheni: String, numBWakilTheni: Int, katebOthoun: String, telKatebOthoun: String){
         self.id = id
         self.nom = nom
         self.degre = degre
         self.etat = etat
-        self.adresse = adresse
-        self.tel = tel
         self.nomPresident = nomPresident
-        self.nomAgentRepublique = nomAgentRepublique
+        self.nomWakilAwel = nomWakilAwel
+        self.telWakilAwel = telWakilAwel
+        self.numBWakilAwel = numBWakilAwel
+        self.nomWakilTheni = nomWakilTheni
+        self.telWakilTheni = telWakilTheni
+        self.numBWakilTheni = numBWakilTheni
+        self.katebOthoun = katebOthoun
+        self.telKatebOthoun = telKatebOthoun
     }
 }

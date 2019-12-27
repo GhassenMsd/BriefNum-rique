@@ -15,16 +15,16 @@ class Expert: NSObject {
     var specialite = ""
     var adresseBureau = ""
     var tel = ""
-    var mail = ""
-    var img = ""
+    var contexte = ""
+    var tribunal = ""
     
-    init(id: Int, nomComplet: String, specialite: String, adresseBureau: String, tel: String, mail: String, img: String){
+    init(id: Int, nomComplet: String, specialite: String, adresseBureau: String, tel: String, contexte: String, tribunal: String){
         self.id = id
         self.nomComplet = nomComplet
         self.specialite = specialite
         self.adresseBureau = adresseBureau
         self.tel = tel
-        self.mail = mail
-        self.img = img
+        self.contexte = contexte
+        self.tribunal = tribunal
     }
 }

@@ -17,6 +17,7 @@ class SignUp: UIViewController {
     @IBOutlet weak var AdBureau: UITextField!
     @IBOutlet weak var AdDomicile: UITextField!
     @IBOutlet weak var tel: UITextField!
+    @IBOutlet weak var inscriptionBtnAction: UIButton!
     
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class SignUp: UIViewController {
         
         imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
         imageUser.clipsToBounds = true
-        
+        inscriptionBtnAction.addShadowView()
         
         let nameImage = UIImage(named:"name")
         addRightImageTo(txtField: name, img: nameImage!)

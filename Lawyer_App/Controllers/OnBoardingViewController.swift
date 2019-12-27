@@ -33,20 +33,20 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide1.image.image = UIImage(named: "Groupe 15")
         slide1.iconImage.image = UIImage(named: "Icon")
-        slide1.titleText.text = "تسجيل الدخول 1"
-        slide1.descriptionText.text = "أدخل بريدك الإلكتروني وسيرسل لك تعليمات حول كيفية إعادة تعيينه 1"
+        slide1.titleText.text = "الجلسات"
+        slide1.descriptionText.text = "ترتيب الجلسات و متابعتها و الحصول على تنبيهات بشأنها و تنسيقها بين المحامين كل ذلك صار متاحا مع 'الوجيز الرقمي'."
 
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.image.image = UIImage(named: "Groupe 512")
         slide2.iconImage.image = UIImage(named: "Icon-1")
-        slide2.titleText.text = "تسجيل الدخول 2"
-        slide2.descriptionText.text = "أدخل بريدك الإلكتروني وسيرسل لك تعليمات حول كيفية إعادة تعيينه 2"
+        slide2.titleText.text = "المواعيد"
+        slide2.descriptionText.text = "استخدام المفكرة الورقية أو حتى الالكترونية صار أمرا من الماضي، متابعة المواعيد و التنبيه لها و تأخيرها أو تقديمها أو إلغاءها و تحديدها زمانيا و مكانيا هي المساعدة الرقمية التي يستحقها المحامي و يجدها بكل الفاعلية مع تطبيق 'الوجيز الرقمي'."
 
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide3.image.image = UIImage(named: "Groupe 513")
         slide3.iconImage.image = UIImage(named: "Icon-2")
-        slide3.titleText.text = "تسجيل الدخول 3"
-        slide3.descriptionText.text = "أدخل بريدك الإلكتروني وسيرسل لك تعليمات حول كيفية إعادة تعيينه 3"
+        slide3.titleText.text = "المهام"
+        slide3.descriptionText.text = "'الوجيز الرقمي' يساعد المحامي على تنظيم المهام و الأحكام التحضيرية المزمع إنجازها و الجهات المكلفة بذلك و مواعيدها و آجالها و ربط ذلك آليا بالملفات أو الحرفاء أو الجلسات."
         
         return [slide1, slide2, slide3]
     }

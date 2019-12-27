@@ -14,9 +14,11 @@ class Login: UIViewController {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var connexionBtnAction: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        connexionBtnAction.addShadowView()
         // Do any additional setup after loading the view.
     }
 

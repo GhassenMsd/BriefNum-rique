@@ -22,6 +22,7 @@ class Affaire: NSObject {
     var numAvCont = ""
     var etatAvCont = 0
     var cercle = ""
+    //var id_Av = 0
     
     override init() {
         

@@ -57,6 +57,7 @@ class SessionViewController: UIViewController {
         }
     }
     
+    
     /*
     // MARK: - Navigation
 

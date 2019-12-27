@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,20 +28,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFN-9q-MIf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="607"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="tintColor" red="0.87058823529999996" green="0.6705882353" blue="0.32156862749999998" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="c4k-IL-09v"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="5ws-2F-Ng7"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ptd-D2-4VE">
-                                <rect key="frame" x="0.0" y="651" width="414" height="37"/>
+                                <rect key="frame" x="0.0" y="721" width="414" height="37"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.87058823529999996" green="0.6705882353" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHM-jH-76I">
-                                <rect key="frame" x="187" y="740" width="43" height="39"/>
+                                <rect key="frame" x="187" y="780" width="43" height="39"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
                                 <state key="normal" title="تخطي">
@@ -1520,7 +1520,7 @@
                                     <color key="titleColor" red="0.8746108413" green="0.66745454069999999" blue="0.31851434709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="AddSession:" destination="Erk-JB-NTL" eventType="touchUpInside" id="rH2-b4-kD7"/>
+                                    <segue destination="LK0-Xd-Zhc" kind="show" identifier="toUpdateSession" id="25N-Oc-NYC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1832,7 +1832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9o-hy-fRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-471" y="1501"/>
+            <point key="canvasLocation" x="-181" y="1411"/>
         </scene>
         <!--جميع أحكام تحضيرية-->
         <scene sceneID="Ej5-hU-Wpy">
@@ -2093,6 +2093,7 @@
                         <viewLayoutGuide key="safeArea" id="9HZ-CU-HG4"/>
                     </view>
                     <connections>
+                        <outlet property="connexionBtnAction" destination="KTn-bO-nAf" id="Nvd-Cg-xd3"/>
                         <outlet property="password" destination="ah7-tk-2tg" id="fgK-az-2br"/>
                         <outlet property="userName" destination="H7h-P0-ojg" id="Zxz-CZ-Qr2"/>
                         <segue destination="18L-ZW-xa6" kind="presentation" identifier="toHome" modalPresentationStyle="fullScreen" id="svv-qu-fUV"/>
@@ -2220,9 +2221,6 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="18L-ZW-xa6" kind="presentation" modalPresentationStyle="fullScreen" id="ccO-Rw-o86"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لديك حساب؟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvT-I5-m9g">
                                 <rect key="frame" x="181" y="820" width="67" height="19"/>
@@ -2295,6 +2293,7 @@
                         <outlet property="AdDomicile" destination="kZ1-FW-ObP" id="UJF-of-afT"/>
                         <outlet property="degre" destination="QFB-ch-FZz" id="zX3-Sw-g2w"/>
                         <outlet property="imageUser" destination="kfO-VU-HRJ" id="zxa-uG-Ual"/>
+                        <outlet property="inscriptionBtnAction" destination="bv2-2G-Dhp" id="b5l-CW-yz2"/>
                         <outlet property="mail" destination="exd-uR-EIu" id="toi-ld-Zge"/>
                         <outlet property="name" destination="x3g-w2-zEw" id="Gxh-9o-INb"/>
                         <outlet property="tel" destination="R4j-hu-wCp" id="IkI-f6-pfl"/>
@@ -3437,7 +3436,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ZGE-EE-ojO" kind="relationship" relationship="rootViewController" id="aBd-wK-7zU"/>
+                        <segue destination="ZGE-EE-ojO" kind="relationship" relationship="rootViewController" id="H8H-va-THp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcF-c0-UTq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3476,10 +3475,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6h4-XX-nYJ">
-                                <rect key="frame" x="2" y="45.5" width="410" height="847.5"/>
+                                <rect key="frame" x="2" y="89.5" width="410" height="754.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-bR-hil">
-                                        <rect key="frame" x="0.0" y="0.0" width="410" height="932.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="410" height="830"/>
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-wH-fHA">
                                                 <rect key="frame" x="20" y="171" width="370" height="234"/>
@@ -4799,7 +4798,7 @@
             </objects>
             <point key="canvasLocation" x="4878" y="1992"/>
         </scene>
-        <!--تغير معلومات الحريف-->
+        <!--الملف الشخصي-->
         <scene sceneID="7yZ-4e-6FI">
             <objects>
                 <viewController id="yQq-nd-Teh" customClass="ProfilUserViewController" customModule="Lawyer_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -4807,13 +4806,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Z0x-Xg-pHo">
-                                <rect key="frame" x="139" y="111" width="132" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="kJm-Kh-02u">
+                                <rect key="frame" x="144.5" y="120" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="d4p-wj-x3z"/>
+                                    <constraint firstAttribute="width" constant="120" id="o8V-DM-Fiq"/>
+                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxu-pz-PQA">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxu-pz-PQA">
                                 <rect key="frame" x="3" y="373" width="408" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person-1" translatesAutoresizingMaskIntoConstraints="NO" id="P6I-0G-IwA">
                                         <rect key="frame" x="346" y="15" width="24" height="24"/>
@@ -4833,18 +4834,24 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztn-a0-8Ax">
-                                        <rect key="frame" x="48" y="23" width="30" height="30"/>
+                                        <rect key="frame" x="30" y="23" width="51" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Edit">
+                                        <state key="normal" title="تعديل">
                                             <color key="titleColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nomCompletEditAction:" destination="yQq-nd-Teh" eventType="touchUpInside" id="01q-XY-1kb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="YIv-XQ-pKR"/>
+                                    <constraint firstAttribute="width" constant="408" id="gPG-nu-6mN"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OXx-j6-XCG">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXx-j6-XCG">
                                 <rect key="frame" x="3" y="451" width="408" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="vh7-X5-OQ3">
                                         <rect key="frame" x="349" y="20" width="18" height="14"/>
@@ -4864,29 +4871,41 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP8-e3-rQv">
-                                        <rect key="frame" x="48" y="23" width="30" height="30"/>
+                                        <rect key="frame" x="30" y="23" width="51" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Edit">
+                                        <state key="normal" title="تعديل">
                                             <color key="titleColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="emailEditAction:" destination="yQq-nd-Teh" eventType="touchUpInside" id="Ojp-s7-Aof"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="BvJ-c5-YvZ"/>
+                                    <constraint firstAttribute="width" constant="408" id="Oud-Ea-c0a"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-p6-boZ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQY-p6-boZ">
                                 <rect key="frame" x="244" y="157" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="13m-Ln-O9Z"/>
+                                    <constraint firstAttribute="height" constant="40" id="rLN-yf-SV8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="4"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.87058823529999996" green="0.6705882353" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                 </state>
+                                <connections>
+                                    <action selector="OpenImagePicker:" destination="yQq-nd-Teh" eventType="touchUpInside" id="Jum-yp-dtd"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lTB-1d-TuP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTB-1d-TuP">
                                 <rect key="frame" x="3" y="529" width="408" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ABureau" translatesAutoresizingMaskIntoConstraints="NO" id="iIp-7Z-Rbr">
                                         <rect key="frame" x="349" y="20" width="18" height="14"/>
@@ -4906,49 +4925,24 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ql-Kc-T4l">
-                                        <rect key="frame" x="48" y="23" width="30" height="30"/>
+                                        <rect key="frame" x="30" y="23" width="51" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Edit">
+                                        <state key="normal" title="تعديل">
                                             <color key="titleColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="adresseEditAction:" destination="yQq-nd-Teh" eventType="touchUpInside" id="biS-cp-VOw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="408" id="3rl-GH-gyK"/>
+                                    <constraint firstAttribute="height" constant="77" id="cn3-CD-ixx"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yOm-ew-AVd">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RuF-LO-30T">
                                 <rect key="frame" x="3" y="607" width="408" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ADomicile" translatesAutoresizingMaskIntoConstraints="NO" id="Sod-Xd-t7t">
-                                        <rect key="frame" x="349" y="20" width="18" height="14"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="عنوان الاقامة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nIc-dJ-uac">
-                                        <rect key="frame" x="235" y="12" width="107" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6 ناجح الفل رادس" placeholder="الإسم بالكامل" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-7y-VFy">
-                                        <rect key="frame" x="96" y="40" width="271" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8N-wu-cQG">
-                                        <rect key="frame" x="48" y="23" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Edit">
-                                            <color key="titleColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RuF-LO-30T">
-                                <rect key="frame" x="3" y="685" width="408" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="num" translatesAutoresizingMaskIntoConstraints="NO" id="ZvZ-7f-V5U">
                                         <rect key="frame" x="349" y="20" width="18" height="14"/>
@@ -4968,38 +4962,76 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ru2-l9-SFa">
-                                        <rect key="frame" x="48" y="23" width="30" height="30"/>
+                                        <rect key="frame" x="30" y="23" width="51" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Edit">
+                                        <state key="normal" title="تعديل">
                                             <color key="titleColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="telEditAction:" destination="yQq-nd-Teh" eventType="touchUpInside" id="N0v-dO-lBA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="8Zq-Tz-LEQ"/>
+                                    <constraint firstAttribute="width" constant="408" id="FVr-jc-ir4"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="سارة حسني" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK1-zj-Ka4">
-                                <rect key="frame" x="151" y="264" width="122" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سارة حسني" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK1-zj-Ka4">
+                                <rect key="frame" x="20" y="264" width="374" height="39"/>
                                 <fontDescription key="fontDescription" name="Samim-Bold" family="Samim" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.2274509804" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="درجة أولى" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYv-P9-2gL">
-                                <rect key="frame" x="163" y="305" width="68" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="درجة أولى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYv-P9-2gL">
+                                <rect key="frame" x="20" y="305" width="211" height="27"/>
                                 <fontDescription key="fontDescription" name="Samim" family="Samim" pointSize="17"/>
                                 <color key="textColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="degre" translatesAutoresizingMaskIntoConstraints="NO" id="kQc-zN-eJT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="degre" translatesAutoresizingMaskIntoConstraints="NO" id="kQc-zN-eJT">
                                 <rect key="frame" x="239.5" y="310" width="20" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="f4M-Ok-Z8F"/>
+                                    <constraint firstAttribute="width" constant="20" id="jco-ek-GzB"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.92549019610000005" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BYv-P9-2gL" firstAttribute="top" secondItem="WK1-zj-Ka4" secondAttribute="bottom" constant="2" id="0d6-aC-sXV"/>
+                            <constraint firstItem="BYv-P9-2gL" firstAttribute="leading" secondItem="HEe-eK-Cwv" secondAttribute="leading" constant="20" id="2mc-Uv-aVc"/>
+                            <constraint firstItem="WK1-zj-Ka4" firstAttribute="leading" secondItem="HEe-eK-Cwv" secondAttribute="leading" constant="20" id="3vx-l5-FTb"/>
+                            <constraint firstItem="HEe-eK-Cwv" firstAttribute="trailing" secondItem="kQc-zN-eJT" secondAttribute="trailing" constant="154.5" id="5yr-qV-s00"/>
+                            <constraint firstItem="qxu-pz-PQA" firstAttribute="top" secondItem="BYv-P9-2gL" secondAttribute="bottom" constant="41" id="6wm-wD-3FP"/>
+                            <constraint firstItem="HEe-eK-Cwv" firstAttribute="trailing" secondItem="RuF-LO-30T" secondAttribute="trailing" constant="3" id="70L-0E-mmc"/>
+                            <constraint firstItem="HEe-eK-Cwv" firstAttribute="trailing" secondItem="kJm-Kh-02u" secondAttribute="trailing" constant="149.5" id="7lV-aD-p1m"/>
+                            <constraint firstItem="kJm-Kh-02u" firstAttribute="top" secondItem="HEe-eK-Cwv" secondAttribute="top" constant="32" id="AXE-h2-dXC"/>
+                            <constraint firstItem="RuF-LO-30T" firstAttribute="top" secondItem="lTB-1d-TuP" secondAttribute="bottom" constant="1" id="BbD-hS-ohz"/>
+                            <constraint firstItem="OXx-j6-XCG" firstAttribute="leading" secondItem="HEe-eK-Cwv" secondAttribute="leading" constant="3" id="CAu-Aa-RvK"/>
+                            <constraint firstItem="OXx-j6-XCG" firstAttribute="top" secondItem="qxu-pz-PQA" secondAttribute="bottom" constant="1" id="DiS-ua-eYN"/>
+                            <constraint firstItem="RuF-LO-30T" firstAttribute="leading" secondItem="HEe-eK-Cwv" secondAttribute="leading" constant="3" id="F5s-mg-B75"/>
+                            <constraint firstItem="HEe-eK-Cwv" firstAttribute="trailing" secondItem="qxu-pz-PQA" secondAttribute="trailing" constant="3" id="K5U-cM-9o0"/>
+                            <constraint firstItem="qxu-pz-PQA" firstAttribute="top" secondItem="kQc-zN-eJT" secondAttribute="bottom" constant="47" id="N5K-un-ujC"/>
+                            <constraint firstItem="HEe-eK-Cwv" firstAttribute="trailing" secondItem="OXx-j6-XCG" secondAttribute="trailing" constant="3" id="NR5-Ff-1ya"/>
+                            <constraint firstItem="HQY-p6-boZ" firstAttribute="leading" secondItem="HEe-eK-Cwv" secondAttribute="leading" constant="244" id="PxJ-Pq-skN"/>
+                            <constraint firstItem="HEe-eK-Cwv" firstAttribute="trailing" secondItem="WK1-zj-Ka4" secondAttribute="trailing" constant="20" id="QX9-5W-nBJ"/>
+                            <constraint firstItem="lTB-1d-TuP" firstAttribute="top" secondItem="OXx-j6-XCG" secondAttribute="bottom" constant="1" id="SNg-JO-EDY"/>
+                            <constraint firstItem="lTB-1d-TuP" firstAttribute="leading" secondItem="HEe-eK-Cwv" secondAttribute="leading" constant="3" id="Scp-lN-KZA"/>
+                            <constraint firstItem="HEe-eK-Cwv" firstAttribute="trailing" secondItem="lTB-1d-TuP" secondAttribute="trailing" constant="3" id="SjL-Dm-TGM"/>
+                            <constraint firstItem="kQc-zN-eJT" firstAttribute="leading" secondItem="BYv-P9-2gL" secondAttribute="trailing" constant="8.5" id="ZWg-9h-ZSt"/>
+                            <constraint firstItem="kJm-Kh-02u" firstAttribute="leading" secondItem="HEe-eK-Cwv" secondAttribute="leading" constant="144.5" id="gXd-f4-6ht"/>
+                            <constraint firstItem="HEe-eK-Cwv" firstAttribute="trailing" secondItem="HQY-p6-boZ" secondAttribute="trailing" constant="130" id="jHZ-oF-0H6"/>
+                            <constraint firstItem="qxu-pz-PQA" firstAttribute="leading" secondItem="HEe-eK-Cwv" secondAttribute="leading" constant="3" id="mI7-YJ-JL7"/>
+                            <constraint firstItem="kQc-zN-eJT" firstAttribute="leading" secondItem="BYv-P9-2gL" secondAttribute="trailing" constant="8.5" id="tQJ-px-yl8"/>
+                            <constraint firstItem="WK1-zj-Ka4" firstAttribute="top" secondItem="kJm-Kh-02u" secondAttribute="bottom" constant="24" id="tmg-z1-mzp"/>
+                            <constraint firstItem="WK1-zj-Ka4" firstAttribute="top" secondItem="HQY-p6-boZ" secondAttribute="bottom" constant="67" id="uAG-Jz-XxJ"/>
+                            <constraint firstItem="HQY-p6-boZ" firstAttribute="top" secondItem="HEe-eK-Cwv" secondAttribute="top" constant="69" id="uqb-yN-x7d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HEe-eK-Cwv"/>
                     </view>
-                    <navigationItem key="navigationItem" title="تغير معلومات الحريف" id="JkJ-US-t5t">
+                    <navigationItem key="navigationItem" title="الملف الشخصي" id="JkJ-US-t5t">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="add_alert" id="UmN-Nw-zcX">
                             <color key="tintColor" red="0.992728897" green="1" blue="0.98851579310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
@@ -5012,12 +5044,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="adresseEdit" destination="Biy-Rm-14B" id="cFw-iI-oHs"/>
+                        <outlet property="btnEditAdresse" destination="1ql-Kc-T4l" id="EWp-jT-PiK"/>
+                        <outlet property="btnEditEmail" destination="dP8-e3-rQv" id="EzA-Vh-5MY"/>
+                        <outlet property="btnEditNomComplet" destination="Ztn-a0-8Ax" id="HJb-hr-xIt"/>
+                        <outlet property="btnEditTel" destination="ru2-l9-SFa" id="mnR-fk-H87"/>
                         <outlet property="degree" destination="BYv-P9-2gL" id="oR6-IV-0o9"/>
                         <outlet property="emailEdit" destination="eI5-xu-xiF" id="wIj-Jp-4Ym"/>
                         <outlet property="imageUpdateBtn" destination="HQY-p6-boZ" id="chi-VS-hap"/>
-                        <outlet property="imageUser" destination="Z0x-Xg-pHo" id="721-jP-cZZ"/>
+                        <outlet property="imageUser" destination="kJm-Kh-02u" id="NMf-Lj-sjV"/>
                         <outlet property="nomComplet" destination="WK1-zj-Ka4" id="RnU-AB-m3W"/>
                         <outlet property="nomCompletEdit" destination="yHN-2c-UmU" id="wKD-Ff-pW5"/>
+                        <outlet property="telEdit" destination="oP7-1W-szK" id="gK3-uN-ikQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXB-I9-ter" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5028,7 +5065,6 @@
     <resources>
         <image name="3" width="128" height="128"/>
         <image name="ABureau" width="16" height="15"/>
-        <image name="ADomicile" width="19" height="16"/>
         <image name="Arrow" width="11" height="19"/>
         <image name="Checkbox" width="60" height="60"/>
         <image name="Groupe 1067" width="40" height="40"/>
@@ -5100,12 +5136,11 @@
         <image name="view_module" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lAy-7B-DGx"/>
+        <segue reference="lMI-ep-tWC"/>
         <segue reference="Xoq-Ji-Ow9"/>
         <segue reference="0i1-Ld-KYm"/>
         <segue reference="xIe-Ch-UhR"/>
         <segue reference="c06-de-jGN"/>
-        <segue reference="ccO-Rw-o86"/>
         <segue reference="FgL-gb-Qop"/>
         <segue reference="f5E-MM-2Ao"/>
     </inferredMetricsTieBreakers>

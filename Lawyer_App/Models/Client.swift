@@ -22,11 +22,12 @@ class Client: NSObject {
     var mail = ""
     var id_Av = 0
     var image = ""
+    var etat = ""
     
     override init() {
     }
     
-    init(id: Int,nomComplet: String,cin_pass: String, dateEmission: String, tel: String, dateNaissance: String, lieuNaissance: String, adresse :String, proffession: String, mail: String, id_Av: Int, image: String) {
+    init(id: Int,nomComplet: String,cin_pass: String, dateEmission: String, tel: String, dateNaissance: String, lieuNaissance: String, adresse :String, proffession: String, mail: String, id_Av: Int, image: String,etat: String) {
         self.id = id
         self.nomComplet = nomComplet
         self.cin_pass = cin_pass
@@ -39,5 +40,6 @@ class Client: NSObject {
         self.mail = mail
         self.id_Av = id_Av
         self.image = image
+        self.etat = etat
     }
 }
