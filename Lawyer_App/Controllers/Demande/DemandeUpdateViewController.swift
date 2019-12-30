@@ -21,7 +21,6 @@ class DemandeUpdateViewController: UIViewController,UITextViewDelegate {
     
     
     var datePicker = UIDatePicker()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -42,7 +42,7 @@ class SessionService: NSObject {
         //  Couldn't save (I've never seen this happen in real world testing)
     if( preferences.object(forKey: "token") != nil){
         print("idddUserrr" + preferences.string(forKey: "idUser")!)
-       
+        
         Alamofire.request(Connexion.adresse + "/api/session/getAllByAffaire/" + preferences.string(forKey: "idUser")! + "/" + idAffaire,encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
                 response in
                 //print(response.result.value as Any)

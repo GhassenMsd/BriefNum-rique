@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -34,7 +35,11 @@ class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
         view!.addShadowView()
 
         cin.text = Home.clients[indexPath.row].cin_pass
-        img.af_setImage(withURL:URL(string: Connexion.adresse + "/Ressources/Client/" + Home.clients[indexPath.row].image)!)
+        
+        img.sd_imageIndicator = SDWebImageActivityIndicator.gray
+
+        img.sd_setImage(with: URL(string: Connexion.adresse + "/Ressources/Client/" + Home.clients[indexPath.row].image), placeholderImage: UIImage(named: "placeholder"))
+        
         img.addShadowView()
         img.contentMode = UIViewContentMode.scaleAspectFill
         img.clipsToBounds = true

@@ -10,6 +10,8 @@ import UIKit
 import FSCalendar
 import QVRWeekView
 import AlamofireImage
+import Alamofire
+import SDWebImage
 
 class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance, WeekViewDelegate {
     
@@ -295,7 +297,18 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         let name = contentView?.viewWithTag(2) as! UILabel
         let img = contentView?.viewWithTag(1) as! UIImageView
         name.text = Home.clients[indexPath.row].nomComplet
-        img.af_setImage(withURL:URL(string: Connexion.adresse + "/Ressources/Client/" + Home.clients[indexPath.row].image)!)
+        
+        //img.af_setImage(withURL:URL(string: Connexion.adresse + "/Ressources/Client/" + Home.clients[indexPath.row].image)!)
+        img.sd_imageIndicator = SDWebImageActivityIndicator.gray
+
+        img.sd_setImage(with: URL(string: Connexion.adresse + "/Ressources/Client/" + Home.clients[indexPath.row].image), placeholderImage: UIImage(named: "placeholder"))
+        
+
+        
+        
+        
+        
+        
         img.contentMode = .scaleAspectFill
         img.addShadowImage(radius: (img.frame.size.width / 2))
         img.clipsToBounds = true
@@ -303,6 +316,17 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         return cell
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsClient"{

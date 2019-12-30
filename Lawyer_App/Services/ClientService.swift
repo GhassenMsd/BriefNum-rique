@@ -53,7 +53,6 @@ class ClientService: NSObject {
             "image":image
         ]
         Alamofire.request(Connexion.adresse + "/api/Client/AddClient", method:.post, parameters:parameters,encoding: JSONEncoding.default, headers:["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
-            print(response.result.value)
                 let result = response.result.value as! String
                 
                 completion(result)

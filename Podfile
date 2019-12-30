@@ -10,6 +10,8 @@ target 'Lawyer_App' do
   pod 'FSCalendar'
   pod 'Floaty', :git => 'https://github.com/jesster2k10/Floaty.git', :branch => 'swift4.0'
   pod "QVRWeekView"
+  pod "MBCircularProgressBar"
+  pod 'SDWebImage', '~> 5.0'
 
   # Pods for Lawyer_App
 

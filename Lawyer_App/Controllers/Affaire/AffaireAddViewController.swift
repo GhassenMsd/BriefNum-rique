@@ -67,19 +67,101 @@ var hidenClient = true
 var hidenAvocat = true
 var hidenEtat = true
     
-var list = ["درجة 1", "درجة 2","درجة 3"]
-var listClient = ["الحريف 1 ","الحريف 2","الحريف 3"]
-var listAvocat = ["محامي 1","محامي 2","محامي 3"]
-var listEtat = ["الدائرة 1","الدائرة 2","الدائرة 3"]
+    
+    
+var listEtat : Array<Cercle> = []
+
+var list : Array<Tribunal> = []
+
+var listClient : Array<Client> = []
+
+var listAvocat : Array<Adversaire> = []
+
+    
+    @objc func fetchClient() -> Void {
+        let clientService = ClientService()
+        clientService.getAll(){ (clients) in
+            if(clients.count == 0){
+                
+            }else{
+                self.listClient = clients
+                self.client.optionArray = self.listClient.map({ (client) -> String in
+                    return client.nomComplet
+                })
+                self.client.reloadInputViews()
+            }
+        }
+    }
+    
+    @objc func fetchTribunal() -> Void {
+        let tribunalService = TribunalService()
+        
+        tribunalService.GetAllTribunal(){ (tribunals) in
+            if(tribunals.count == 0){
+                
+            }else{
+                self.list = tribunals
+                self.degree.optionArray = self.list.map({ (degree) -> String in
+                    return degree.nom
+                })
+                self.degree.reloadInputViews()
+            }
+        }
+        
+        
+    }
+    
+    @objc func fetchCercle(id: String) -> Void {
+        let cercleService = CercleService()
+        cercleService.GetAllCercle(idTribunal: id){ (cercles) in
+            if(cercles.count == 0){
+                
+            }else{
+                self.listEtat = cercles
+                self.etat.optionArray = self.listEtat.map({ (etat) -> String in
+                    return etat.degre
+                })
+                self.etat.reloadInputViews()
+            }
+        }
+        
+    }
+    
+    @objc func fetchAdversaire() -> Void {
+        self.avocat.text = ""
+        let adversaireService = AdversaireService()
+        adversaireService.GetAllAdversaire(){(adversaires) in
+            if(adversaires.count == 0){
+                
+            }else{
+                self.listAvocat = adversaires
+                self.avocat.optionArray = self.listAvocat.map({ (avocat) -> String in
+
+                    return avocat.nomComplet
+
+                })
+                self.avocat.optionArray.append("إضافة ضد")
+                //self.avocat.optionArray.reverse()
+                self.avocat.reloadInputViews()
+            }
+            
+        }
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchClient()
         //DropDownList degree
-        degree.optionArray = list
+        fetchTribunal()
+        
+        
         degree.didSelect{(selectedText , index ,id) in
             self.hiden = true
-            }
+            print("lisstt indexx " + String(self.list[index].id))
+            self.fetchCercle(id: String(self.list[index].id))
+        }
+        
         degree.listWillAppear {
             self.hiden = false
         }
@@ -93,9 +175,13 @@ var listEtat = ["الدائرة 1","الدائرة 2","الدائرة 3"]
         //dropDown.ImageArray = [👩🏻‍🦳,🙊,🥞]
         
         //DropDownList client
-        client.optionArray = listClient
+        
+    
         client.didSelect{(selectedText , index ,id) in
             self.hidenClient = true
+            
+            
+            
             }
         client.listWillAppear {
             self.hidenClient = false
@@ -105,8 +191,9 @@ var listEtat = ["الدائرة 1","الدائرة 2","الدائرة 3"]
         }
         
         //DropDownList client
-        etat.optionArray = listEtat
         etat.didSelect{(selectedText , index ,id) in
+
+            
             self.hidenEtat = true
             }
         etat.listWillAppear {
@@ -117,9 +204,20 @@ var listEtat = ["الدائرة 1","الدائرة 2","الدائرة 3"]
         }
         
         //DropDownList avocat
-        avocat.optionArray = listAvocat
+        fetchAdversaire()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchAdversaire), name: NSNotification.Name(rawValue: "fetchAdversaire"), object: nil)
+        
         avocat.didSelect{(selectedText , index ,id) in
             self.hidenAvocat = true
+            print(selectedText)
+
+            if(selectedText == "إضافة ضد"){
+                self.performSegue(withIdentifier: "addAdversaire", sender: self)
+                print("idhaafeett dhed")
+            }else{
+                print("lisstt indexx from dhed " + String(self.listAvocat[index].id))
+            }
             }
         avocat.listWillAppear {
             self.hidenAvocat = false
@@ -200,4 +298,13 @@ var listEtat = ["الدائرة 1","الدائرة 2","الدائرة 3"]
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "addAdversaire"{
+        if segue.destination is AdversaireAddViewController {
+            //sessionViewController.session = sessionS
+        }
+    }
+    
+}
 }

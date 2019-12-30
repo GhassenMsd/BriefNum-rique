@@ -5,7 +5,11 @@ PODS:
   - Floaty (4.0.0)
   - FSCalendar (2.8.1)
   - iOSDropDown (0.3.4)
+  - MBCircularProgressBar (0.3.5)
   - QVRWeekView (0.13.3)
+  - SDWebImage (5.4.1):
+    - SDWebImage/Core (= 5.4.1)
+  - SDWebImage/Core (5.4.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -13,7 +17,9 @@ DEPENDENCIES:
   - Floaty (from `https://github.com/jesster2k10/Floaty.git`, branch `swift4.0`)
   - FSCalendar
   - iOSDropDown
+  - MBCircularProgressBar
   - QVRWeekView
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -21,7 +27,9 @@ SPEC REPOS:
     - AlamofireImage
     - FSCalendar
     - iOSDropDown
+    - MBCircularProgressBar
     - QVRWeekView
+    - SDWebImage
 
 EXTERNAL SOURCES:
   Floaty:
@@ -39,8 +47,10 @@ SPEC CHECKSUMS:
   Floaty: df27b72d9ed1e58d48aa3717327ffdb857268c63
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   QVRWeekView: d3941741f5c5b324a097d30d4ea8f4c9a2c2c59c
+  SDWebImage: 29c340dbdcef342bb13125553f4e19ce056b07a7
 
-PODFILE CHECKSUM: e932c3bb24112e56753822af69700358738ea9ef
+PODFILE CHECKSUM: 74dd14795f51ea1ccd05ffcad5c87e0ce811e64c
 
 COCOAPODS: 1.8.4

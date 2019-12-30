@@ -31,7 +31,12 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
         
         let SessionName = contentView?.viewWithTag(2) as! UILabel
         let DateSession = contentView?.viewWithTag(3) as! UILabel
+        let send = contentView?.viewWithTag(5) as! UIImageView
         let view = contentView?.viewWithTag(1)!
+        
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(tapImage(_:)))
+        send.isUserInteractionEnabled = true
+        send.addGestureRecognizer(tapImage)
 
         view!.addShadowView()
 
@@ -39,6 +44,10 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
         DateSession.text = sessionsList[indexPath.row].date
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
+    }
+    
+    @objc func tapImage(_ gesture:UITapGestureRecognizer) {
+        performSegue(withIdentifier: "Send", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -75,7 +84,6 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
             if let sessionDetailsViewController = segue.destination as? SessionViewController {
                 sessionDetailsViewController.session = sessionsList[index.row]
                 sessionDetailsViewController.idSession = String(sessionsList[index.row].id)
-
             }
         }
         else if(segue.identifier == "toAddSession"){

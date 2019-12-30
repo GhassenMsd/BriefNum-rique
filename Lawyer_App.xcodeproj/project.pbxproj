@@ -12,6 +12,11 @@
 		852FC47923B23D92000AE8AE /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47823B23D92000AE8AE /* ClientService.swift */; };
 		852FC47B23B23F00000AE8AE /* UpdateClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47A23B23F00000AE8AE /* UpdateClientViewController.swift */; };
 		852FC47D23B23F36000AE8AE /* ProfilUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */; };
+		852FC48523B67C30000AE8AE /* CercleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC48423B67C30000AE8AE /* CercleService.swift */; };
+		852FC48723B686DD000AE8AE /* TribunalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC48623B686DD000AE8AE /* TribunalService.swift */; };
+		852FC48923B6AB24000AE8AE /* AdversaireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC48823B6AB24000AE8AE /* AdversaireService.swift */; };
+		852FC48B23B6AED7000AE8AE /* Adversaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC48A23B6AED7000AE8AE /* Adversaire.swift */; };
+		852FC48D23B7CFAF000AE8AE /* AdversaireAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC48C23B7CFAF000AE8AE /* AdversaireAddViewController.swift */; };
 		85A7451323918AC800BCE149 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451123918AC800BCE149 /* SignUp.swift */; };
 		85A7451423918AC800BCE149 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451223918AC800BCE149 /* Login.swift */; };
 		85D0BCD6239C6F7400653951 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCD5239C6F7400653951 /* Home.swift */; };
@@ -82,6 +87,11 @@
 		852FC47823B23D92000AE8AE /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
 		852FC47A23B23F00000AE8AE /* UpdateClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateClientViewController.swift; sourceTree = "<group>"; };
 		852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilUserViewController.swift; sourceTree = "<group>"; };
+		852FC48423B67C30000AE8AE /* CercleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CercleService.swift; sourceTree = "<group>"; };
+		852FC48623B686DD000AE8AE /* TribunalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TribunalService.swift; sourceTree = "<group>"; };
+		852FC48823B6AB24000AE8AE /* AdversaireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdversaireService.swift; sourceTree = "<group>"; };
+		852FC48A23B6AED7000AE8AE /* Adversaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adversaire.swift; sourceTree = "<group>"; };
+		852FC48C23B7CFAF000AE8AE /* AdversaireAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdversaireAddViewController.swift; sourceTree = "<group>"; };
 		85A7450F23918A4700BCE149 /* Samim-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Samim-Bold.ttf"; sourceTree = "<group>"; };
 		85A7451123918AC800BCE149 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		85A7451223918AC800BCE149 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -189,6 +199,7 @@
 				8F0F5FA323A1C8F500BC322A /* Tribunal.swift */,
 				8F08CD8123A5BE3D00636CCC /* User.swift */,
 				85D5789F23A8200A00E5AB1F /* RendezVous.swift */,
+				852FC48A23B6AED7000AE8AE /* Adversaire.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +223,9 @@
 				85ECC5A823AA8A53003736F8 /* DemandeService.swift */,
 				85D5789B23A81F2500E5AB1F /* RendezVouzService.swift */,
 				852FC47823B23D92000AE8AE /* ClientService.swift */,
+				852FC48423B67C30000AE8AE /* CercleService.swift */,
+				852FC48623B686DD000AE8AE /* TribunalService.swift */,
+				852FC48823B6AB24000AE8AE /* AdversaireService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +236,7 @@
 				8F33056A2391ED5D001A0DAD /* AffairesListViewController.swift */,
 				8F33056F23942AEA001A0DAD /* AffaireAddViewController.swift */,
 				8F0F623623956C3300301725 /* AffaireDetailsViewController.swift */,
+				852FC48C23B7CFAF000AE8AE /* AdversaireAddViewController.swift */,
 			);
 			path = Affaire;
 			sourceTree = "<group>";
@@ -514,15 +529,18 @@
 				85D0BCDF239EC99800653951 /* ProfilClient.swift in Sources */,
 				8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */,
 				85F3893623AD0A0F002E8985 /* ObjectifUpdateViewController.swift in Sources */,
+				852FC48723B686DD000AE8AE /* TribunalService.swift in Sources */,
 				8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */,
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
 				85D5789C23A81F2500E5AB1F /* RendezVouzService.swift in Sources */,
 				8F0F5F9223A1C18100BC322A /* Contrat.swift in Sources */,
+				852FC48B23B6AED7000AE8AE /* Adversaire.swift in Sources */,
 				8F08CD8523A5C28300636CCC /* LoginService.swift in Sources */,
 				85D5789823A7ACEB00E5AB1F /* EncyclopedieViewController.swift in Sources */,
 				8F0A880C239AA70B0035B20A /* DemandesListViewController.swift in Sources */,
 				8F98800E23901CDB00A44379 /* SceneDelegate.swift in Sources */,
 				85F3893A23AD2162002E8985 /* SessionUpdateViewController.swift in Sources */,
+				852FC48523B67C30000AE8AE /* CercleService.swift in Sources */,
 				852FC47923B23D92000AE8AE /* ClientService.swift in Sources */,
 				8F0F623B2395E83500301725 /* SessionsListViewController.swift in Sources */,
 				8F0F5F8E23A1BD9C00BC322A /* BureauEnquete.swift in Sources */,
@@ -541,6 +559,7 @@
 				85D578A023A8200A00E5AB1F /* RendezVous.swift in Sources */,
 				85D141BD23A6DB63009434A0 /* ObjectifAddViewController.swift in Sources */,
 				8F0F5F9423A1C2C000BC322A /* dataAvocat.swift in Sources */,
+				852FC48923B6AB24000AE8AE /* AdversaireService.swift in Sources */,
 				8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */,
 				85D5789E23A81F7100E5AB1F /* SessionService.swift in Sources */,
 				8F0F5F9C23A1C61400BC322A /* HuissierNotaire.swift in Sources */,
@@ -553,6 +572,7 @@
 				85D5789A23A81EF000E5AB1F /* MissionService.swift in Sources */,
 				8F1260FD23A1295600152FF7 /* Affaire.swift in Sources */,
 				8F0F5FA423A1C8F500BC322A /* Tribunal.swift in Sources */,
+				852FC48D23B7CFAF000AE8AE /* AdversaireAddViewController.swift in Sources */,
 				8F33057023942AEA001A0DAD /* AffaireAddViewController.swift in Sources */,
 				8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */,
 				85D578A223A82AB000E5AB1F /* AffaireService.swift in Sources */,
@@ -695,6 +715,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NXURM49C6Z;
 				INFOPLIST_FILE = Lawyer_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -713,6 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NXURM49C6Z;
 				INFOPLIST_FILE = Lawyer_App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
