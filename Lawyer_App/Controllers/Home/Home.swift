@@ -47,7 +47,10 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
     var sessionsDateTime: Array<Date> = []
     var missionsDateTime: Array<Date> = []
     var rendezVousListeDateTime: Array<Date> = []
-    
+    var sessionByDate: Array<Session> = []
+    var missionByDate: Array<Mission> = []
+    var rendezVousByDate: Array<RendezVous> = []
+
     
     fileprivate let formatter = DateFormatter()
     
@@ -81,6 +84,12 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         calendarBtn.addGestureRecognizer(tapCalendar)
         let tapWeek = UITapGestureRecognizer(target: self, action: #selector(tapWeekBtn(_:)))
         weekBtn.addGestureRecognizer(tapWeek)
+
+        let tapSession = UITapGestureRecognizer(target: self, action: #selector(tapSessionBtn))
+        sessionLabel.addGestureRecognizer(tapSession)
+        
+        let tapMission = UITapGestureRecognizer(target: self, action: #selector(tapMissionBtn))
+        missionLabel.addGestureRecognizer(tapMission)
 
         initCalendarView()
         fetchClient()
@@ -123,6 +132,13 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         }
     }
 
+    @objc func tapSessionBtn(){
+        performSegue(withIdentifier: "toSessionNow", sender: nil)
+    }
+    
+    @objc func tapMissionBtn(){
+        performSegue(withIdentifier: "toListMissionDay", sender: nil)
+    }
     
     func fetchSession(){
         let sessionService = SessionService()
@@ -135,7 +151,10 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
                 return date
             })
             self.sessions = sessions
-            self.sessionLabel.text = "الجلسات (" + String(self.sessionsDate.count) + ")"
+            self.sessionByDate = sessions.filter { (session) -> Bool in
+                session.date.contains(String(Date.init().description.prefix(10)))
+            }
+            self.sessionLabel.text = "الجلسات (" + String(self.sessionByDate.count) + ")"
             self.calendar.reloadData()
             self.weekCalendar.reloadData()
         }
@@ -153,7 +172,11 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
                 return date
             })
             self.rendezvousListe = rendezvousArray
-            self.rendezVouzLabel.text = "المواعيد (" + String(self.rendezVousDate.count) + ")"
+            self.rendezVousByDate = rendezvousArray.filter { (rendezVous) -> Bool in
+                rendezVous.date.contains(String(Date.init().description.prefix(10)))
+            }
+
+            self.rendezVouzLabel.text = "المواعيد (" + String(self.rendezVousByDate.count) + ")"
             self.calendar.reloadData()
             self.weekCalendar.reloadData()
         }
@@ -172,7 +195,10 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
             })
             
             self.missions = missions
-            self.missionLabel.text = "المهام (" + String(self.missionsDate.count) + ")"
+            self.missionByDate = missions.filter { (mission) -> Bool in
+                mission.date.contains(String(Date.init().description.prefix(10)))
+            }
+            self.missionLabel.text = "المهام (" + String(self.missionByDate.count) + ")"
 
             self.calendar.reloadData()
             self.weekCalendar.reloadData()
@@ -338,6 +364,16 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         else if segue.identifier == "toListeClient"{
             if let listeClient = segue.destination as? ListClients{
                 listeClient.clients = sender as! Array<Client>
+            }
+        }
+        else if segue.identifier == "toSessionNow"{
+            if let listSessionController = segue.destination as? SessionListeByDateViewController{
+                listSessionController.sessionsList = self.sessionByDate
+            }
+        }
+        else if segue.identifier == "toListMissionDay"{
+            if let listMissionController = segue.destination as? MissionDayListViewController{
+                listMissionController.missionsList = self.missionByDate
             }
         }
     }

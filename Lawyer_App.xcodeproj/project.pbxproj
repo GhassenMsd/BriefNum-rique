@@ -10,7 +10,6 @@
 		2448F3DF2FEE0A2594A8B5D1 /* Pods_Lawyer_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */; };
 		852FC47723B116F0000AE8AE /* AhkemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47623B116F0000AE8AE /* AhkemListViewController.swift */; };
 		852FC47923B23D92000AE8AE /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47823B23D92000AE8AE /* ClientService.swift */; };
-		852FC47B23B23F00000AE8AE /* UpdateClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47A23B23F00000AE8AE /* UpdateClientViewController.swift */; };
 		852FC47D23B23F36000AE8AE /* ProfilUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */; };
 		852FC48523B67C30000AE8AE /* CercleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC48423B67C30000AE8AE /* CercleService.swift */; };
 		852FC48723B686DD000AE8AE /* TribunalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC48623B686DD000AE8AE /* TribunalService.swift */; };
@@ -33,6 +32,10 @@
 		85D578A023A8200A00E5AB1F /* RendezVous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D5789F23A8200A00E5AB1F /* RendezVous.swift */; };
 		85D578A223A82AB000E5AB1F /* AffaireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D578A123A82AB000E5AB1F /* AffaireService.swift */; };
 		85ECC5A923AA8A53003736F8 /* DemandeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECC5A823AA8A53003736F8 /* DemandeService.swift */; };
+		85ECF4EF23BA1E0F005EDBD8 /* MissionDayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECF4EE23BA1E0F005EDBD8 /* MissionDayListViewController.swift */; };
+		85ECF4F123BA1E3F005EDBD8 /* MissionDayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECF4F023BA1E3F005EDBD8 /* MissionDayDetailViewController.swift */; };
+		85ECF4F323BA1E5D005EDBD8 /* SessionListeByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECF4F223BA1E5D005EDBD8 /* SessionListeByDateViewController.swift */; };
+		85ECF4F523BA1E78005EDBD8 /* SessionDayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85ECF4F423BA1E78005EDBD8 /* SessionDayDetailViewController.swift */; };
 		85F3893423ABEAE3002E8985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F3893323ABEAE2002E8985 /* Main.storyboard */; };
 		85F3893623AD0A0F002E8985 /* ObjectifUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3893523AD0A0F002E8985 /* ObjectifUpdateViewController.swift */; };
 		85F3893823AD214D002E8985 /* DemandeUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F3893723AD214D002E8985 /* DemandeUpdateViewController.swift */; };
@@ -85,7 +88,6 @@
 		620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lawyer_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		852FC47623B116F0000AE8AE /* AhkemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhkemListViewController.swift; sourceTree = "<group>"; };
 		852FC47823B23D92000AE8AE /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
-		852FC47A23B23F00000AE8AE /* UpdateClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateClientViewController.swift; sourceTree = "<group>"; };
 		852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilUserViewController.swift; sourceTree = "<group>"; };
 		852FC48423B67C30000AE8AE /* CercleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CercleService.swift; sourceTree = "<group>"; };
 		852FC48623B686DD000AE8AE /* TribunalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TribunalService.swift; sourceTree = "<group>"; };
@@ -110,6 +112,10 @@
 		85D5789F23A8200A00E5AB1F /* RendezVous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendezVous.swift; sourceTree = "<group>"; };
 		85D578A123A82AB000E5AB1F /* AffaireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffaireService.swift; sourceTree = "<group>"; };
 		85ECC5A823AA8A53003736F8 /* DemandeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandeService.swift; sourceTree = "<group>"; };
+		85ECF4EE23BA1E0F005EDBD8 /* MissionDayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDayListViewController.swift; sourceTree = "<group>"; };
+		85ECF4F023BA1E3F005EDBD8 /* MissionDayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDayDetailViewController.swift; sourceTree = "<group>"; };
+		85ECF4F223BA1E5D005EDBD8 /* SessionListeByDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionListeByDateViewController.swift; sourceTree = "<group>"; };
+		85ECF4F423BA1E78005EDBD8 /* SessionDayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDayDetailViewController.swift; sourceTree = "<group>"; };
 		85F3893323ABEAE2002E8985 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		85F3893523AD0A0F002E8985 /* ObjectifUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectifUpdateViewController.swift; sourceTree = "<group>"; };
 		85F3893723AD214D002E8985 /* DemandeUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemandeUpdateViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +255,8 @@
 				8F0F623C239693CC00301725 /* SessionAddViewController.swift */,
 				85F3893923AD2162002E8985 /* SessionUpdateViewController.swift */,
 				852FC47623B116F0000AE8AE /* AhkemListViewController.swift */,
+				85ECF4F223BA1E5D005EDBD8 /* SessionListeByDateViewController.swift */,
+				85ECF4F423BA1E78005EDBD8 /* SessionDayDetailViewController.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -271,6 +279,8 @@
 				8F0A8807239953E40035B20A /* ObjectifsListViewController.swift */,
 				85D141BC23A6DB63009434A0 /* ObjectifAddViewController.swift */,
 				85F3893523AD0A0F002E8985 /* ObjectifUpdateViewController.swift */,
+				85ECF4EE23BA1E0F005EDBD8 /* MissionDayListViewController.swift */,
+				85ECF4F023BA1E3F005EDBD8 /* MissionDayDetailViewController.swift */,
 			);
 			path = Objectif;
 			sourceTree = "<group>";
@@ -281,7 +291,6 @@
 				85D0BCDE239EC99800653951 /* ProfilClient.swift */,
 				85D0BCE0239FB84100653951 /* ListClients.swift */,
 				85D0BCE923A0010100653951 /* AjoutClient.swift */,
-				852FC47A23B23F00000AE8AE /* UpdateClientViewController.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -525,6 +534,7 @@
 				8F0F5F9823A1C47200BC322A /* Expert.swift in Sources */,
 				8F98801023901CDB00A44379 /* ViewController.swift in Sources */,
 				85D0BCE8239FDCAA00653951 /* Client.swift in Sources */,
+				85ECF4EF23BA1E0F005EDBD8 /* MissionDayListViewController.swift in Sources */,
 				8F0F5F9E23A1C64C00BC322A /* Mission.swift in Sources */,
 				85D0BCDF239EC99800653951 /* ProfilClient.swift in Sources */,
 				8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */,
@@ -546,6 +556,7 @@
 				8F0F5F8E23A1BD9C00BC322A /* BureauEnquete.swift in Sources */,
 				8F08CD8223A5BE3D00636CCC /* User.swift in Sources */,
 				8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */,
+				85ECF4F323BA1E5D005EDBD8 /* SessionListeByDateViewController.swift in Sources */,
 				85D141BF23A6DBA7009434A0 /* DemandeAddViewController.swift in Sources */,
 				8F0F5F9A23A1C56B00BC322A /* HuissierDeJustice.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
@@ -557,8 +568,10 @@
 				8F0F623D239693CC00301725 /* SessionAddViewController.swift in Sources */,
 				8F0F5F9623A1C32500BC322A /* Demande.swift in Sources */,
 				85D578A023A8200A00E5AB1F /* RendezVous.swift in Sources */,
+				85ECF4F123BA1E3F005EDBD8 /* MissionDayDetailViewController.swift in Sources */,
 				85D141BD23A6DB63009434A0 /* ObjectifAddViewController.swift in Sources */,
 				8F0F5F9423A1C2C000BC322A /* dataAvocat.swift in Sources */,
+				85ECF4F523BA1E78005EDBD8 /* SessionDayDetailViewController.swift in Sources */,
 				852FC48923B6AB24000AE8AE /* AdversaireService.swift in Sources */,
 				8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */,
 				85D5789E23A81F7100E5AB1F /* SessionService.swift in Sources */,
@@ -568,7 +581,6 @@
 				8F98802D23902C2300A44379 /* OnBoardingViewController.swift in Sources */,
 				85A7451423918AC800BCE149 /* Login.swift in Sources */,
 				85F3893823AD214D002E8985 /* DemandeUpdateViewController.swift in Sources */,
-				852FC47B23B23F00000AE8AE /* UpdateClientViewController.swift in Sources */,
 				85D5789A23A81EF000E5AB1F /* MissionService.swift in Sources */,
 				8F1260FD23A1295600152FF7 /* Affaire.swift in Sources */,
 				8F0F5FA423A1C8F500BC322A /* Tribunal.swift in Sources */,

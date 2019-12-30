@@ -53,6 +53,7 @@ class ClientService: NSObject {
             "image":image
         ]
         Alamofire.request(Connexion.adresse + "/api/Client/AddClient", method:.post, parameters:parameters,encoding: JSONEncoding.default, headers:["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
+            print(response.result.value)
                 let result = response.result.value as! String
                 
                 completion(result)
@@ -85,7 +86,7 @@ class ClientService: NSObject {
         }
     }
     
-    func updateClient(id: Int, nomComplet: String, dateNaissance: String, lieuNaissance: String, cin_pass: String, dateEmission: String, proffession: String, adresse: String, mail: String, image: String, completion: @escaping (String) -> Void){
+    func updateClient(id: Int, nomComplet: String, dateNaissance: String, lieuNaissance: String, cin_pass: String, dateEmission: String, proffession: String, adresse: String, mail: String, image: String, tel: String, completion: @escaping (String) -> Void){
     let preferences = UserDefaults.standard
     if( preferences.object(forKey: "token") != nil){
         let parameters: Parameters = [
@@ -98,9 +99,25 @@ class ClientService: NSObject {
             "proffession":proffession,
             "adresse":adresse,
             "mail":mail,
-            "image":image
+            "image":image,
+            "tel":tel
         ]
         Alamofire.request(Connexion.adresse + "/api/Client/UpdateClient", method:.post, parameters:parameters,encoding: JSONEncoding.default, headers:["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
+            print(response.result.value)
+                let result = response.result.value as! String
+                
+                completion(result)
+            }
+        }
+    }
+    
+    func deleteClient(id: Int, completion: @escaping (String) -> Void){
+    let preferences = UserDefaults.standard
+    if( preferences.object(forKey: "token") != nil){
+        let parameters: Parameters = [
+            "id": id
+        ]
+        Alamofire.request(Connexion.adresse + "/api/Client/DeleteClient", method:.post, parameters:parameters,encoding: JSONEncoding.default, headers:["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
             print(response.result.value)
                 let result = response.result.value as! String
                 

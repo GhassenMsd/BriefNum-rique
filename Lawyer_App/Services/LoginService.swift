@@ -12,6 +12,9 @@ import Alamofire
 
 class LoginService : NSObject {
     
+    let preferences = UserDefaults.standard
+
+    
     override init() {
     }
 
@@ -36,15 +39,14 @@ class LoginService : NSObject {
             else{
                 let userDict = responseDict["user"] as! Dictionary<String,Any>
                 let user = User(id: userDict["id"] as! Int ,nomComplet: userDict["nomComplet"] as! String,grade: userDict["grade"] as! String ,adresseBureau: userDict["adresseBureau"] as! String ,tel: userDict["tel"] as! String ,img: userDict["img"] as! String ,password: userDict["password"] as! String ,token: responseDict["token"] as! String,email: userDict["email"] as! String)
-                let preferences = UserDefaults.standard
                 
-                preferences.setValue(responseDict["token"] as! String, forKey: "token")
-                preferences.setValue(user.id, forKey: "idUser")
+                self.preferences.setValue(responseDict["token"] as! String, forKey: "token")
+                self.preferences.setValue(user.id, forKey: "idUser")
                 let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: user)
-                preferences.setValue(encodedData, forKey: "user")
+                self.preferences.setValue(encodedData, forKey: "user")
 
                 //  Save to disk
-                let didSave = preferences.synchronize()
+                let didSave = self.preferences.synchronize()
                 if !didSave {
                     print("matsabbech")
                     //  Couldn't save (I've never seen this happen in real world testing)
@@ -52,6 +54,27 @@ class LoginService : NSObject {
                 
                 completion(user)
             }
+        }
+    }
+    
+    func UpdateUser(user: User, completion: @escaping (String) -> Void){
+        
+        let parameters: Parameters = [
+            "id": user.id,
+            "nomComplet": user.nomComplet,
+            "grade": user.grade,
+            "adresseBureau": user.adresseBureau,
+            "tel": user.tel,
+            "email": user.email,
+            "img": user.img
+        ]
+        
+        Alamofire.request(Connexion.adresse + "/api/Avocat/Update", method:.put, parameters:parameters, headers: ["Authorization": "Bearer " + self.preferences.string(forKey: "token")!]).responseJSON { response in
+            print(response.result.value as Any)
+            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: user)
+            self.preferences.setValue(encodedData, forKey: "user")
+
+            completion(response.result.value as! String)
         }
     }
 

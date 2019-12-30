@@ -14,17 +14,20 @@ import UIKit
 
 class AdversaireAddViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    @IBOutlet var ViewPhone: UIView!
+    @IBOutlet var phone: UITextField!
+    @IBOutlet var viewavocatAd: UIView!
+    @IBOutlet var avocatAd: UITextField!
+    
     @IBOutlet var imageUser: UIImageView!
     @IBOutlet var addImageBtn: UIButton!
     @IBOutlet var viewCin: UIView!
     @IBOutlet var dateNaissance: UITextField!
     @IBOutlet var viewDateCin: UIView!
     @IBOutlet var lieuNaissance: UITextField!
-    @IBOutlet var viewDate: UIView!
     @IBOutlet var cin_pass: UITextField!
     @IBOutlet var viewplace: UIView!
     @IBOutlet var dateEmission: UITextField!
-    @IBOutlet var viewName: UIView!
     @IBOutlet var proffession: UITextField!
     @IBOutlet var viewAdress: UIView!
     @IBOutlet var viewMet: UIView!
@@ -81,7 +84,7 @@ class AdversaireAddViewController: UIViewController,UIImagePickerControllerDeleg
         
     @IBAction func addClient(_ sender: Any) {
         if(Verif()){
-            self.adversaireService.addAdversaire(nomComplet: self.nomComplet.text!, dateNaissance: dateNaissance.text!, lieuNaissance: lieuNaissance.text!, cin_pass: cin_pass.text!, dateEmission: dateEmission.text!, proffession: proffession.text!, adresse: adresse.text!, mail: mail.text!, image: imageName, tel:"2222222" ){ (response) in
+            self.adversaireService.addAdversaire(nomComplet: self.nomComplet.text!, dateNaissance: dateNaissance.text!, lieuNaissance: lieuNaissance.text!, cin_pass: cin_pass.text!, dateEmission: dateEmission.text!, proffession: proffession.text!, adresse: adresse.text!, mail: mail.text!, image: imageName, tel: phone.text!, AvocatAdversaire: avocatAd.text! ){ (response) in
                 print(response);
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchAdversaire"), object: nil)
                 self.navigationController?.popViewController(animated: true)
@@ -103,10 +106,10 @@ class AdversaireAddViewController: UIViewController,UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCin.addShadowView()
+        ViewPhone.addShadowView()
+        viewavocatAd.addShadowView()
         viewDateCin.addShadowView()
-        viewDate.addShadowView()
         viewplace.addShadowView()
-        viewName.addShadowView()
         viewAdress.addShadowView()
         viewMet.addShadowView()
         viewMail.addShadowView()

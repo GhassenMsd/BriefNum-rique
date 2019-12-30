@@ -12,7 +12,8 @@ import SDWebImage
 class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var clients: Array<Client> = []
-    
+    let clientService = ClientService()
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Home.clients.count
     }
@@ -72,6 +73,30 @@ class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var ClientTableView: UITableView!
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete{
+            let alert = UIAlertController(title: nil, message: "هل تريد حقاً حذف هذا الحريف ؟", preferredStyle: .alert)
+
+            // yes action
+            let yesAction = UIAlertAction(title: "تأكيد", style: .default) { _ in
+                // replace data variable with your own data array
+                self.clientService.deleteClient(id: Home.clients[indexPath.row].id) { _ in
+                    Home.clients.remove(at: indexPath.row)
+                    self.ClientTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                    self.ClientTableView.reloadData()
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchClient"), object: nil)
+                }
+            }
+            alert.addAction(yesAction)
+
+            // cancel action
+            alert.addAction(UIAlertAction(title: "إلغاء", style: .cancel, handler: nil))
+
+            present(alert, animated: true, completion: nil)
+            
+            print("delete")
+        }
+    }
     
     @objc func fetchClients(){
         ClientTableView.reloadData()

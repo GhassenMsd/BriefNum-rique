@@ -41,13 +41,12 @@ class AjoutClient: UIViewController,UIImagePickerControllerDelegate,UINavigation
 
     @IBOutlet weak var imageUser: UIImageView!
     @IBOutlet weak var viewCin: UIView!
-    @IBOutlet weak var viewDateCin: UIView!
     @IBOutlet weak var viewDate: UIView!
-    @IBOutlet weak var viewplace: UIView!
     @IBOutlet weak var viewName: UIView!
     @IBOutlet weak var viewAdress: UIView!
     @IBOutlet weak var viewMet: UIView!
     @IBOutlet weak var viewMail: UIView!
+    @IBOutlet weak var viewTel: UIView!
     @IBOutlet weak var addImageBtn: UIButton!
     let imagePicker = UIImagePickerController()
     var imageName:String = "avatar.png"
@@ -60,6 +59,7 @@ class AjoutClient: UIViewController,UIImagePickerControllerDelegate,UINavigation
     @IBOutlet weak var proffession: UITextField!
     @IBOutlet weak var adresse: UITextField!
     @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var tel: UITextField!
     let clientService = ClientService()
     var datePicker = UIDatePicker()
     var datePickerEmission = UIDatePicker()
@@ -98,13 +98,17 @@ class AjoutClient: UIViewController,UIImagePickerControllerDelegate,UINavigation
             self.mail.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
             verif = false
         }
+        if(self.tel.text!.isEmpty){
+            self.tel.isError(baseColor: UIColor.gray.cgColor, numberOfShakes: 3, revert: true)
+            verif = false
+        }
 
         return verif
     }
         
     @IBAction func addClient(_ sender: Any) {
         if(Verif()){
-            self.clientService.addClient(nomComplet: self.nomComplet.text!, dateNaissance: dateNaissance.text!, lieuNaissance: lieuNaissance.text!, cin_pass: cin_pass.text!, dateEmission: dateEmission.text!, proffession: proffession.text!, adresse: adresse.text!, mail: mail.text!, image: imageName, tel:"2222222" ){ (response) in
+            self.clientService.addClient(nomComplet: self.nomComplet.text!, dateNaissance: dateNaissance.text!, lieuNaissance: lieuNaissance.text!, cin_pass: cin_pass.text!, dateEmission: dateEmission.text!, proffession: proffession.text!, adresse: adresse.text!, mail: mail.text!, image: imageName, tel: tel.text! ){ (response) in
                 print(response);
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchClient"), object: nil)
                 self.navigationController?.popViewController(animated: true)
@@ -125,9 +129,8 @@ class AjoutClient: UIViewController,UIImagePickerControllerDelegate,UINavigation
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCin.addShadowView()
-        viewDateCin.addShadowView()
         viewDate.addShadowView()
-        viewplace.addShadowView()
+        viewTel.addShadowView()
         viewName.addShadowView()
         viewAdress.addShadowView()
         viewMet.addShadowView()

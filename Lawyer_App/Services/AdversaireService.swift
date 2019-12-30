@@ -24,7 +24,7 @@ class AdversaireService: NSObject {
             
             var adversaires:Array<Adversaire> = []
             for adversaireDict in response.result.value as! Array<Dictionary<String,Any>> {
-                adversaires.append(Adversaire(id: adversaireDict["id"] as! Int, nomComplet: adversaireDict["nomComplet"] as! String, cin_pass: adversaireDict["cin_pass"] as! String, dateEmission: adversaireDict["dateEmission"] as! String, tel: adversaireDict["tel"] as! String, dateNaissance: adversaireDict["dateNaissance"] as! String, lieuNaissance: adversaireDict["lieuNaissance"] as! String, adresse: adversaireDict["adresse"] as! String, proffession: adversaireDict["proffession"] as! String, mail: adversaireDict["mail"] as! String, num_Av: adversaireDict["num_Av"] as! Int, image: adversaireDict["image"] as! String, etat: adversaireDict["etat"] as! String))
+                adversaires.append(Adversaire(id: adversaireDict["id"] as! Int, nomComplet: adversaireDict["nomComplet"] as! String, cin_pass: adversaireDict["cin_pass"] as! String, dateEmission: adversaireDict["dateEmission"] as! String, tel: adversaireDict["tel"] as! String, dateNaissance: adversaireDict["dateNaissance"] as! String, lieuNaissance: adversaireDict["lieuNaissance"] as! String, adresse: adversaireDict["adresse"] as! String, proffession: adversaireDict["proffession"] as! String, mail: adversaireDict["mail"] as! String, num_Av: adversaireDict["num_Av"] as! Int, image: adversaireDict["image"] as! String, etat: adversaireDict["etat"] as! String,AvocatAdversaire: adversaireDict["AvocatAdversaire"] as! String))
                 }
 
                 completion(adversaires)
@@ -36,7 +36,7 @@ class AdversaireService: NSObject {
         }
     
     
-    func addAdversaire(nomComplet: String, dateNaissance: String, lieuNaissance: String, cin_pass: String, dateEmission: String, proffession: String, adresse: String, mail: String, image: String, tel: String, completion: @escaping (String) -> Void){
+    func addAdversaire(nomComplet: String, dateNaissance: String, lieuNaissance: String, cin_pass: String, dateEmission: String, proffession: String, adresse: String, mail: String, image: String, tel: String,AvocatAdversaire: String, completion: @escaping (String) -> Void){
     let preferences = UserDefaults.standard
     if( preferences.object(forKey: "token") != nil){
         let parameters: Parameters = [
@@ -50,7 +50,8 @@ class AdversaireService: NSObject {
             "mail":mail,
             "tel":tel,
             "num_Av":preferences.string(forKey: "idUser")!,
-            "image":image
+            "image":image,
+            "AvocatAdversaire":AvocatAdversaire
         ]
         Alamofire.request(Connexion.adresse + "/api/Adversaire/AddAdversaire", method:.post, parameters:parameters,encoding: JSONEncoding.default, headers:["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
                 let result = response.result.value as! String
