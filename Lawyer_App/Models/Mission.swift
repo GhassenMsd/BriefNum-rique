@@ -19,12 +19,12 @@ class Mission: NSObject {
     var type = ""
     var requis = ""
     var notes = ""
-    var id_Aff = ""
+    var id_Aff = 0
     
     override init() {
         
     }
-    init(id: Int, nomMission: String, date: String,duree: String, partieConsernee: String, adressePartieC: String, type: String, requis: String, notes: String, id_Aff: String){
+    init(id: Int, nomMission: String, date: String,duree: String, partieConsernee: String, adressePartieC: String, type: String, requis: String, notes: String, id_Aff: Int){
         self.id = id
         self.nomMission = nomMission
         self.date = date

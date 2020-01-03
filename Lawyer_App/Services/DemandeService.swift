@@ -26,7 +26,7 @@ class DemandeService: NSObject {
                 //print(response.result.value as Any)
             var demandes:Array<Demande> = []
             for demandeDict in response.result.value as! Array<Dictionary<String,Any>> {
-                demandes.append(Demande(id: demandeDict["id"] as! Int, nomDomande: demandeDict["nomDemande"] as! String, partieConcernee: demandeDict["partieConcernée"] as! String, type: demandeDict["type"] as! String, sujet: demandeDict["sujet"] as! String, date: String((demandeDict["date"] as! String).prefix(10)), notes: demandeDict["notes"] as! String, id_Aff: demandeDict["id_Aff"] as! String))
+                demandes.append(Demande(id: demandeDict["id"] as! Int, nomDomande: demandeDict["nomDemande"] as! String, partieConcernee: demandeDict["partieConcernée"] as! String, type: demandeDict["type"] as! String, sujet: demandeDict["sujet"] as! String, date: String((demandeDict["date"] as! String).prefix(10)), notes: demandeDict["notes"] as! String, id_Aff: demandeDict["id_Aff"] as! Int))
             }
             completion(demandes)
                 
@@ -89,7 +89,7 @@ class DemandeService: NSObject {
                 response in
                 //print(response.result.value as! Array<Dictionary<String,Any>>)
             let responseDict = response.result.value as! Dictionary<String,Any>
-            let demande = Demande(id: responseDict["id"] as! Int, nomDomande: responseDict["nomDemande"] as! String, partieConcernee: responseDict["partieConcernée"] as! String, type: responseDict["type"] as! String, sujet: responseDict["sujet"] as! String, date: responseDict["date"] as! String, notes: responseDict["notes"] as! String, id_Aff: responseDict["id_Aff"] as! String)
+            let demande = Demande(id: responseDict["id"] as! Int, nomDomande: responseDict["nomDemande"] as! String, partieConcernee: responseDict["partieConcernée"] as! String, type: responseDict["type"] as! String, sujet: responseDict["sujet"] as! String, date: responseDict["date"] as! String, notes: responseDict["notes"] as! String, id_Aff: responseDict["id_Aff"] as! Int)
             completion(demande)
                 
             }

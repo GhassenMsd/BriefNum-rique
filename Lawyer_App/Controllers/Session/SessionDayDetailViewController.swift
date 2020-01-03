@@ -24,7 +24,7 @@ class SessionDayDetailViewController: UIViewController {
         super.viewDidLoad()
         ViewSession.addShadowView()
         self.navBar.title = "جلسة " + String(session.date.prefix(10))
-        self.numAffaire.text = session.id_Aff
+        self.numAffaire.text = String(session.id_Aff)
         self.noteSession.text = session.notes
         self.dateSession.text = session.date
         self.sujetSession.text = session.sujet

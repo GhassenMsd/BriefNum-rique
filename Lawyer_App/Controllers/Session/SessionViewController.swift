@@ -24,9 +24,10 @@ class SessionViewController: UIViewController {
     @objc func fetchSessionDetail() -> Void {
         let sessionServices = SessionService()
         sessionServices.getSessionById(id: idSession){ (session) in
-            self.navBar.title = session.nomSession
+            
+            self.navBar.title = "جلسة " + String(session.date.prefix(10))
             self.noteSession.text = session.notes
-            self.dateSession.text = session.date
+            self.dateSession.text = String(session.date.prefix(10))
             self.sujetSession.text = session.sujet
             self.Disp_prepSession.text = session.Disp_prep
         }

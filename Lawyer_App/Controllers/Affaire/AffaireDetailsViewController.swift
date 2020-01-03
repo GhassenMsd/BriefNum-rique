@@ -50,7 +50,7 @@ class AffaireDetailsViewController: UIViewController {
     @objc func fetchDemande() -> Void {
         let demandeService = DemandeService()
 
-        demandeService.getAllByAffaire(idAffaire: affaire.numAff){ (demandes) in
+        demandeService.getAllByAffaire(idAffaire: String(affaire.numAff)){ (demandes) in
             if(demandes.count == 0){
                 self.demandeNon.isHidden = false
                 self.demandeNon.text = "ليس لديك مطالب"
@@ -69,7 +69,7 @@ class AffaireDetailsViewController: UIViewController {
     @objc func fetchSession() -> Void {
         let sessionService = SessionService()
 
-        sessionService.getAllByAffaire(idAffaire: affaire.numAff){ (sessions) in
+        sessionService.getAllByAffaire(idAffaire: String(affaire.numAff)){ (sessions) in
             if (sessions.count == 0){
                 self.sessionNon.isHidden = false
                 self.ahkemNo.isHidden = false
@@ -80,7 +80,7 @@ class AffaireDetailsViewController: UIViewController {
 
             }else{
                 self.sessionS = sessions[0]
-                self.SessionName.text = sessions[0].nomSession
+                self.SessionName.text = "جلسة " + sessions[0].date
                 self.SessionDate.text = sessions[0].date
                 self.ahkemText.text = sessions[0].Disp_prep
                 
@@ -94,7 +94,7 @@ class AffaireDetailsViewController: UIViewController {
     
     @objc func fetchMission() -> Void {
         let missionService = MissionService()
-        missionService.getAllByAffaire(idAffaire: affaire.numAff){ (missions) in
+        missionService.getAllByAffaire(idAffaire: String(affaire.numAff)){ (missions) in
             print("miiiiiiiiii " + String(missions.count))
             if(missions.count == 0){
                 self.misssionsNon.isHidden = false
@@ -114,9 +114,9 @@ class AffaireDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navbar.title = "قظية " + affaire.numAff
+        navbar.title = "قظية " + String(affaire.numeroAffaire)
         //detailsAffaire
-        self.numeroAff.text = affaire.numAff
+        self.numeroAff.text = String(affaire.numeroAffaire)
         self.SujetAffaire.text = affaire.sujet
         self.cercle.text = affaire.cercle
         
@@ -233,37 +233,37 @@ class AffaireDetailsViewController: UIViewController {
         
         else if segue.identifier == "toListSession"{
             if let sessionsListViewController = segue.destination as? SessionsListViewController {
-                sessionsListViewController.idAffaire = affaire.numAff
+                sessionsListViewController.idAffaire = String(affaire.numAff)
             }
         }
             else if segue.identifier == "tiListAhkem"{
                 if let ahkemListViewController = segue.destination as? AhkemListViewController {
-                    ahkemListViewController.idAffaire = affaire.numAff
+                    ahkemListViewController.idAffaire = String(affaire.numAff)
                 }
             }
         else if segue.identifier == "toListObjectif"{
             if let objectifsListViewController = segue.destination as? ObjectifsListViewController {
-                objectifsListViewController.idAffaire = affaire.numAff
+                objectifsListViewController.idAffaire = String(affaire.numAff)
             }
         }
         else if segue.identifier == "toListDemande"{
             if let demandesListViewController = segue.destination as? DemandesListViewController {
-                demandesListViewController.idAffaire = affaire.numAff
+                demandesListViewController.idAffaire = String(affaire.numAff)
             }
         }
         else if segue.identifier == "AjoutSession"{
             if let sessionAddViewController = segue.destination as? SessionAddViewController {
-                sessionAddViewController.idAffaireFromHome = affaire.numAff
+                sessionAddViewController.idAffaireFromHome = String(affaire.numAff)
             }
         }
         else if segue.identifier == "AjoutMission"{
             if let objectifAddViewController = segue.destination as? ObjectifAddViewController {
-                objectifAddViewController.idAffaireFromHome = affaire.numAff
+                objectifAddViewController.idAffaireFromHome = String(affaire.numAff)
             }
         }
         else if segue.identifier == "AjoutDemande"{
             if let demandeAddViewController = segue.destination as? DemandeAddViewController {
-                demandeAddViewController.idAffaireFromHome = affaire.numAff
+                demandeAddViewController.idAffaireFromHome = String(affaire.numAff)
             }
         }
     }

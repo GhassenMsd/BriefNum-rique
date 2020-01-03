@@ -53,7 +53,6 @@ class ClientService: NSObject {
             "image":image
         ]
         Alamofire.request(Connexion.adresse + "/api/Client/AddClient", method:.post, parameters:parameters,encoding: JSONEncoding.default, headers:["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
-            print(response.result.value)
                 let result = response.result.value as! String
                 
                 completion(result)
@@ -103,7 +102,6 @@ class ClientService: NSObject {
             "tel":tel
         ]
         Alamofire.request(Connexion.adresse + "/api/Client/UpdateClient", method:.post, parameters:parameters,encoding: JSONEncoding.default, headers:["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
-            print(response.result.value)
                 let result = response.result.value as! String
                 
                 completion(result)
@@ -118,7 +116,6 @@ class ClientService: NSObject {
             "id": id
         ]
         Alamofire.request(Connexion.adresse + "/api/Client/DeleteClient", method:.post, parameters:parameters,encoding: JSONEncoding.default, headers:["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON { response in
-            print(response.result.value)
                 let result = response.result.value as! String
                 
                 completion(result)

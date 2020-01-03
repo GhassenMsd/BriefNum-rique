@@ -17,13 +17,13 @@ class Demande: NSObject {
     var sujet = ""
     var date = ""
     var notes = ""
-    var id_Aff = ""
+    var id_Aff = 0
     
     override init() {
         
     }
     
-    init(id: Int, nomDomande: String, partieConcernee: String, type: String, sujet: String, date: String, notes: String, id_Aff: String){
+    init(id: Int, nomDomande: String, partieConcernee: String, type: String, sujet: String, date: String, notes: String, id_Aff: Int){
         self.id = id
         self.nomDemande = nomDomande
         self.partieConcernee = partieConcernee

@@ -49,7 +49,13 @@ extension UIColor {
 class AffaireAddViewController: UIViewController, UITextViewDelegate {
  
  
-@IBOutlet weak var degree: DropDown!
+@IBOutlet var numText: UITextField!
+@IBOutlet var ViewNum: UIView!
+@IBOutlet var DateView: UIView!
+@IBOutlet var dateText: UITextField!
+
+    
+@IBOutlet var degree: DropDown!
 @IBOutlet weak var sujet: UITextView!
 @IBOutlet weak var client: DropDown!
 @IBOutlet weak var etat: DropDown!
@@ -62,12 +68,20 @@ class AffaireAddViewController: UIViewController, UITextViewDelegate {
 @IBOutlet weak var ViewDocument: UIView!
 @IBOutlet weak var ViewAdd: UIButton!
     
+    
+var datePicker = UIDatePicker()
+
 var hiden = true
 var hidenClient = true
 var hidenAvocat = true
 var hidenEtat = true
     
     
+var idTribunal = 0
+var idCercle = 0
+var idClient = 0
+var idAdversaire = 0
+
     
 var listEtat : Array<Cercle> = []
 
@@ -152,13 +166,18 @@ var listAvocat : Array<Adversaire> = []
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchClient()
+        
+        
+       
         //DropDownList degree
         fetchTribunal()
         
         
         degree.didSelect{(selectedText , index ,id) in
             self.hiden = true
-            print("lisstt indexx " + String(self.list[index].id))
+            self.idTribunal = self.list[index].id
+            print("idTribunal " + String(self.idTribunal))
+            
             self.fetchCercle(id: String(self.list[index].id))
         }
         
@@ -179,8 +198,9 @@ var listAvocat : Array<Adversaire> = []
     
         client.didSelect{(selectedText , index ,id) in
             self.hidenClient = true
-            
-            
+            self.idClient = self.listClient[index].id
+            print("idClient " + String(self.idClient))
+
             
             }
         client.listWillAppear {
@@ -192,8 +212,9 @@ var listAvocat : Array<Adversaire> = []
         
         //DropDownList client
         etat.didSelect{(selectedText , index ,id) in
+            self.idCercle = self.listEtat[index].id
+            print("idCercle " + String(self.idCercle))
 
-            
             self.hidenEtat = true
             }
         etat.listWillAppear {
@@ -210,12 +231,12 @@ var listAvocat : Array<Adversaire> = []
         
         avocat.didSelect{(selectedText , index ,id) in
             self.hidenAvocat = true
-            print(selectedText)
 
             if(selectedText == "إضافة ضد"){
                 self.performSegue(withIdentifier: "addAdversaire", sender: self)
                 print("idhaafeett dhed")
             }else{
+                self.idAdversaire = self.listAvocat[index].id
                 print("lisstt indexx from dhed " + String(self.listAvocat[index].id))
             }
             }
@@ -226,7 +247,18 @@ var listAvocat : Array<Adversaire> = []
             self.hidenAvocat = true
         }
         
+        datePicker.datePickerMode = .dateAndTime
+        dateText.inputView = datePicker
+       
+        datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
+        let tapDate = UITapGestureRecognizer(target: self, action: #selector(tapDateGuesture))
+        self.view.addGestureRecognizer(tapDate)
+               
+               
+        
         sujet.delegate = self
+        ViewNum.addShadowView()
+        DateView.addShadowView()
         ViewDegree.addShadowView()
         ViewClient.addShadowView()
         ViewAvocat.addShadowView()
@@ -237,6 +269,21 @@ var listAvocat : Array<Adversaire> = []
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @objc func tapDateGuesture(){
+        view.endEditing(true)
+    }
+
+    @objc func dateChanged(){
+        getDateFromPicker()
+    }
+    
+    func getDateFromPicker(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd hh:mm"
+        dateText.text = formatter.string(from: datePicker.date)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -307,4 +354,18 @@ var listAvocat : Array<Adversaire> = []
     }
     
 }
+    
+    @IBAction func AddAffaire(_ sender: Any) {
+        let affaireService = AffaireService()
+        let sessionServices = SessionService()
+        affaireService.addAffaire(degre: self.idTribunal, sujet: sujet.text!, date: dateText.text!, numeroAffaire: numText.text!, id_Clt: self.idClient, id_Crl: self.idCercle,idAdversaire: self.idAdversaire) { (id) in
+            sessionServices.AddSession(nomSession: "", date: self.dateText.text!, sujet: "", notes: "", Disp_prep: "", Cpt_Rd_Sess: "", id_Aff: id){ () in
+                
+            }
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchAffaire"), object: nil)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+
 }

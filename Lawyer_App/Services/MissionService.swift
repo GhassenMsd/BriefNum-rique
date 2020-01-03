@@ -25,7 +25,7 @@ class MissionService: NSObject {
                     print(response.result.value as! Array<Dictionary<String,Any>>)
                 var missions:Array<Mission> = []
                 for missionDict in response.result.value as! Array<Dictionary<String,Any>> {
-                    missions.append(Mission(id : missionDict["id"] as! Int, nomMission : missionDict["nomMission"] as! String,date : (missionDict["date"] as! String), duree : missionDict["duree"] as! String, partieConsernee : missionDict["partieConcernee"] as! String , adressePartieC : missionDict["adressePartieC"] as! String , type : missionDict["type"] as! String, requis : missionDict["requis"] as! String, notes : missionDict["notes"] as! String , id_Aff: missionDict["id_Aff"] as! String ))
+                    missions.append(Mission(id : missionDict["id"] as! Int, nomMission : missionDict["nomMission"] as! String,date : (missionDict["date"] as! String), duree : missionDict["duree"] as! String, partieConsernee : missionDict["partieConcernee"] as! String , adressePartieC : missionDict["adressePartieC"] as! String , type : missionDict["type"] as! String, requis : missionDict["requis"] as! String, notes : missionDict["notes"] as! String , id_Aff: missionDict["id_Aff"] as! Int ))
                 }
                 completion(missions)
                     
@@ -43,7 +43,7 @@ class MissionService: NSObject {
                 print(response.result.value as! Array<Dictionary<String,Any>>)
             var missions:Array<Mission> = []
             for missionDict in response.result.value as! Array<Dictionary<String,Any>> {
-                missions.append(Mission(id : missionDict["id"] as! Int, nomMission : missionDict["nomMission"] as! String,date : String((missionDict["date"] as! String).prefix(10)), duree : missionDict["duree"] as! String, partieConsernee : missionDict["partieConcernee"] as! String , adressePartieC : missionDict["adressePartieC"] as! String , type : missionDict["type"] as! String, requis : missionDict["requis"] as! String, notes : missionDict["notes"] as! String, id_Aff: missionDict["id_Aff"] as! String))
+                missions.append(Mission(id : missionDict["id"] as! Int, nomMission : missionDict["nomMission"] as! String,date : String((missionDict["date"] as! String).prefix(10)), duree : missionDict["duree"] as! String, partieConsernee : missionDict["partieConcernee"] as! String , adressePartieC : missionDict["adressePartieC"] as! String , type : missionDict["type"] as! String, requis : missionDict["requis"] as! String, notes : missionDict["notes"] as! String, id_Aff: missionDict["id_Aff"] as! Int))
             }
             completion(missions)
                 
@@ -114,7 +114,7 @@ class MissionService: NSObject {
                 //print(response.result.value as! Array<Dictionary<String,Any>>)
             let responseDict = response.result.value as! Dictionary<String,Any>
 
-            let mission = Mission(id: responseDict["id"] as! Int, nomMission: responseDict["nomMission"] as! String, date: responseDict["date"] as! String, duree: responseDict["duree"] as! String, partieConsernee: responseDict["partieConcernee"] as! String, adressePartieC: responseDict["adressePartieC"] as! String, type: responseDict["type"] as! String, requis: responseDict["requis"] as! String, notes: responseDict["notes"] as! String, id_Aff: responseDict["id_Aff"] as! String)
+            let mission = Mission(id: responseDict["id"] as! Int, nomMission: responseDict["nomMission"] as! String, date: responseDict["date"] as! String, duree: responseDict["duree"] as! String, partieConsernee: responseDict["partieConcernee"] as! String, adressePartieC: responseDict["adressePartieC"] as! String, type: responseDict["type"] as! String, requis: responseDict["requis"] as! String, notes: responseDict["notes"] as! String, id_Aff: responseDict["id_Aff"] as! Int)
 
             completion(mission)
                 

@@ -14,6 +14,8 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
     var sessionsList : Array<Session> = []
     var idAffaire = ""
     @IBOutlet var hideJalsa: UILabel!
+    var selectedCell:Int!
+
     
 
     @IBAction func BackAction(_ sender: Any) {
@@ -31,22 +33,23 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
         
         let SessionName = contentView?.viewWithTag(2) as! UILabel
         let DateSession = contentView?.viewWithTag(3) as! UILabel
-        let send = contentView?.viewWithTag(5) as! UIImageView
+        //let send = contentView?.viewWithTag(5) as! UIImageView
         let view = contentView?.viewWithTag(1)!
-        
         let tapImage = UITapGestureRecognizer(target: self, action: #selector(tapImage(_:)))
-        send.isUserInteractionEnabled = true
-        send.addGestureRecognizer(tapImage)
+        cell?.contentView.viewWithTag(5)?.isUserInteractionEnabled = true
+        cell?.contentView.viewWithTag(5)?.addGestureRecognizer(tapImage)
+        cell?.contentView.viewWithTag(5)?.tag = indexPath.row
 
+        
         view!.addShadowView()
-
-        SessionName.text = sessionsList[indexPath.row].nomSession
+        SessionName.text = "جلسة " + sessionsList[indexPath.row].date
         DateSession.text = sessionsList[indexPath.row].date
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
     }
     
-    @objc func tapImage(_ gesture:UITapGestureRecognizer) {
+    @objc func tapImage(_ sender:UITapGestureRecognizer) {
+        self.selectedCell = sender.view?.tag
         performSegue(withIdentifier: "Send", sender: nil)
     }
     
@@ -91,12 +94,18 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
                 sessionAddViewCtroller.idAffaire = self.idAffaire
             }
             
+        }else if(segue.identifier == "Send"){
+
+            if let ListAvocats = segue.destination as? ListAvocatsViewController {
+                ListAvocats.dateSession = sessionsList[self.selectedCell].date
+                ListAvocats.idTrib = sessionsList[self.selectedCell].tribunal
+            }
         }
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         performSegue(withIdentifier: "toSessionDetails", sender: sessionsTableView.cellForRow(at: indexPath))
     }
     

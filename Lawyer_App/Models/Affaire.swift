@@ -10,36 +10,34 @@ import UIKit
 
 class Affaire: NSObject {
     
-    var nameAff = ""
-    var numAff = ""
-    var degre = ""
+    var numAff = 0
+    var degre = 0
     var sujet = ""
     var date = ""
     var etat = ""
+    var numeroAffaire = 0
     var idClt = 0
     var idCrl = 0
-    var numCasPrec = ""
-    var numAvCont = ""
-    var etatAvCont = 0
+    var idAdversaire = 0
     var cercle = ""
+    var tribunal = ""
     //var id_Av = 0
     
     override init() {
         
     }
     
-    init(nameAff: String, numAff: String, degre: String, sujet: String,date: String, etat: String, idClt: Int, idCrl: Int, numCasPrec: String, numAvCont: String, etatAvCont: Int,cercle: String){
+    init(numAff: Int,degre: Int, sujet: String,date: String, etat: String,numeroAffaire: Int, idClt: Int, idCrl: Int,cercle: String,tribunal: String,idAdversaire: Int){
         self.numAff = numAff
-        self.nameAff = nameAff
         self.degre = degre
         self.sujet = sujet
         self.date = date
         self.etat = etat
+        self.numeroAffaire = numeroAffaire
         self.idClt = idClt
         self.idCrl = idCrl
-        self.numCasPrec = numCasPrec
-        self.numAvCont = numAvCont
-        self.etatAvCont = etatAvCont
         self.cercle = cercle
+        self.tribunal = tribunal
+        self.idAdversaire = idAdversaire
     }
 }

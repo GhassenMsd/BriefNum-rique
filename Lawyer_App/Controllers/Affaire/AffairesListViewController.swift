@@ -17,12 +17,7 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var AffairesTableView: UITableView!
     @IBOutlet weak var ViewSearch: UIView!
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        ViewSearch.addShadowView()
-        
+    @objc func fetchAffaire() -> Void {
         affaireService.getAll() { (affaires) in
             if (affaires.count == 0){
                 self.KadhayaNon.text = "ليس لديك قضايا"
@@ -31,6 +26,14 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
                 self.AffairesTableView.reloadData()
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ViewSearch.addShadowView()
+        
+        fetchAffaire()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchAffaire), name: NSNotification.Name(rawValue: "fetchAffaire"), object: nil)
 
     }
     
@@ -49,8 +52,8 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
 
         view!.addShadowView()
 
-            numAffaire.text =  "قظية " + affairesList[indexPath.row].numAff
-            tribunal.text = affairesList[indexPath.row].degre
+        numAffaire.text =  "قظية " + String(affairesList[indexPath.row].numeroAffaire)
+            tribunal.text = affairesList[indexPath.row].tribunal
             cercle.text = affairesList[indexPath.row].cercle
         
         
@@ -60,7 +63,28 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
+            let alert = UIAlertController(title: nil, message: "هل تريد حقاً حذف هذه القضية ؟", preferredStyle: .alert)
+
+            // yes action
+            let yesAction = UIAlertAction(title: "تأكيد", style: .default) { _ in
+                // replace data variable with your own data array
+                
+                self.affaireService.DeleteAffaire(id: String(self.affairesList[indexPath.row].numAff)){ () in
+                    self.affairesList.remove(at: indexPath.row)
+                    self.AffairesTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+                    self.AffairesTableView.reloadData()
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchAffaire"), object: nil)
+                }
+            }
+            alert.addAction(yesAction)
+
+            // cancel action
+            alert.addAction(UIAlertAction(title: "إلغاء", style: .cancel, handler: nil))
+
+            present(alert, animated: true, completion: nil)
+            
             print("delete")
+            
         }
     }
     

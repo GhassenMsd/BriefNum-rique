@@ -15,7 +15,7 @@ class SessionService: NSObject {
     override init() {
     }
     
-    func getAll (completion: @escaping (Array<Session>) -> Void) {
+func getAll (completion: @escaping (Array<Session>) -> Void) {
         
         let preferences = UserDefaults.standard
             //  Couldn't save (I've never seen this happen in real world testing)
@@ -27,7 +27,7 @@ class SessionService: NSObject {
                     //print(response.result.value as Any)
                 var sessions:Array<Session> = []
                 for sessionDict in response.result.value as! Array<Dictionary<String,Any>> {
-                    sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : (sessionDict["date"] as! String), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! String ))
+                    sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : (sessionDict["date"] as! String), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! Int ,tribunal: sessionDict["id_trib"] as! Int))
                 }
                 completion(sessions)
                     
@@ -36,7 +36,8 @@ class SessionService: NSObject {
         }
     
     
-    func getAllByAffaire (idAffaire: String,completion: @escaping (Array<Session>) -> Void) {
+    
+func getAllByAffaire (idAffaire: String,completion: @escaping (Array<Session>) -> Void) {
     
     let preferences = UserDefaults.standard
         //  Couldn't save (I've never seen this happen in real world testing)
@@ -48,7 +49,7 @@ class SessionService: NSObject {
                 //print(response.result.value as Any)
             var sessions:Array<Session> = []
             for sessionDict in response.result.value as! Array<Dictionary<String,Any>> {
-                sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : String((sessionDict["date"] as! String).prefix(10)), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! String ))
+                sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : String((sessionDict["date"] as! String).prefix(10)), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! Int ,tribunal: sessionDict["id_trib"] as! Int))
             }
             completion(sessions)
                 
@@ -57,7 +58,7 @@ class SessionService: NSObject {
     }
     
     
-    func AddSession(nomSession: String, date: String,sujet: String,notes: String,Disp_prep: String,Cpt_Rd_Sess: String,id_Aff: Int, completion: @escaping () -> Void){
+func AddSession(nomSession: String, date: String,sujet: String,notes: String,Disp_prep: String,Cpt_Rd_Sess: String,id_Aff: Int, completion: @escaping () -> Void){
         
         let preferences = UserDefaults.standard
         let parameters: Parameters = [
@@ -75,7 +76,7 @@ class SessionService: NSObject {
         }
     }
     
-    func DeleteSession(id: String, completion: @escaping () -> Void){
+func DeleteSession(id: String, completion: @escaping () -> Void){
         
         let preferences = UserDefaults.standard
         
@@ -84,7 +85,7 @@ class SessionService: NSObject {
         }
     }
     
-    func UpdateSession(id: String,nomSession: String, date: String,sujet: String,notes: String,Disp_prep: String,Cpt_Rd_Sess: String, completion: @escaping () -> Void){
+func UpdateSession(id: String,nomSession: String, date: String,sujet: String,notes: String,Disp_prep: String,Cpt_Rd_Sess: String, completion: @escaping () -> Void){
         
         let preferences = UserDefaults.standard
         let parameters: Parameters = [
@@ -102,7 +103,7 @@ class SessionService: NSObject {
         }
     }
     
-    func getSessionById (id: String,completion: @escaping (Session) -> Void) {
+func getSessionById (id: String,completion: @escaping (Session) -> Void) {
     
     let preferences = UserDefaults.standard
        
@@ -110,7 +111,7 @@ class SessionService: NSObject {
                 response in
                 //print(response.result.value as! Array<Dictionary<String,Any>>)
             let responseDict = response.result.value as! Dictionary<String,Any>
-            let session = Session(id: responseDict["id"] as! Int , nomSession: responseDict["nomSession"] as! String, date: responseDict["date"] as! String, sujet: responseDict["sujet"] as! String, notes: responseDict["notes"] as! String, Disp_prep: responseDict["Disp_prep"] as! String, Cpt_Rd_Sess: responseDict["Cpt_Rd_Sess"] as! String, id_Aff: responseDict["id_Aff"] as! String)
+            let session = Session(id: responseDict["id"] as! Int , nomSession: responseDict["nomSession"] as! String, date: responseDict["date"] as! String, sujet: responseDict["sujet"] as! String, notes: responseDict["notes"] as! String, Disp_prep: responseDict["Disp_prep"] as! String, Cpt_Rd_Sess: responseDict["Cpt_Rd_Sess"] as! String, id_Aff: responseDict["id_Aff"] as! Int)
             
             completion(session)
                 
@@ -118,5 +119,8 @@ class SessionService: NSObject {
         
     }
 
+    
+
+    
         
 }

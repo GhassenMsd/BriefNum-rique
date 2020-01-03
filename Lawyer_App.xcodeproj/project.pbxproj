@@ -18,6 +18,8 @@
 		852FC48D23B7CFAF000AE8AE /* AdversaireAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC48C23B7CFAF000AE8AE /* AdversaireAddViewController.swift */; };
 		85A7451323918AC800BCE149 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451123918AC800BCE149 /* SignUp.swift */; };
 		85A7451423918AC800BCE149 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7451223918AC800BCE149 /* Login.swift */; };
+		85C481FD23BE8151006F5CA3 /* ListAvocatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C481FC23BE8151006F5CA3 /* ListAvocatsViewController.swift */; };
+		85C481FF23BEB6DA006F5CA3 /* AvocatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C481FE23BEB6DA006F5CA3 /* AvocatService.swift */; };
 		85D0BCD6239C6F7400653951 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCD5239C6F7400653951 /* Home.swift */; };
 		85D0BCDF239EC99800653951 /* ProfilClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCDE239EC99800653951 /* ProfilClient.swift */; };
 		85D0BCE1239FB84100653951 /* ListClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BCE0239FB84100653951 /* ListClients.swift */; };
@@ -98,6 +100,8 @@
 		85A7451123918AC800BCE149 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		85A7451223918AC800BCE149 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		85A7451523918AFE00BCE149 /* samim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = samim.ttf; sourceTree = "<group>"; };
+		85C481FC23BE8151006F5CA3 /* ListAvocatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAvocatsViewController.swift; sourceTree = "<group>"; };
+		85C481FE23BEB6DA006F5CA3 /* AvocatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvocatService.swift; sourceTree = "<group>"; };
 		85D0BCD5239C6F7400653951 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		85D0BCDE239EC99800653951 /* ProfilClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilClient.swift; sourceTree = "<group>"; };
 		85D0BCE0239FB84100653951 /* ListClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListClients.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				852FC48423B67C30000AE8AE /* CercleService.swift */,
 				852FC48623B686DD000AE8AE /* TribunalService.swift */,
 				852FC48823B6AB24000AE8AE /* AdversaireService.swift */,
+				85C481FE23BEB6DA006F5CA3 /* AvocatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				852FC47623B116F0000AE8AE /* AhkemListViewController.swift */,
 				85ECF4F223BA1E5D005EDBD8 /* SessionListeByDateViewController.swift */,
 				85ECF4F423BA1E78005EDBD8 /* SessionDayDetailViewController.swift */,
+				85C481FC23BE8151006F5CA3 /* ListAvocatsViewController.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 				8F98801023901CDB00A44379 /* ViewController.swift in Sources */,
 				85D0BCE8239FDCAA00653951 /* Client.swift in Sources */,
 				85ECF4EF23BA1E0F005EDBD8 /* MissionDayListViewController.swift in Sources */,
+				85C481FF23BEB6DA006F5CA3 /* AvocatService.swift in Sources */,
 				8F0F5F9E23A1C64C00BC322A /* Mission.swift in Sources */,
 				85D0BCDF239EC99800653951 /* ProfilClient.swift in Sources */,
 				8F3305672391DBBC001A0DAD /* BaseTabBarController.swift in Sources */,
@@ -579,6 +586,7 @@
 				8F0F5FA223A1C80500BC322A /* Session.swift in Sources */,
 				8F98801623901CDC00A44379 /* Lawyer_App.xcdatamodeld in Sources */,
 				8F98802D23902C2300A44379 /* OnBoardingViewController.swift in Sources */,
+				85C481FD23BE8151006F5CA3 /* ListAvocatsViewController.swift in Sources */,
 				85A7451423918AC800BCE149 /* Login.swift in Sources */,
 				85F3893823AD214D002E8985 /* DemandeUpdateViewController.swift in Sources */,
 				85D5789A23A81EF000E5AB1F /* MissionService.swift in Sources */,
