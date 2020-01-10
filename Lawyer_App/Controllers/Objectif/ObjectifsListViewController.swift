@@ -13,7 +13,9 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
     let missionsService = MissionService()
     var missionsList : Array<Mission> = []
     var idAffaire = ""
-    
+    let refreshControl = UIRefreshControl()
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .large)
+
     @IBOutlet var hideMohema: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return missionsList.count
@@ -45,7 +47,7 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
                 self.missionsService.DeleteMission(id: String(self.missionsList[indexPath.row].id)) { () in
                     self.missionsList.remove(at: indexPath.row)
                     self.ObjectifTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-                    self.ObjectifTableView.reloadData()
+                    self.ObjectifTableView.reloadWithAnimation()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMohema"), object: nil)
 
                 }
@@ -91,6 +93,14 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         addObjectif.addShadowView()
+        
+        refreshControl.addTarget(self, action: #selector(fetchMohema), for: .valueChanged)
+        spinner.startAnimating()
+        ObjectifTableView.backgroundView = spinner
+        // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
+        ObjectifTableView.refreshControl = refreshControl
+        
+        
         fetchMohema()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchMohema), name: NSNotification.Name(rawValue: "fetchMohema"), object: nil)
         
@@ -104,8 +114,10 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
                 self.hideMohema.isHidden = false
             }else{
                 self.missionsList = missions
-                self.ObjectifTableView.reloadData()
+                self.ObjectifTableView.reloadWithAnimation()
                 self.hideMohema.isHidden = true
+                self.refreshControl.endRefreshing()
+                self.spinner.stopAnimating()
             }
             
         }

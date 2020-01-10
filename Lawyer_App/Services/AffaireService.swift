@@ -65,5 +65,18 @@ class AffaireService: NSObject {
         }
     }
     
- 
+    func getcountClient (id: Int ,completion: @escaping (Int) -> Void) {
+     
+    let preferences = UserDefaults.standard
+    if( preferences.object(forKey: "token") != nil){
+        
+        Alamofire.request(Connexion.adresse + "/api/Affaire/countAffaire/" + String(id),encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
+                response in
+                print(response.result.value as! Dictionary<String,Any>)
+            let countDict = response.result.value as! Dictionary<String,Any>
+            completion(countDict["count"] as! Int)
+            }
+        }
+    }
+    
 }

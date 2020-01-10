@@ -42,6 +42,8 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
         TVSujet.delegate = self
         TVRemarque.delegate = self
         datePicker.datePickerMode = .dateAndTime
+        datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+
         TVDate.inputView = datePicker
         
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
@@ -58,6 +60,8 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
         if (self.idAffaire == ""){
             sessionService.AddSession(nomSession: TVNom.text!, date: TVDate.text!, sujet: TVSujet.text, notes: TVRemarque.text, Disp_prep: TVAutre.text, Cpt_Rd_Sess: "aaa", id_Aff: Int(idAffaireFromHome)!){ () in
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSession"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSessionByDate"), object: nil)
+                
             }
         }else if (self.idAffaireFromHome == ""){
             sessionService.AddSession(nomSession: TVNom.text!, date: TVDate.text!, sujet: TVSujet.text, notes: TVRemarque.text, Disp_prep: TVAutre.text, Cpt_Rd_Sess: "aaa", id_Aff: Int(idAffaire)!){ () in

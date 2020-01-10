@@ -43,6 +43,8 @@ class ObjectifUpdateViewController: UIViewController,UITextViewDelegate {
         
         Notes.delegate = self
         datePicker.datePickerMode = .dateAndTime
+        datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+
         DateObjectif.inputView = datePicker
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         let tapDate = UITapGestureRecognizer(target: self, action: #selector(tapDateGuesture))

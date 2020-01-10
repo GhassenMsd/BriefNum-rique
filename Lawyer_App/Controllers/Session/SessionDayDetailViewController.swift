@@ -26,7 +26,7 @@ class SessionDayDetailViewController: UIViewController {
         self.navBar.title = "جلسة " + String(session.date.prefix(10))
         self.numAffaire.text = String(session.id_Aff)
         self.noteSession.text = session.notes
-        self.dateSession.text = session.date
+        self.dateSession.text = String(session.date.prefix(10))
         self.sujetSession.text = session.sujet
         self.Disp_prepSession.text = session.Disp_prep
         // Do any additional setup after loading the view.

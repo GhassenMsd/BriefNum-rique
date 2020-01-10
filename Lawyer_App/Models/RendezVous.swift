@@ -9,14 +9,20 @@ import UIKit
 
 class RendezVous: NSObject {
     var id = 0
+    var nom = ""
     var date = ""
     var adresse = ""
     var sujet = ""
     var notes = ""
     var id_Av = 0
     
-    init(id: Int, date: String, adresse: String, sujet: String, notes: String, id_Av: Int){
+    override init() {
+        
+    }
+    
+    init(id: Int, nom:String, date: String, adresse: String, sujet: String, notes: String, id_Av: Int){
         self.id = id
+        self.nom = nom
         self.date = date
         self.adresse = adresse
         self.sujet = sujet

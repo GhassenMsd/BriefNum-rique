@@ -15,6 +15,9 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
     var idAffaire = ""
     @IBOutlet var hideJalsa: UILabel!
     var selectedCell:Int!
+    typealias Animation = (UITableViewCell, IndexPath, UITableView) -> Void
+    let refreshControl = UIRefreshControl()
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .large)
 
     
 
@@ -26,6 +29,8 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sessionsList.count
     }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCell")
@@ -43,7 +48,12 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
         
         view!.addShadowView()
         SessionName.text = "جلسة " + sessionsList[indexPath.row].date
-        DateSession.text = sessionsList[indexPath.row].date
+        DateSession.text = sessionsList[indexPath.row].nom
+        
+        
+
+        
+        
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
     }
@@ -63,7 +73,7 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
                 self.sessionService.DeleteSession(id: String(self.sessionsList[indexPath.row].id)) { () in
                     self.sessionsList.remove(at: indexPath.row)
                     self.sessionsTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-                    self.sessionsTableView.reloadData()
+                    self.sessionsTableView.reloadWithAnimation()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchJalsa"), object: nil)
                 }
             }
@@ -115,6 +125,13 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         AddSession.addShadowView()
+        
+        refreshControl.addTarget(self, action: #selector(fetchJalsa), for: .valueChanged)
+        spinner.startAnimating()
+        sessionsTableView.backgroundView = spinner
+        // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
+        sessionsTableView.refreshControl = refreshControl
+        
         fetchJalsa()
         
         NotificationCenter.default.addObserver(self, selector: #selector(fetchJalsa), name: NSNotification.Name(rawValue: "fetchJalsa"), object: nil)
@@ -128,8 +145,11 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
                 self.hideJalsa.isHidden = false
             }else{
                 self.sessionsList = sessions
-                self.sessionsTableView.reloadData()
+                self.sessionsTableView.reloadWithAnimation()
                 self.hideJalsa.isHidden = true
+                self.refreshControl.endRefreshing()
+                self.spinner.stopAnimating()
+
             }
             
         }
@@ -146,4 +166,25 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
     }
     */
 
+    
+    
 }
+
+extension UITableView {
+func reloadWithAnimation() {
+    self.reloadData()
+    let tableViewHeight = self.bounds.size.height
+    let cells = self.visibleCells
+    var delayCounter = 0
+    for cell in cells {
+        cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)
+    }
+    for cell in cells {
+        UIView.animate(withDuration: 1.6, delay: 0.08 * Double(delayCounter),usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            cell.transform = CGAffineTransform.identity
+        }, completion: nil)
+        delayCounter += 1
+    }
+}
+}
+

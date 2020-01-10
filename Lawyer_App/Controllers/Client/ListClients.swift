@@ -68,7 +68,11 @@ class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(fetchClients), name: NSNotification.Name(rawValue: "fetchClients"), object: nil)
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ClientTableView.reloadWithAnimation()
     }
     
     @IBOutlet weak var ClientTableView: UITableView!
@@ -83,7 +87,7 @@ class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
                 self.clientService.deleteClient(id: Home.clients[indexPath.row].id) { _ in
                     Home.clients.remove(at: indexPath.row)
                     self.ClientTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-                    self.ClientTableView.reloadData()
+                    self.ClientTableView.reloadWithAnimation()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchClient"), object: nil)
                 }
             }
@@ -99,7 +103,7 @@ class ListClients: UIViewController,UITableViewDataSource,UITableViewDelegate {
     }
     
     @objc func fetchClients(){
-        ClientTableView.reloadData()
+        ClientTableView.reloadWithAnimation()
     }
 
     /*

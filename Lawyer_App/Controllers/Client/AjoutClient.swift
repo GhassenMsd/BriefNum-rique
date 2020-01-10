@@ -30,7 +30,7 @@ extension UITextField {
         let shake: CABasicAnimation = CABasicAnimation(keyPath: "position")
         shake.duration = 0.07
         shake.repeatCount = shakes
-        if revert { shake.autoreverses = true  } else { shake.autoreverses = false }
+        if revert { shake.autoreverses = true } else { shake.autoreverses = false }
         shake.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
         shake.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
         self.layer.add(shake, forKey: "position")
@@ -141,6 +141,9 @@ class AjoutClient: UIViewController,UIImagePickerControllerDelegate,UINavigation
         imageUser.clipsToBounds = true
         datePicker.datePickerMode = .date
         datePickerEmission.datePickerMode = .date
+        datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+        datePickerEmission.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+
         dateNaissance.inputView = datePicker
         
         dateEmission.inputView = datePickerEmission
@@ -203,31 +206,7 @@ class AjoutClient: UIViewController,UIImagePickerControllerDelegate,UINavigation
         self.clientService.uploadImage(image: imageData) { (image) in
             self.imageName = image
         }
-        //let fileUrl = info[UIImagePickerControllerPHAsset] as! PHAsset
-        //let assetResources = PHAssetResource.assetResources(for: fileUrl)
-        //print(assetResources.first!.originalFilename)
-
-        /*let headers: HTTPHeaders = [:]
-        // 2
-        Alamofire.upload(
-            multipartFormData: { multipartFormData in
-                multipartFormData.append(imageData, withName: "file", fileName:"image.jpg" , mimeType: "image/jpeg")
-        },
-            to: Connexion.adresse + "/UploadImage/exercice",
-            headers: headers,
-            encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .success(let upload, _, _):
-                    upload.responseJSON { response in
-                        debugPrint(response)
-                        self.imageName = response.result.value as! String
-                    }
-                case .failure(let encodingError):
-                    print(encodingError)
-                }
-                
-        })*/
-
+        
         self.dismiss(animated: true, completion: nil)
     }
     

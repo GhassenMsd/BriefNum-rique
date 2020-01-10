@@ -12,6 +12,19 @@ import QVRWeekView
 import AlamofireImage
 import Alamofire
 import SDWebImage
+import Floaty
+
+extension Array{
+    public mutating func appendDistinct<S>(contentsOf newElements: S, where condition:@escaping (Element, Element) -> Bool) where S : Sequence, Element == S.Element {
+      newElements.forEach { (item) in
+        if !(self.contains(where: { (selfItem) -> Bool in
+            return !condition(selfItem, item)
+        })) {
+            self.append(item)
+        }
+    }
+  }
+}
 
 class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance, WeekViewDelegate {
     
@@ -32,12 +45,20 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
     @IBOutlet weak var calendarView: UIView!
     @IBOutlet weak var calendarBtn: UIImageView!
     @IBOutlet weak var weekBtn: UIImageView!
+    @IBOutlet var floaty: Floaty!
+    @IBOutlet weak var hokm1: UILabel!
+    @IBOutlet weak var iconHokm1: UIImageView!
+    @IBOutlet weak var hokm2: UILabel!
+    @IBOutlet weak var iconHokm2: UIImageView!
+    @IBOutlet var toAhkemListe: UILabel!
+    @IBOutlet var toClientListe: UILabel!
     
     //variables
     var allEvents: [Int: EventData] = [:]
     var eventsSortedByDay: [Date: [EventData]] = [:]
     var id: Int = 0     //id of event weekView
     static var clients: Array<Client> = []
+    static var sessionByDate: Array<Session> = []
     var missions: Array<Mission> = []
     var rendezvousListe:Array<RendezVous> = []
     var sessions: Array<Session> = []
@@ -49,8 +70,10 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
     var rendezVousListeDateTime: Array<Date> = []
     var sessionByDate: Array<Session> = []
     var missionByDate: Array<Mission> = []
-    var rendezVousByDate: Array<RendezVous> = []
-
+    static var rendezVousByDate: Array<RendezVous> = []
+    var alldateArray:Array<Date> = []
+    let sessionService = SessionService()
+    var ahkemListe: Array<Session> = []
     
     fileprivate let formatter = DateFormatter()
     
@@ -80,6 +103,7 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         numberCas.layer.masksToBounds = true
         numberClient.layer.masksToBounds = true
         
+        
         let tapCalendar = UITapGestureRecognizer(target: self, action: #selector(tapCalendarBtn(_:)))
         calendarBtn.addGestureRecognizer(tapCalendar)
         let tapWeek = UITapGestureRecognizer(target: self, action: #selector(tapWeekBtn(_:)))
@@ -91,14 +115,46 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         let tapMission = UITapGestureRecognizer(target: self, action: #selector(tapMissionBtn))
         missionLabel.addGestureRecognizer(tapMission)
 
+        let tapRendezVous = UITapGestureRecognizer(target: self, action: #selector(tapRendezVousBtn))
+        rendezVouzLabel.addGestureRecognizer(tapRendezVous)
+        
+        let tapSessionAhkem = UITapGestureRecognizer(target: self, action: #selector(tapAhkemNow))
+        toAhkemListe.addGestureRecognizer(tapSessionAhkem)
+        
+        let tapClientListe = UITapGestureRecognizer(target: self, action: #selector(tapClients))
+        toClientListe.addGestureRecognizer(tapClientListe)
+
+        let tapHokm1G = UITapGestureRecognizer(target: self, action: #selector(tapHokm1))
+        hokm1.addGestureRecognizer(tapHokm1G)
+        
+        let tapHokm2G = UITapGestureRecognizer(target: self, action: #selector(tapHokm2))
+        hokm2.addGestureRecognizer(tapHokm2G)
+
+        
+        floaty.addItem("إضافة مهمة", icon: UIImage(named: "Groupe 584")!,handler: { _ in
+            self.performSegue(withIdentifier: "toAddMission", sender: self)
+        })
+        floaty.addItem("إضافة موعد", icon: UIImage(named: "date_range-1")!,handler: { _ in
+            self.performSegue(withIdentifier: "toAddRendezVous", sender: self)
+        })
+        floaty.addItem("إضافة حريف", icon: UIImage(named: "person")!,handler: { _ in
+            self.performSegue(withIdentifier: "toAddClient", sender: self)
+        })
+
+        self.view.addSubview(floaty)
+        
         initCalendarView()
         fetchClient()
         initWeekView()
         fetchRendezVous()
         fetchSession()
         fetchMission()
-        
+        fetchSessionByDate()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchClient), name: NSNotification.Name(rawValue: "fetchClient"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchSessionByDate), name: NSNotification.Name(rawValue: "fetchSessionByDate"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchSession), name: NSNotification.Name(rawValue: "fetchSession"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchRendezVous), name: NSNotification.Name(rawValue: "fetchRendezVous"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchMission), name: NSNotification.Name(rawValue: "fetchMission"), object: nil)
 
     }
     
@@ -131,25 +187,74 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchClients"), object: nil)
         }
     }
+    
+    @objc func fetchSessionByDate(){ 
+        sessionService.getByDateNow(){ (sessions) in
+            Home.sessionByDate = sessions
+            self.ahkemListe = sessions.filter { (session) -> Bool in
+                session.Disp_prep != ""
+            }
+            self.numberCas.text = String(self.ahkemListe.count)
+            if self.ahkemListe.count > 0  {
+                self.hokm1.text = self.ahkemListe[0].Disp_prep
+                self.hokm1.isHidden = false
+                self.iconHokm1.isHidden = false
+                if self.ahkemListe.count > 1 {
+                    self.hokm2.text = self.ahkemListe[1].Disp_prep
+                    self.hokm2.isHidden = false
+                    self.iconHokm2.isHidden = false
+                }
+            }
+        }
+    }
+    
+    @objc func tapHokm1(){
+        print(11111111111)
+        performSegue(withIdentifier: "toHokm", sender: 0)
+    }
+    
+    @objc func tapHokm2(){
+        print(0000000)
+        performSegue(withIdentifier: "toHokm", sender: 1)
+    }
+    
+    @objc func tapAhkemNow(){
+        performSegue(withIdentifier: "toAhkemNow", sender: 1)
+    }
 
+    @objc func tapClients(){
+        performSegue(withIdentifier: "toListeClient", sender: Home.clients)
+    }
+    
     @objc func tapSessionBtn(){
         performSegue(withIdentifier: "toSessionNow", sender: nil)
+    }
+    
+    @objc func tapRendezVousBtn(){
+        performSegue(withIdentifier: "toListeRendezVous", sender: nil)
     }
     
     @objc func tapMissionBtn(){
         performSegue(withIdentifier: "toListMissionDay", sender: nil)
     }
     
-    func fetchSession(){
-        let sessionService = SessionService()
+    @objc func fetchSession(){
         sessionService.getAll(){ (sessions) in
             self.sessionsDate = sessions.map({ (session) -> String in
                 return String(session.date.prefix(10))
             })
+            
             self.sessionsDateTime = sessions.map({ (session) -> Date in
                 let date = self.dateFormatter1.date(from: session.date)!
                 return date
             })
+            
+            self.alldateArray.appendDistinct(contentsOf: Array(Set(self.sessionsDateTime)), where: { (date1, date2) -> Bool in
+                    let dateS1 = String(date1.description.prefix(10))
+                    let dateS2 = String(date2.description.prefix(10))
+                    return dateS1 != dateS2
+            })
+            //self.alldateArray.append(contentsOf: self.sessionsDateTime)
             self.sessions = sessions
             self.sessionByDate = sessions.filter { (session) -> Bool in
                 session.date.contains(String(Date.init().description.prefix(10)))
@@ -160,7 +265,7 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         }
     }
     
-    func fetchRendezVous(){
+    @objc func fetchRendezVous(){
         let rendezVousService = RendezVousService()
         rendezVousService.getAll(){ (rendezvousArray) in
             self.rendezVousDate = rendezvousArray.map({ (rendezvous) -> String in
@@ -171,18 +276,27 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
                 let date = self.dateFormatter1.date(from: rendezvous.date)!
                 return date
             })
+            self.alldateArray.appendDistinct(contentsOf: Array(Set(self.rendezVousListeDateTime)), where: { (date1, date2) -> Bool in
+                    let dateS1 = String(date1.description.prefix(10))
+                    let dateS2 = String(date2.description.prefix(10))
+                    return dateS1 != dateS2
+            })
+            //self.alldateArray.append(contentsOf: self.rendezVousListeDateTime)
+
             self.rendezvousListe = rendezvousArray
-            self.rendezVousByDate = rendezvousArray.filter { (rendezVous) -> Bool in
+            Home.rendezVousByDate = rendezvousArray.filter { (rendezVous) -> Bool in
                 rendezVous.date.contains(String(Date.init().description.prefix(10)))
             }
 
-            self.rendezVouzLabel.text = "المواعيد (" + String(self.rendezVousByDate.count) + ")"
+            self.rendezVouzLabel.text = "المواعيد (" + String(Home.rendezVousByDate.count) + ")"
             self.calendar.reloadData()
             self.weekCalendar.reloadData()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchRendezVousListe"), object: nil)
         }
+        
     }
     
-    func fetchMission(){
+    @objc func fetchMission(){
         let missionService = MissionService()
         missionService.getAll(){ (missions) in
             self.missionsDate = missions.map({ (mission) -> String in
@@ -192,8 +306,14 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
                 print(self.dateFormatter1.date(from: mission.date)!)
                 let date = self.dateFormatter1.date(from: mission.date)!
                 return date
+                })
+            self.alldateArray.appendDistinct(contentsOf: Array(Set(self.missionsDateTime)), where: { (date1, date2) -> Bool in
+                    let dateS1 = String(date1.description.prefix(10))
+                    let dateS2 = String(date2.description.prefix(10))
+                    return dateS1 != dateS2
             })
-            
+            //self.alldateArray.append(contentsOf: self.missionsDateTime)
+
             self.missions = missions
             self.missionByDate = missions.filter { (mission) -> Bool in
                 mission.date.contains(String(Date.init().description.prefix(10)))
@@ -224,7 +344,7 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
             eventsSortedByDay[date] = nil
         }
 
-        for date in sessionsDateTime where eventsSortedByDay[date] == nil {
+        for date in alldateArray where eventsSortedByDay[date] == nil {
             var dateEvents: [EventData] = []
             let startOfDate = date.getStartOfDay()
             let dateString = dateFormatter2.string(for: date)!
@@ -234,7 +354,7 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
             for session in dateArraySession {
                 let dateSession = self.dateFormatter1.date(from: session.date)!
                 let hourDuration = 1.0
-                let hourStart = dateSession.getTimeInHours()
+                let hourStart = dateSession.getTimeInHours() + 1
                 let eventStartOffset = Int((hourStart)*60.0*60.0)
                 let eventEndOffset = eventStartOffset+Int(hourDuration*60.0*60.0)
 
@@ -245,14 +365,16 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
                 let color = UIColor(rgb: 0xBADFBE)
 
                 let data = EventData(id: id, title: title, startDate: start, endDate: end, color: color)
+                
                 allEvents[id] = data
+                
                 dateEvents.append(data)
                 id += 1
             }
             for mission in dateArrayMission {
                 let dateMission = self.dateFormatter1.date(from: mission.date)!
                 let hourDuration = 1.0
-                let hourStart = dateMission.getTimeInHours()
+                let hourStart = dateMission.getTimeInHours() + 1
                 let eventStartOffset = Int((hourStart)*60.0*60.0)
                 let eventEndOffset = eventStartOffset+Int(hourDuration*60.0*60.0)
 
@@ -270,14 +392,14 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
             for rendezvous in dateArrayRendezVous {
                 let dateRendezVous = self.dateFormatter1.date(from: rendezvous.date)!
                 let hourDuration = 1.0
-                let hourStart = dateRendezVous.getTimeInHours()
+                let hourStart = dateRendezVous.getTimeInHours() + 1
                 let eventStartOffset = Int((hourStart)*60.0*60.0)
                 let eventEndOffset = eventStartOffset+Int(hourDuration*60.0*60.0)
 
                 let start = dateWithInterval(eventStartOffset, fromDate: startOfDate)
                 let end = dateWithInterval(eventEndOffset, fromDate: startOfDate)
 
-                let title = rendezvous.sujet
+                let title = rendezvous.nom
                 let color = UIColor(rgb: 0xE6928D)
 
                 let data = EventData(id: id, title: title, startDate: start, endDate: end, color: color)
@@ -329,12 +451,6 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
 
         img.sd_setImage(with: URL(string: Connexion.adresse + "/Ressources/Client/" + Home.clients[indexPath.row].image), placeholderImage: UIImage(named: "placeholder"))
         
-
-        
-        
-        
-        
-        
         img.contentMode = .scaleAspectFill
         img.addShadowImage(radius: (img.frame.size.width / 2))
         img.clipsToBounds = true
@@ -342,17 +458,6 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         return cell
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsClient"{
@@ -371,11 +476,39 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
                 listSessionController.sessionsList = self.sessionByDate
             }
         }
+        else if segue.identifier == "toAhkemNow"{
+            if let listSessionController = segue.destination as? SessionListeByDateViewController{
+                listSessionController.sessionsList = self.ahkemListe
+            }
+        }
         else if segue.identifier == "toListMissionDay"{
             if let listMissionController = segue.destination as? MissionDayListViewController{
                 listMissionController.missionsList = self.missionByDate
             }
         }
+        else if segue.identifier == "toAddClient"{
+            /*if let listMissionController = segue.destination as? MissionDayListViewController{
+                listMissionController.missionsList = self.missionByDate
+            }*/
+        }
+        else if segue.identifier == "toAddMission"{
+            /*if let listMissionController = segue.destination as? MissionDayListViewController{
+                listMissionController.missionsList = self.missionByDate
+            }*/
+        }
+        else if segue.identifier == "toListeRendezVous"{
+            /*if let listRendezVousController = segue.destination as? RendezVousListeViewController{
+                listRendezVousController.rendezVousList = self.rendezVousByDate
+            }*/
+        }
+        if segue.identifier == "toHokm"{
+            let index = sender as! Int
+            if let sessionDay = segue.destination as? SessionDayDetailViewController{
+                sessionDay.session = self.ahkemListe[index]
+            }
+            
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -414,6 +547,27 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         return arrayColor
     }
     
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    
+        print("aaaaaaaaaaaaaaa" + date.description)
+        Home.rendezVousByDate = self.rendezvousListe.filter { (rendezVous) -> Bool in
+            rendezVous.date.contains(String(date.description.prefix(10)))
+        }
+
+        self.rendezVouzLabel.text = "المواعيد (" + String(Home.rendezVousByDate.count) + ")"
+        
+        self.sessionByDate = self.sessions.filter { (session) -> Bool in
+            session.date.contains(String(Date.init().description.prefix(10)))
+        }
+        self.sessionLabel.text = "الجلسات (" + String(self.sessionByDate.count) + ")"
+        
+        self.missionByDate = self.missions.filter { (mission) -> Bool in
+            mission.date.contains(String(Date.init().description.prefix(10)))
+        }
+        self.missionLabel.text = "المهام (" + String(self.missionByDate.count) + ")"
+        
+    }
+    
     @IBAction func monthPrec(_ sender: Any) {
         let currentdate = self.calendar.currentPage
         self.calendar.setCurrentPage(Calendar.current.date(byAdding: .month, value: -1, to: currentdate)!, animated: true)
@@ -427,6 +581,11 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
     @IBAction func toListeClientAction(_ sender: Any) {
         performSegue(withIdentifier: "toListeClient", sender: Home.clients)
     }
+    
+    @IBAction func toAhkem(_ sender: Any) {
+        performSegue(withIdentifier: "toAhkemNow", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

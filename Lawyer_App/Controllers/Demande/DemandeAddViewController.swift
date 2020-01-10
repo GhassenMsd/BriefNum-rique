@@ -31,6 +31,8 @@ class DemandeAddViewController: UIViewController,UITextViewDelegate {
         ShadowViews()
         Sujet.delegate = self
         datePicker.datePickerMode = .dateAndTime
+        datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+
         DateDemande.inputView = datePicker
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
         let tapDate = UITapGestureRecognizer(target: self, action: #selector(tapDateGuesture))

@@ -17,7 +17,7 @@ class ProfilUserViewController: UIViewController,UIImagePickerControllerDelegate
         let preferences = UserDefaults.standard
         let decoded  = preferences.data(forKey: "user")
         user = NSKeyedUnarchiver.unarchiveObject(with: decoded!) as! User
-        self.imageUser.af_setImage(withURL:URL(string: Connexion.adresse + "/Ressources/Client/" + user.img)!)
+        self.imageUser.af_setImage(withURL:URL(string: Connexion.adresse + "/Ressources/Avocat/" + user.img)!)
         self.imageUser.contentMode = .scaleAspectFill
         self.nomComplet.text = user.nomComplet
         self.degree.text = user.grade
@@ -76,7 +76,7 @@ class ProfilUserViewController: UIViewController,UIImagePickerControllerDelegate
             return
         }
         
-        self.clientService.uploadImage(image: imageData) { (image) in
+        self.loginService.uploadImage(image: imageData) { (image) in
             self.imageName = image
             self.user.img = image
             self.loginService.UpdateUser(user: self.user) { (response) in

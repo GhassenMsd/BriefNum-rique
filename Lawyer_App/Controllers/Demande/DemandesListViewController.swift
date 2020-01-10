@@ -13,7 +13,9 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
     let demandeservice = DemandeService()
     var demandesList : Array<Demande> = []
     var idAffaire = ""
-    
+    let refreshControl = UIRefreshControl()
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .large)
+
     @IBOutlet var hideMatleb: UILabel!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demandesList.count
@@ -45,7 +47,7 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
                 self.demandeservice.DeleteDemande(id: String(self.demandesList[indexPath.row].id)) { () in
                     self.demandesList.remove(at: indexPath.row)
                     self.DemandesTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-                    self.DemandesTableView.reloadData()
+                    self.DemandesTableView.reloadWithAnimation()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchMatleb"), object: nil)
                 }
             }
@@ -89,6 +91,13 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         addDemande.addShadowView()
+        
+        refreshControl.addTarget(self, action: #selector(fetchMatleb), for: .valueChanged)
+        spinner.startAnimating()
+        DemandesTableView.backgroundView = spinner
+        // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
+        DemandesTableView.refreshControl = refreshControl
+        
         fetchMatleb()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchMatleb), name: NSNotification.Name(rawValue: "fetchMatleb"), object: nil)
         
@@ -103,8 +112,11 @@ class DemandesListViewController: UIViewController ,UITableViewDataSource,UITabl
                 self.hideMatleb.isHidden = false
             }else{
                 self.demandesList = demandes
-                self.DemandesTableView.reloadData()
+                self.DemandesTableView.reloadWithAnimation()
                 self.hideMatleb.isHidden = true
+                self.refreshControl.endRefreshing()
+                self.spinner.stopAnimating()
+
             }
             
         }

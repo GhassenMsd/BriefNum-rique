@@ -118,7 +118,10 @@ class AdversaireAddViewController: UIViewController,UIImagePickerControllerDeleg
         addImageBtn.layer.cornerRadius = addImageBtn.frame.size.width / 2
         imageUser.clipsToBounds = true
         datePicker.datePickerMode = .date
+        datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
         datePickerEmission.datePickerMode = .date
+        datePickerEmission.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+
         dateNaissance.inputView = datePicker
         
         dateEmission.inputView = datePickerEmission

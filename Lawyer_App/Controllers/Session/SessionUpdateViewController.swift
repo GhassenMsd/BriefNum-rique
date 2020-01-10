@@ -49,6 +49,8 @@ class SessionUpdateViewController: UIViewController, UITextViewDelegate {
         TVSujet.delegate = self
         TVRemarque.delegate = self
         datePicker.datePickerMode = .dateAndTime
+        datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+
         TVDate.inputView = datePicker
         
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)

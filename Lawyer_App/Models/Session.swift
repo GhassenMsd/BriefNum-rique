@@ -18,12 +18,13 @@ class Session: NSObject {
     var Cpt_Rd_Sess = ""
     var id_Aff = 0
     var tribunal = 0
+    var nom = ""
     
     override init() {
         
     }
     
-    init(id: Int, nomSession: String, date: String, sujet: String, notes: String, Disp_prep: String, Cpt_Rd_Sess: String, id_Aff: Int,tribunal: Int){
+    init(id: Int, nomSession: String, date: String, sujet: String, notes: String, Disp_prep: String, Cpt_Rd_Sess: String, id_Aff: Int,tribunal: Int, nom:String){
         self.id = id
         self.nomSession = nomSession
         self.date = date
@@ -33,16 +34,7 @@ class Session: NSObject {
         self.Cpt_Rd_Sess = Cpt_Rd_Sess
         self.id_Aff = id_Aff
         self.tribunal = tribunal
+        self.nom = nom
     }
     
-    init(id: Int, nomSession: String, date: String, sujet: String, notes: String, Disp_prep: String, Cpt_Rd_Sess: String, id_Aff: Int){
-        self.id = id
-        self.nomSession = nomSession
-        self.date = date
-        self.sujet = sujet
-        self.notes = notes
-        self.Disp_prep = Disp_prep
-        self.Cpt_Rd_Sess = Cpt_Rd_Sess
-        self.id_Aff = id_Aff
-    }
 }

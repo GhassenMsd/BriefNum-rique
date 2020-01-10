@@ -1,16 +1,15 @@
 //
-//  AhkemListViewController.swift
+//  ahkemByDayListViewController.swift
 //  Lawyer_App
 //
-//  Created by Ghassen Msaad on 12/23/19.
-//  Copyright © 2019 hamadi aziz. All rights reserved.
+//  Created by hamadi aziz on 04/01/2020.
+//  Copyright © 2020 hamadi aziz. All rights reserved.
 //
 
 import UIKit
 
-class AhkemListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ahkemListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    let sessionService = SessionService()
     var sessionsList : Array<Session> = []
     var idAffaire = ""
 
@@ -24,7 +23,7 @@ class AhkemListViewController: UIViewController,UITableViewDelegate,UITableViewD
     @IBOutlet var ahkemnon: UILabel!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sessionsList.count
+        return Home.sessionByDate.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,8 +36,8 @@ class AhkemListViewController: UIViewController,UITableViewDelegate,UITableViewD
 
         view!.addShadowView()
 
-        hokmName.text = sessionsList[indexPath.row].Disp_prep
-        Jalsa.text = sessionsList[indexPath.row].nomSession
+        hokmName.text = Home.sessionByDate[indexPath.row].Disp_prep
+        Jalsa.text = Home.sessionByDate[indexPath.row].nomSession
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
     }
@@ -50,42 +49,25 @@ class AhkemListViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sessionService.getAllByAffaire(idAffaire: idAffaire){ (sessions) in
-            if (sessions.count == 0){
-                self.ahkemnon.text = "ليس لديك أحكام"
-            }else{
-                self.sessionsList = sessions
-                self.ahkemTableView.reloadData()
-                self.ahkemnon.isHidden = true
-            }
-            
-        }
+        
         // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toAhkemSessionDetails"{
-            let cell = sender as! UITableViewCell
-            print(cell)
-            let index = ahkemTableView.indexPath(for: cell)! as NSIndexPath
-            if let sessionDetailsViewController = segue.destination as? SessionViewController {
-                sessionDetailsViewController.session = sessionsList[index.row]
-                sessionDetailsViewController.idSession = String(sessionsList[index.row].id)
+            let index = sender as! NSIndexPath
+            if let sessionDayDetailsViewController = segue.destination as? SessionDayDetailViewController {
+                sessionDayDetailsViewController.session = Home.sessionByDate[index.row]
 
             }
         }
-        else if(segue.identifier == "toAddSession"){
-            if let sessionAddViewCtroller = segue.destination as? SessionAddViewController {
-                sessionAddViewCtroller.idAffaire = self.idAffaire
-            }
-            
-        }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "toAhkemSessionDetails", sender: ahkemTableView.cellForRow(at: indexPath))
+        performSegue(withIdentifier: "toAhkemSessionDetails", sender: indexPath)
     }
     
 

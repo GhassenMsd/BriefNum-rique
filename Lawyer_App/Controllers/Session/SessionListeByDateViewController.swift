@@ -35,8 +35,8 @@ class SessionListeByDateViewController: UIViewController, UITableViewDataSource,
 
         view!.addShadowView()
 
-        SessionName.text = sessionsList[indexPath.row].nomSession
-        DateSession.text = String(sessionsList[indexPath.row].date.prefix(10))
+        SessionName.text = "جلسة " + String(sessionsList[indexPath.row].date.prefix(10))
+        DateSession.text = sessionsList[indexPath.row].nom
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
         return cell!
     }

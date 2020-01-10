@@ -10,8 +10,11 @@ import UIKit
 
 class AffairesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .large)
+
     let affaireService = AffaireService()
     var affairesList : Array<Affaire> = []
+    let refreshControl = UIRefreshControl()
 
     @IBOutlet var KadhayaNon: UILabel!
     @IBOutlet weak var AffairesTableView: UITableView!
@@ -23,7 +26,9 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
                 self.KadhayaNon.text = "ليس لديك قضايا"
             }else{
                 self.affairesList = affaires
-                self.AffairesTableView.reloadData()
+                self.AffairesTableView.reloadWithAnimation()
+                self.refreshControl.endRefreshing()
+                self.spinner.stopAnimating()
             }
         }
     }
@@ -31,6 +36,11 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         ViewSearch.addShadowView()
+        refreshControl.addTarget(self, action: #selector(fetchAffaire), for: .valueChanged)
+        spinner.startAnimating()
+        AffairesTableView.backgroundView = spinner
+        // this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
+        AffairesTableView.refreshControl = refreshControl
         
         fetchAffaire()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchAffaire), name: NSNotification.Name(rawValue: "fetchAffaire"), object: nil)
@@ -72,7 +82,7 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
                 self.affaireService.DeleteAffaire(id: String(self.affairesList[indexPath.row].numAff)){ () in
                     self.affairesList.remove(at: indexPath.row)
                     self.AffairesTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-                    self.AffairesTableView.reloadData()
+                    self.AffairesTableView.reloadWithAnimation()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchAffaire"), object: nil)
                 }
             }
@@ -98,13 +108,21 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         performSegue(withIdentifier: "toDetails", sender: AffairesTableView.cellForRow(at: indexPath))
         
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchAffaire()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        affairesList = []
+        AffairesTableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation

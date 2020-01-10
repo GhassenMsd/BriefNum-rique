@@ -81,7 +81,7 @@ class AffaireDetailsViewController: UIViewController {
             }else{
                 self.sessionS = sessions[0]
                 self.SessionName.text = "جلسة " + sessions[0].date
-                self.SessionDate.text = sessions[0].date
+                self.SessionDate.text = sessions[0].nom
                 self.ahkemText.text = sessions[0].Disp_prep
                 
                 self.sessionNon.isHidden = true
@@ -237,7 +237,7 @@ class AffaireDetailsViewController: UIViewController {
             }
         }
             else if segue.identifier == "tiListAhkem"{
-                if let ahkemListViewController = segue.destination as? AhkemListViewController {
+                if let ahkemListViewController = segue.destination as? ahkemListViewController {
                     ahkemListViewController.idAffaire = String(affaire.numAff)
                 }
             }
@@ -269,6 +269,7 @@ class AffaireDetailsViewController: UIViewController {
     }
     
     @IBAction func BackAction(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchAffaire"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
     

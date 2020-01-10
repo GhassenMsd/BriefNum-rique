@@ -27,7 +27,7 @@ func getAll (completion: @escaping (Array<Session>) -> Void) {
                     //print(response.result.value as Any)
                 var sessions:Array<Session> = []
                 for sessionDict in response.result.value as! Array<Dictionary<String,Any>> {
-                    sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : (sessionDict["date"] as! String), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! Int ,tribunal: sessionDict["id_trib"] as! Int))
+                    sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : (sessionDict["date"] as! String), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! Int ,tribunal: sessionDict["id_trib"] as! Int,nom: sessionDict["nom"] as! String))
                 }
                 completion(sessions)
                     
@@ -49,7 +49,7 @@ func getAllByAffaire (idAffaire: String,completion: @escaping (Array<Session>) -
                 //print(response.result.value as Any)
             var sessions:Array<Session> = []
             for sessionDict in response.result.value as! Array<Dictionary<String,Any>> {
-                sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : String((sessionDict["date"] as! String).prefix(10)), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! Int ,tribunal: sessionDict["id_trib"] as! Int))
+                sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : String((sessionDict["date"] as! String).prefix(10)), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! Int ,tribunal: sessionDict["id_trib"] as! Int,nom: sessionDict["nom"] as! String))
             }
             completion(sessions)
                 
@@ -111,7 +111,7 @@ func getSessionById (id: String,completion: @escaping (Session) -> Void) {
                 response in
                 //print(response.result.value as! Array<Dictionary<String,Any>>)
             let responseDict = response.result.value as! Dictionary<String,Any>
-            let session = Session(id: responseDict["id"] as! Int , nomSession: responseDict["nomSession"] as! String, date: responseDict["date"] as! String, sujet: responseDict["sujet"] as! String, notes: responseDict["notes"] as! String, Disp_prep: responseDict["Disp_prep"] as! String, Cpt_Rd_Sess: responseDict["Cpt_Rd_Sess"] as! String, id_Aff: responseDict["id_Aff"] as! Int)
+            let session = Session(id: responseDict["id"] as! Int , nomSession: responseDict["nomSession"] as! String, date: responseDict["date"] as! String, sujet: responseDict["sujet"] as! String, notes: responseDict["notes"] as! String, Disp_prep: responseDict["Disp_prep"] as! String, Cpt_Rd_Sess: responseDict["Cpt_Rd_Sess"] as! String, id_Aff: responseDict["id_Aff"] as! Int,tribunal: responseDict["id_trib"] as! Int,nom: responseDict["nom"] as! String)
             
             completion(session)
                 
@@ -120,7 +120,25 @@ func getSessionById (id: String,completion: @escaping (Session) -> Void) {
     }
 
     
-
+    func getByDateNow (completion: @escaping (Array<Session>) -> Void) {
+    
+    let preferences = UserDefaults.standard
+        //  Couldn't save (I've never seen this happen in real world testing)
+    if( preferences.object(forKey: "token") != nil){
+        print("idddUserrr" + preferences.string(forKey: "idUser")!)
+        
+        Alamofire.request(Connexion.adresse + "/api/session/getByDateNow/" + preferences.string(forKey: "idUser")! ,encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
+                response in
+                //print(response.result.value as Any)
+            var sessions:Array<Session> = []
+            for sessionDict in response.result.value as! Array<Dictionary<String,Any>> {
+                sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : String((sessionDict["date"] as! String).prefix(10)), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! Int ,tribunal: sessionDict["id_trib"] as! Int,nom: sessionDict["nom"] as! String))
+            }
+            completion(sessions)
+                
+            }
+        }
+    }
     
         
 }

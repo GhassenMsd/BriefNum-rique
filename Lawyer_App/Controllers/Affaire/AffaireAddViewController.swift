@@ -246,13 +246,21 @@ var listAvocat : Array<Adversaire> = []
         avocat.listWillDisappear {
             self.hidenAvocat = true
         }
-        
+        datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
         datePicker.datePickerMode = .dateAndTime
         dateText.inputView = datePicker
        
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
-        let tapDate = UITapGestureRecognizer(target: self, action: #selector(tapDateGuesture))
-        self.view.addGestureRecognizer(tapDate)
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        toolbar.backgroundColor = .gray
+           //done button & cancel button
+        let doneButton = UIBarButtonItem(title: "فعله", style: .plain, target: self, action:#selector(tapDateGuesture))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolbar.setItems([spaceButton,doneButton], animated: false)
+        dateText.inputAccessoryView = toolbar
+
                
                
         

@@ -84,6 +84,13 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
         return verif
     }
     
+    func fetchCountAffaire(){
+        let affaireService = AffaireService()
+        affaireService.getcountClient(id: ProfilClient.client.id){ (count) in
+            self.nbrAffaire.text =  "عدد القضايا : " + String(count)
+        }
+    }
+    
     @IBAction func OpenImagePicker(_ sender: Any) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -109,6 +116,9 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
         self.imageName = ProfilClient.client.image
         datePicker.datePickerMode = .date
         datePickerEmission.datePickerMode = .date
+        datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+        datePickerEmission.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
+
         self.dateNaiss.inputView = datePicker
         
         self.dateEmiss.inputView = datePickerEmission
@@ -124,7 +134,7 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
         
         reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: "reloadData"), object: nil)
-
+        fetchCountAffaire()
 
         // Do any additional setup after loading the view.
     }
