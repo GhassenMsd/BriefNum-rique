@@ -188,7 +188,7 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
         }
     }
     
-    @objc func fetchSessionByDate(){ 
+    @objc func fetchSessionByDate(){
         sessionService.getByDateNow(){ (sessions) in
             Home.sessionByDate = sessions
             self.ahkemListe = sessions.filter { (session) -> Bool in
@@ -549,20 +549,20 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
     
-        print("aaaaaaaaaaaaaaa" + date.description)
+        let tomorrow:Date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+        print("aaaaaaaaaaaaaaa" + tomorrow.description)
         Home.rendezVousByDate = self.rendezvousListe.filter { (rendezVous) -> Bool in
-            rendezVous.date.contains(String(date.description.prefix(10)))
+            rendezVous.date.contains(String(tomorrow.description.prefix(10)))
         }
 
         self.rendezVouzLabel.text = "المواعيد (" + String(Home.rendezVousByDate.count) + ")"
-        
         self.sessionByDate = self.sessions.filter { (session) -> Bool in
-            session.date.contains(String(Date.init().description.prefix(10)))
+            session.date.contains(String(tomorrow.description.prefix(10)))
         }
         self.sessionLabel.text = "الجلسات (" + String(self.sessionByDate.count) + ")"
         
         self.missionByDate = self.missions.filter { (mission) -> Bool in
-            mission.date.contains(String(Date.init().description.prefix(10)))
+            mission.date.contains(String(tomorrow.description.prefix(10)))
         }
         self.missionLabel.text = "المهام (" + String(self.missionByDate.count) + ")"
         

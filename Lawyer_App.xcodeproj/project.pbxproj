@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2448F3DF2FEE0A2594A8B5D1 /* Pods_Lawyer_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */; };
+		8504703A23CB837300D257E3 /* MissionRecu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8504703923CB837300D257E3 /* MissionRecu.swift */; };
+		8504703C23CB838600D257E3 /* MissionEnvoye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8504703B23CB838600D257E3 /* MissionEnvoye.swift */; };
 		85148D6D23C7E07A0078A657 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85148D6C23C7E07A0078A657 /* Animator.swift */; };
 		85148D6F23C8C42F0078A657 /* forgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85148D6E23C8C42F0078A657 /* forgetPasswordViewController.swift */; };
 		85148D7123C8C44A0078A657 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85148D7023C8C44A0078A657 /* VerificationCodeViewController.swift */; };
@@ -17,6 +19,11 @@
 		85148D7A23C8C9F50078A657 /* RendezVousDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85148D7923C8C9F50078A657 /* RendezVousDetailsViewController.swift */; };
 		85148D7C23C8CA6F0078A657 /* MissionAddFromHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85148D7B23C8CA6F0078A657 /* MissionAddFromHomeViewController.swift */; };
 		85148D7E23C8CD4D0078A657 /* ahkemByDaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85148D7D23C8CD4D0078A657 /* ahkemByDaylistViewController.swift */; };
+		85148D8023C911DE0078A657 /* SessionRecu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85148D7F23C911DE0078A657 /* SessionRecu.swift */; };
+		85148D8223C913C40078A657 /* SessionEnvoye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85148D8123C913C40078A657 /* SessionEnvoye.swift */; };
+		8514EF2523DF0B6D00438727 /* JihetEttisalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514EF2423DF0B6D00438727 /* JihetEttisalViewController.swift */; };
+		8514EF2723DF0B9D00438727 /* JihetEttisal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514EF2623DF0B9D00438727 /* JihetEttisal.swift */; };
+		8514EF2923DF0BEC00438727 /* JihetEttisalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514EF2823DF0BEC00438727 /* JihetEttisalService.swift */; };
 		852FC47723B116F0000AE8AE /* AhkemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47623B116F0000AE8AE /* AhkemListViewController.swift */; };
 		852FC47923B23D92000AE8AE /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47823B23D92000AE8AE /* ClientService.swift */; };
 		852FC47D23B23F36000AE8AE /* ProfilUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */; };
@@ -98,6 +105,8 @@
 /* Begin PBXFileReference section */
 		28B534695AD7B99AFC3950FB /* Pods-Lawyer_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lawyer_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lawyer_App/Pods-Lawyer_App.debug.xcconfig"; sourceTree = "<group>"; };
 		620EA1627D5165BD8853A2B9 /* Pods_Lawyer_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lawyer_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8504703923CB837300D257E3 /* MissionRecu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRecu.swift; sourceTree = "<group>"; };
+		8504703B23CB838600D257E3 /* MissionEnvoye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEnvoye.swift; sourceTree = "<group>"; };
 		85148D6C23C7E07A0078A657 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		85148D6E23C8C42F0078A657 /* forgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetPasswordViewController.swift; sourceTree = "<group>"; };
 		85148D7023C8C44A0078A657 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +116,11 @@
 		85148D7923C8C9F50078A657 /* RendezVousDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendezVousDetailsViewController.swift; sourceTree = "<group>"; };
 		85148D7B23C8CA6F0078A657 /* MissionAddFromHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionAddFromHomeViewController.swift; sourceTree = "<group>"; };
 		85148D7D23C8CD4D0078A657 /* ahkemByDaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ahkemByDaylistViewController.swift; sourceTree = "<group>"; };
+		85148D7F23C911DE0078A657 /* SessionRecu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRecu.swift; sourceTree = "<group>"; };
+		85148D8123C913C40078A657 /* SessionEnvoye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionEnvoye.swift; sourceTree = "<group>"; };
+		8514EF2423DF0B6D00438727 /* JihetEttisalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JihetEttisalViewController.swift; sourceTree = "<group>"; };
+		8514EF2623DF0B9D00438727 /* JihetEttisal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JihetEttisal.swift; sourceTree = "<group>"; };
+		8514EF2823DF0BEC00438727 /* JihetEttisalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JihetEttisalService.swift; sourceTree = "<group>"; };
 		852FC47623B116F0000AE8AE /* AhkemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AhkemListViewController.swift; sourceTree = "<group>"; };
 		852FC47823B23D92000AE8AE /* ClientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
 		852FC47C23B23F36000AE8AE /* ProfilUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilUserViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +234,14 @@
 			path = RendezVous;
 			sourceTree = "<group>";
 		};
+		8514EF2323DF0B4200438727 /* Jihet ettisal */ = {
+			isa = PBXGroup;
+			children = (
+				8514EF2423DF0B6D00438727 /* JihetEttisalViewController.swift */,
+			);
+			path = "Jihet ettisal";
+			sourceTree = "<group>";
+		};
 		85C4820023BFBE4D006F5CA3 /* Historique */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +271,11 @@
 				85D5789F23A8200A00E5AB1F /* RendezVous.swift */,
 				852FC48A23B6AED7000AE8AE /* Adversaire.swift */,
 				85148D6C23C7E07A0078A657 /* Animator.swift */,
+				85148D7F23C911DE0078A657 /* SessionRecu.swift */,
+				85148D8123C913C40078A657 /* SessionEnvoye.swift */,
+				8504703923CB837300D257E3 /* MissionRecu.swift */,
+				8504703B23CB838600D257E3 /* MissionEnvoye.swift */,
+				8514EF2623DF0B9D00438727 /* JihetEttisal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +303,7 @@
 				852FC48623B686DD000AE8AE /* TribunalService.swift */,
 				852FC48823B6AB24000AE8AE /* AdversaireService.swift */,
 				85C481FE23BEB6DA006F5CA3 /* AvocatService.swift */,
+				8514EF2823DF0BEC00438727 /* JihetEttisalService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -431,6 +459,7 @@
 		8F98802B23902BF500A44379 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8514EF2323DF0B4200438727 /* Jihet ettisal */,
 				85148D7423C8C97C0078A657 /* RendezVous */,
 				85C4820023BFBE4D006F5CA3 /* Historique */,
 				85D5789623A7ACB200E5AB1F /* Encyclopedie */,
@@ -597,6 +626,7 @@
 				85F3893623AD0A0F002E8985 /* ObjectifUpdateViewController.swift in Sources */,
 				852FC48723B686DD000AE8AE /* TribunalService.swift in Sources */,
 				8F0A8808239953E40035B20A /* ObjectifsListViewController.swift in Sources */,
+				8504703A23CB837300D257E3 /* MissionRecu.swift in Sources */,
 				8F98800C23901CDB00A44379 /* AppDelegate.swift in Sources */,
 				85D5789C23A81F2500E5AB1F /* RendezVouzService.swift in Sources */,
 				8F0F5F9223A1C18100BC322A /* Contrat.swift in Sources */,
@@ -615,8 +645,10 @@
 				8F08CD8723A5C28300636CCC /* Connexion.swift in Sources */,
 				85ECF4F323BA1E5D005EDBD8 /* SessionListeByDateViewController.swift in Sources */,
 				85D141BF23A6DBA7009434A0 /* DemandeAddViewController.swift in Sources */,
+				8504703C23CB838600D257E3 /* MissionEnvoye.swift in Sources */,
 				8F0F5F9A23A1C56B00BC322A /* HuissierDeJustice.swift in Sources */,
 				8F9880312390330400A44379 /* Slide.swift in Sources */,
+				8514EF2723DF0B9D00438727 /* JihetEttisal.swift in Sources */,
 				8F0F5F9023A1BF0F00BC322A /* Cercle.swift in Sources */,
 				85C4820223BFBEDD006F5CA3 /* HistoriqueViewController.swift in Sources */,
 				85148D7323C8C4690078A657 /* newPasswordViewController.swift in Sources */,
@@ -628,12 +660,14 @@
 				8F0F5F9623A1C32500BC322A /* Demande.swift in Sources */,
 				85D578A023A8200A00E5AB1F /* RendezVous.swift in Sources */,
 				85ECF4F123BA1E3F005EDBD8 /* MissionDayDetailViewController.swift in Sources */,
+				85148D8223C913C40078A657 /* SessionEnvoye.swift in Sources */,
 				85D141BD23A6DB63009434A0 /* ObjectifAddViewController.swift in Sources */,
 				8F0F5F9423A1C2C000BC322A /* dataAvocat.swift in Sources */,
 				85ECF4F523BA1E78005EDBD8 /* SessionDayDetailViewController.swift in Sources */,
 				852FC48923B6AB24000AE8AE /* AdversaireService.swift in Sources */,
 				8F0F623723956C3300301725 /* AffaireDetailsViewController.swift in Sources */,
 				85D5789E23A81F7100E5AB1F /* SessionService.swift in Sources */,
+				8514EF2923DF0BEC00438727 /* JihetEttisalService.swift in Sources */,
 				8F0F5F9C23A1C61400BC322A /* HuissierNotaire.swift in Sources */,
 				8F0F5FA223A1C80500BC322A /* Session.swift in Sources */,
 				8F98801623901CDC00A44379 /* Lawyer_App.xcdatamodeld in Sources */,
@@ -643,6 +677,7 @@
 				85148D7A23C8C9F50078A657 /* RendezVousDetailsViewController.swift in Sources */,
 				85A7451423918AC800BCE149 /* Login.swift in Sources */,
 				85F3893823AD214D002E8985 /* DemandeUpdateViewController.swift in Sources */,
+				85148D8023C911DE0078A657 /* SessionRecu.swift in Sources */,
 				85148D6F23C8C42F0078A657 /* forgetPasswordViewController.swift in Sources */,
 				85D5789A23A81EF000E5AB1F /* MissionService.swift in Sources */,
 				8F1260FD23A1295600152FF7 /* Affaire.swift in Sources */,
@@ -652,6 +687,7 @@
 				8F0A880623994EFB0035B20A /* ObjectifDetailsViewController.swift in Sources */,
 				85148D6D23C7E07A0078A657 /* Animator.swift in Sources */,
 				85D578A223A82AB000E5AB1F /* AffaireService.swift in Sources */,
+				8514EF2523DF0B6D00438727 /* JihetEttisalViewController.swift in Sources */,
 				8F0A880A239AA2AE0035B20A /* DemandeDetailsViewController.swift in Sources */,
 				85ECC5A923AA8A53003736F8 /* DemandeService.swift in Sources */,
 			);

@@ -25,6 +25,7 @@ var affaire: Int
 class ListAvocatsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet var avocatTable: UITableView!
     @IBOutlet var ta2kid: UIButton!
+    @IBOutlet var hideMouhami: UITextView!
     
     var counts = 0
 
@@ -35,6 +36,7 @@ class ListAvocatsViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     var dateSession = ""
+    var tribunalName = ""
     var idTrib = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,17 +84,23 @@ class ListAvocatsViewController: UIViewController,UITableViewDelegate,UITableVie
             label.text = "\(counts)"
         }
     }
-    
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         ta2kid.addShadowView()
         let avocatService = AvocatService()
         avocatService.getAvocatByDate(date: self.dateSession, idTribunal: self.idTrib){ (avocats) in
-            self.avocatslist = avocats
-            self.avocatTable.reloadWithAnimation()
+            
+            if (avocats.count == 0){
+                self.hideMouhami.text = "ليس هناك محامين في " + self.tribunalName + " يوم " + self.dateSession
+                self.hideMouhami.isHidden = false
+            }else{
+                self.avocatslist = avocats
+                self.avocatTable.reloadWithAnimation()
+                self.hideMouhami.isHidden = true
+            }
+            
+            
         }
         
         
@@ -100,6 +108,7 @@ class ListAvocatsViewController: UIViewController,UITableViewDelegate,UITableVie
         self.avocatTable.allowsSelectionDuringEditing = true
         print(dateSession)
         print(idTrib)
+        print(tribunalName)
         // Do any additional setup after loading the view.
     }
     

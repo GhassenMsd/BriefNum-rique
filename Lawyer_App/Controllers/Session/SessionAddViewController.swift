@@ -13,14 +13,12 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
     var idAffaire = ""
     var idAffaireFromHome = ""
 
-    @IBOutlet var viewNom: UIView!
     @IBOutlet weak var ViewDate: UIView!
     @IBOutlet weak var ViewSujet: UIView!
     @IBOutlet weak var ViewRemarque: UIView!
     @IBOutlet weak var ViewAutre: UIView!
     @IBOutlet weak var ViewAdd: UIButton!
     
-    @IBOutlet var TVNom: UITextField!
     @IBOutlet var TVSujet: UITextView!
     @IBOutlet var TVDate: UITextField!
     @IBOutlet var TVRemarque: UITextView!
@@ -35,7 +33,6 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
         ViewDate.addShadowView()
         ViewAutre.addShadowView()
         ViewRemarque.addShadowView()
-        viewNom.addShadowView()
         
         print("idAffaire from Add :" + idAffaire)
         TVAutre.delegate = self
@@ -43,7 +40,6 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
         TVRemarque.delegate = self
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = NSLocale(localeIdentifier: "ar_TN") as Locale
-
         TVDate.inputView = datePicker
         
         datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
@@ -53,23 +49,21 @@ class SessionAddViewController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
     }
     
-    
     @IBAction func AddSession(_ sender: Any) {
         let sessionService = SessionService()
         
         if (self.idAffaire == ""){
-            sessionService.AddSession(nomSession: TVNom.text!, date: TVDate.text!, sujet: TVSujet.text, notes: TVRemarque.text, Disp_prep: TVAutre.text, Cpt_Rd_Sess: "aaa", id_Aff: Int(idAffaireFromHome)!){ () in
+            sessionService.AddSession(nomSession: "Session", date: TVDate.text!, sujet: TVSujet.text, notes: TVRemarque.text, Disp_prep: TVAutre.text, Cpt_Rd_Sess: "aaa", id_Aff: Int(idAffaireFromHome)!){ () in
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSession"), object: nil)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSessionByDate"), object: nil)
                 
             }
         }else if (self.idAffaireFromHome == ""){
-            sessionService.AddSession(nomSession: TVNom.text!, date: TVDate.text!, sujet: TVSujet.text, notes: TVRemarque.text, Disp_prep: TVAutre.text, Cpt_Rd_Sess: "aaa", id_Aff: Int(idAffaire)!){ () in
+            sessionService.AddSession(nomSession: "Session", date: TVDate.text!, sujet: TVSujet.text, notes: TVRemarque.text, Disp_prep: TVAutre.text, Cpt_Rd_Sess: "aaa", id_Aff: Int(idAffaire)!){ () in
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchJalsa"), object: nil)
                 
             }
         }
-        
         
         
         self.navigationController?.popViewController(animated: true)

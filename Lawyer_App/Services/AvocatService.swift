@@ -20,7 +20,7 @@ class AvocatService: NSObject {
     if( preferences.object(forKey: "token") != nil){
         print("idddUserrr" + preferences.string(forKey: "idUser")!)
         
-        Alamofire.request(Connexion.adresse + "/api/Avocat/getAllByDate/" + date + "/" + String(idTribunal),encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
+        Alamofire.request(Connexion.adresse + "/api/Avocat/getAllByDate/" + date + "/" + String(idTribunal) + "/" + preferences.string(forKey: "idUser")! ,encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
                 response in
                 //print(response.result.value as Any)
             var avocats:Array<AvocatByDate> = []

@@ -19,6 +19,7 @@ class ObjectifDetailsViewController: UIViewController {
     
     
     var idMission = ""
+    
     var mission = Mission()
 
     @objc func fetchDetailsMission() -> Void {

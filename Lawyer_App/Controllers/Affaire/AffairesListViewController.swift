@@ -14,8 +14,11 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
 
     let affaireService = AffaireService()
     var affairesList : Array<Affaire> = []
+    var affairesListFiltre : Array<Affaire> = []
     let refreshControl = UIRefreshControl()
 
+    @IBOutlet var rechercheText: UITextField!
+    @IBOutlet var addAf: UIButton!
     @IBOutlet var KadhayaNon: UILabel!
     @IBOutlet weak var AffairesTableView: UITableView!
     @IBOutlet weak var ViewSearch: UIView!
@@ -26,6 +29,7 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
                 self.KadhayaNon.text = "ليس لديك قضايا"
             }else{
                 self.affairesList = affaires
+                self.affairesListFiltre = affaires
                 self.AffairesTableView.reloadWithAnimation()
                 self.refreshControl.endRefreshing()
                 self.spinner.stopAnimating()
@@ -44,11 +48,10 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
         
         fetchAffaire()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchAffaire), name: NSNotification.Name(rawValue: "fetchAffaire"), object: nil)
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return affairesList.count
+        return affairesListFiltre.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,9 +65,9 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
 
         view!.addShadowView()
 
-        numAffaire.text =  "قظية " + String(affairesList[indexPath.row].numeroAffaire)
-            tribunal.text = affairesList[indexPath.row].tribunal
-            cercle.text = affairesList[indexPath.row].cercle
+        numAffaire.text =  "قظية " + String(affairesListFiltre[indexPath.row].numeroAffaire)
+            tribunal.text = affairesListFiltre[indexPath.row].tribunal
+            cercle.text = affairesListFiltre[indexPath.row].cercle
         
         
         //let exerciceName = contentView?.viewWithTag(3) as! UILabel
@@ -79,8 +82,8 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
             let yesAction = UIAlertAction(title: "تأكيد", style: .default) { _ in
                 // replace data variable with your own data array
                 
-                self.affaireService.DeleteAffaire(id: String(self.affairesList[indexPath.row].numAff)){ () in
-                    self.affairesList.remove(at: indexPath.row)
+                self.affaireService.DeleteAffaire(id: String(self.affairesListFiltre[indexPath.row].numAff)){ () in
+                    self.affairesListFiltre.remove(at: indexPath.row)
                     self.AffairesTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
                     self.AffairesTableView.reloadWithAnimation()
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchAffaire"), object: nil)
@@ -100,17 +103,16 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetails"{
-            let cell = sender as! UITableViewCell
-            let index = AffairesTableView.indexPath(for: cell)! as NSIndexPath
+            let index = sender as! NSIndexPath
             if let affaireDetailsViewController = segue.destination as? AffaireDetailsViewController {
-                affaireDetailsViewController.affaire = affairesList[index.row]
+                affaireDetailsViewController.affaire = affairesListFiltre[index.row]
             }
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "toDetails", sender: AffairesTableView.cellForRow(at: indexPath))
+        performSegue(withIdentifier: "toDetails", sender: indexPath)
         
     }
     
@@ -120,10 +122,30 @@ class AffairesListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        spinner.startAnimating()
+        AffairesTableView.backgroundView = spinner
         affairesList = []
+        affairesListFiltre = []
+        self.rechercheText.text = ""
         AffairesTableView.reloadData()
     }
 
+    @IBAction func toAddAffaire(_ sender: UIButton) {
+        performSegue(withIdentifier: "toAddAffaire", sender: self)
+    }
+    
+    @IBAction func rechercheAffaire(_ sender: Any) {
+        if(self.rechercheText.text! != ""){
+            self.affairesListFiltre = self.affairesList.filter { (affaire) -> Bool in
+                return affaire.cercle.uppercased().contains(self.rechercheText.text!.uppercased()) || affaire.tribunal.uppercased().contains(self.rechercheText.text!.uppercased()) || affaire.numeroAffaire.description.contains(self.rechercheText.text!.uppercased())
+            }
+        }
+        else{
+            self.affairesListFiltre = self.affairesList
+        }
+        AffairesTableView.reloadData()
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -59,7 +59,6 @@ func getAllByAffaire (idAffaire: String,completion: @escaping (Array<Session>) -
     
     
 func AddSession(nomSession: String, date: String,sujet: String,notes: String,Disp_prep: String,Cpt_Rd_Sess: String,id_Aff: Int, completion: @escaping () -> Void){
-        
         let preferences = UserDefaults.standard
         let parameters: Parameters = [
             "nomSession": nomSession,
@@ -120,7 +119,7 @@ func getSessionById (id: String,completion: @escaping (Session) -> Void) {
     }
 
     
-    func getByDateNow (completion: @escaping (Array<Session>) -> Void) {
+func getByDateNow (completion: @escaping (Array<Session>) -> Void) {
     
     let preferences = UserDefaults.standard
         //  Couldn't save (I've never seen this happen in real world testing)
@@ -135,6 +134,48 @@ func getSessionById (id: String,completion: @escaping (Session) -> Void) {
                 sessions.append(Session(id : sessionDict["id"] as! Int, nomSession : sessionDict["nomSession"] as! String,date : String((sessionDict["date"] as! String).prefix(10)), sujet : sessionDict["sujet"] as! String, notes : sessionDict["notes"] as! String , Disp_prep : sessionDict["Disp_prep"] as! String , Cpt_Rd_Sess : sessionDict["Cpt_Rd_Sess"] as! String, id_Aff : sessionDict["id_Aff"] as! Int ,tribunal: sessionDict["id_trib"] as! Int,nom: sessionDict["nom"] as! String))
             }
             completion(sessions)
+                
+            }
+        }
+    }
+    
+    
+func getSessionsRecu (completion: @escaping (Array<SessionRecu>) -> Void) {
+    
+    let preferences = UserDefaults.standard
+        //  Couldn't save (I've never seen this happen in real world testing)
+    if( preferences.object(forKey: "token") != nil){
+        
+        Alamofire.request(Connexion.adresse + "/api/SessionRecu/getSessionRecu/" + preferences.string(forKey: "idUser")! , encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
+                response in
+                //print(response.result.value as Any)
+            
+            var sessionsRecu:Array<SessionRecu> = []
+            for sessionDict in response.result.value as! Array<Dictionary<String,Any>> {
+                sessionsRecu.append(SessionRecu(dateLimite: sessionDict["dateLimite"] as! String, dateSession: sessionDict["dateSession"] as! String, sujetSession: sessionDict["sujetSession"] as! String, Disp_prep: sessionDict["Disp_prep"] as! String, avocatMoukabel: sessionDict["avocatMoukabel"] as! String, client: sessionDict["client"] as! String, numeroAffaire: sessionDict["numeroAffaire"] as! Int, tribunal: sessionDict["tribunal"] as! String))
+            }
+            completion(sessionsRecu)
+                
+            }
+        }
+    }
+    
+    
+func getSessionsEnvoye (completion: @escaping (Array<SessionEnvoye>) -> Void) {
+    
+    let preferences = UserDefaults.standard
+        //  Couldn't save (I've never seen this happen in real world testing)
+    if( preferences.object(forKey: "token") != nil){
+        
+        Alamofire.request(Connexion.adresse + "/api/SessionEnvoye/getSessionEnvoye/" + preferences.string(forKey: "idUser")! , encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
+                response in
+                //print(response.result.value as Any)
+            
+            var sessionsEnvoye:Array<SessionEnvoye> = []
+            for sessionDict in response.result.value as! Array<Dictionary<String,Any>> {
+                sessionsEnvoye.append(SessionEnvoye(dateLimite: sessionDict["dateLimite"] as! String, dateSession: sessionDict["dateSession"] as! String, sujetSession: sessionDict["sujetSession"] as! String, Disp_prep: sessionDict["Disp_prep"] as! String, avocatMoukabel: sessionDict["avocatMoukabel"] as! String, client: sessionDict["client"] as! String, numeroAffaire: sessionDict["numeroAffaire"] as! Int, tribunal: sessionDict["tribunal"] as! String))
+            }
+            completion(sessionsEnvoye)
                 
             }
         }

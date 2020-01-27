@@ -152,6 +152,7 @@ class AffaireDetailsViewController: UIViewController {
         let tapAhkem = UITapGestureRecognizer(target: self, action: #selector(tapAhkem(_:)))
         let tapAhkemListList = UITapGestureRecognizer(target: self, action: #selector(tapAhkemListList(_:)))
         
+
         AllSession.addGestureRecognizer(tapSessionList)
         AllObjectif.addGestureRecognizer(tapObjectifList)
         ViewAffaire.addGestureRecognizer(tapSession)

@@ -104,11 +104,12 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
                 sessionAddViewCtroller.idAffaire = self.idAffaire
             }
             
+            
         }else if(segue.identifier == "Send"){
-
             if let ListAvocats = segue.destination as? ListAvocatsViewController {
-                ListAvocats.dateSession = sessionsList[self.selectedCell].date
+                ListAvocats.dateSession = String(sessionsList[self.selectedCell].date.prefix(10))
                 ListAvocats.idTrib = sessionsList[self.selectedCell].tribunal
+                ListAvocats.tribunalName = sessionsList[self.selectedCell].nom
             }
         }
     }
@@ -169,6 +170,8 @@ class SessionsListViewController: UIViewController, UITableViewDataSource, UITab
     
     
 }
+
+
 
 extension UITableView {
 func reloadWithAnimation() {

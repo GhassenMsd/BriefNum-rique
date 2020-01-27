@@ -122,6 +122,48 @@ class MissionService: NSObject {
         
     }
     
+func getMissionsEnvoye (completion: @escaping (Array<MissionEnvoye>) -> Void) {
+    
+    let preferences = UserDefaults.standard
+        //  Couldn't save (I've never seen this happen in real world testing)
+    if( preferences.object(forKey: "token") != nil){
+        
+        Alamofire.request(Connexion.adresse + "/api/MissionEnvoye/getMissionEnvoye/" + preferences.string(forKey: "idUser")! , encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
+                response in
+                //print(response.result.value as Any)
+            
+            var missionsEnvoye:Array<MissionEnvoye> = []
+            for missionDict in response.result.value as! Array<Dictionary<String,Any>> {
+                missionsEnvoye.append(MissionEnvoye(dateLimite: missionDict["dateLimite"] as! String, dateMission: missionDict["dateMission"] as! String, nomMission: missionDict["nomMission"] as! String, partieConcernee: missionDict["partieConcernee"] as! String, adressePartieC: missionDict["adressePartieC"] as! String, type: missionDict["type"] as! String, requis: missionDict["requis"] as! String, notes: missionDict["notes"] as! String, avocatMoukabel: missionDict["avocatMoukabel"] as! String, numeroAffaire: missionDict["numeroAffaire"] as! Int))
+            }
+            completion(missionsEnvoye)
+                
+            }
+        }
+    }
+    
+    
+    
+func getMissionsRecu (completion: @escaping (Array<MissionRecu>) -> Void) {
+    
+    let preferences = UserDefaults.standard
+        //  Couldn't save (I've never seen this happen in real world testing)
+    if( preferences.object(forKey: "token") != nil){
+        
+        Alamofire.request(Connexion.adresse + "/api/MissionRecu/getMissionRecu/" + preferences.string(forKey: "idUser")! , encoding: JSONEncoding.default, headers: ["Authorization": "Bearer " + preferences.string(forKey: "token")!]).responseJSON {
+                response in
+                //print(response.result.value as Any)
+            
+            var missionsRecu:Array<MissionRecu> = []
+            for missionDict in response.result.value as! Array<Dictionary<String,Any>> {
+                missionsRecu.append(MissionRecu(dateLimite: missionDict["dateLimite"] as! String, dateMission: missionDict["dateMission"] as! String, nomMission: missionDict["nomMission"] as! String, partieConcernee: missionDict["partieConcernee"] as! String, adressePartieC: missionDict["adressePartieC"] as! String, type: missionDict["type"] as! String, requis: missionDict["requis"] as! String, notes: missionDict["notes"] as! String, avocatMoukabel: missionDict["avocatMoukabel"] as! String, numeroAffaire: missionDict["numeroAffaire"] as! Int))
+            }
+            completion(missionsRecu)
+                
+            }
+        }
+    }
+    
     
 
 }

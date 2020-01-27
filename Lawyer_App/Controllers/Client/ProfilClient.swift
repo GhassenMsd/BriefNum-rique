@@ -41,7 +41,9 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
     var datePicker = UIDatePicker()
     var datePickerEmission = UIDatePicker()
     let clientService = ClientService()
+    var taptel: UITapGestureRecognizer? = nil
 
+    
     func Verif() -> Bool{
         var verif = true
         if(self.nomComplet.text!.isEmpty){
@@ -100,6 +102,7 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dateView.addShadowView()
@@ -131,6 +134,8 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
         let tapDateEmission = UITapGestureRecognizer(target: self, action: #selector(tapDateGuestureEmission))
         self.view.addGestureRecognizer(tapDateEmission)
 
+        taptel = UITapGestureRecognizer(target: self, action: #selector(tapTelGuesture))
+        self.tel.addGestureRecognizer(self.taptel!)
         
         reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: "reloadData"), object: nil)
@@ -177,11 +182,12 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
         self.lieuNaiss.isEnabled = true
         self.adresse.isEnabled = true
         self.profession.isEnabled = true
-        self.tel.isEnabled = true
+        //self.tel.isEnabled = true
         self.email.isEnabled = true
         self.addImageBtn.isHidden = false
         self.btnEnableUpdate.isEnabled = false
         self.btnUpdate.isHidden = false
+        self.tel.removeGestureRecognizer(self.taptel!)
     }
     
     @IBAction func btnUpdateAction(_ sender: Any) {
@@ -196,11 +202,12 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
                 self.lieuNaiss.isEnabled = false
                 self.adresse.isEnabled = false
                 self.profession.isEnabled = false
-                self.tel.isEnabled = false
                 self.email.isEnabled = false
                 self.btnEnableUpdate.isEnabled = true
                 self.btnUpdate.isHidden = true
                 self.addImageBtn.isHidden = true
+                //self.tel.isEnabled = false
+                self.tel.addGestureRecognizer(self.taptel!)
             }
         }
         
@@ -261,6 +268,21 @@ class ProfilClient: UIViewController,UIImagePickerControllerDelegate,UINavigatio
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func tapTelGuesture(){
+        if let phoneURL = URL(string: ("tel://" + self.tel.text!)) {
+
+            let alert = UIAlertController(title: ("هل تريد الاتصال ب " + self.tel.text! + " ?"), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { (action) in
+                //
+                UIApplication.shared.canOpenURL(phoneURL as URL)
+                UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+            }))
+
+            alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     /*

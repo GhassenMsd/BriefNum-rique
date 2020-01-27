@@ -119,7 +119,6 @@ class ObjectifsListViewController: UIViewController ,UITableViewDataSource,UITab
                 self.refreshControl.endRefreshing()
                 self.spinner.stopAnimating()
             }
-            
         }
     }
     

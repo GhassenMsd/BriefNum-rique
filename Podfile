@@ -12,7 +12,6 @@ target 'Lawyer_App' do
   pod "QVRWeekView"
   pod "MBCircularProgressBar"
   pod 'SDWebImage', '~> 5.0'
-
   # Pods for Lawyer_App
 
 end

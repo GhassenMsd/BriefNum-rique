@@ -23,7 +23,10 @@ class Login: UIViewController {
     }
     
     
-    @IBAction func loginAction(_ sender: Any) {
+    @IBAction func loginAction(_ sender: UIButton) {
+        connexionBtnAction.animateButtonDown()
+        connexionBtnAction.animateButtonUp()
+
         let email = userName.text!
         let password = self.password.text!
         if( email != "" && password != ""){
@@ -40,6 +43,7 @@ class Login: UIViewController {
             }
 
         }
+        
     }
     
     @IBAction func checkBoxTapped(_ sender: UIButton) {
@@ -64,3 +68,20 @@ class Login: UIViewController {
     
 }
 
+
+extension UIView {
+
+func animateButtonDown() {
+
+    UIView.animate(withDuration: 0.5, delay: 0.0, options: [.allowUserInteraction, .curveEaseIn], animations: {
+        self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+    }, completion: nil)
+}
+
+func animateButtonUp() {
+
+    UIView.animate(withDuration: 0.5, delay: 0.0, options: [.allowUserInteraction, .curveEaseOut], animations: {
+        self.transform = CGAffineTransform.identity
+    }, completion: nil)
+}
+}

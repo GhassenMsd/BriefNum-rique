@@ -24,7 +24,7 @@ class DemandeDetailsViewController: UIViewController {
         let demandeservices = DemandeService()
         demandeservices.getDemandeById(id: idDemande){ (demande) in
             self.navbar.title = demande.nomDemande
-            self.dateDemande.text = demande.date
+            self.dateDemande.text = String(demande.date.prefix(10))
             self.PartieCD.text = demande.partieConcernee
             self.typeD.text = demande.type
             self.sujetDemande.text = demande.sujet
@@ -35,7 +35,6 @@ class DemandeDetailsViewController: UIViewController {
         super.viewDidLoad()
         fetchdemandeDetail()
         NotificationCenter.default.addObserver(self, selector: #selector(fetchdemandeDetail), name: NSNotification.Name(rawValue: "fetchdemandeDetail"), object: nil)
-        
         
         ViewDemande.addShadowView()
         // Do any additional setup after loading the view.

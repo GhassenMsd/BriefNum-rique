@@ -8,48 +8,62 @@
 
 import UIKit
 
-
-struct Jalaset{
-var date: String
-var affaire: String
-var tribunal: String
-var client: String
-var sujet: String
-var ahkem: String
-
-    init(date: String, affaire: String,tribunal: String,client: String,sujet: String,ahkem: String)
-    {
-        self.date = date
-        self.affaire = affaire
-        self.tribunal = tribunal
-        self.client = client
-        self.sujet = sujet
-        self.ahkem = ahkem
-    }
-}
-
-
 class HistoriqueViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet var tableJalaset: UITableView!
-    var jalasetList : Array<Jalaset> = []
+    @IBOutlet var tableMaham: UITableView!
     
-    var jalsa1 = Jalaset(date: "01-02-2020", affaire: "143", tribunal: "محكمة تونس", client: "غسان مساعد", sujet: "لهرم القضائي يبررها في ذلك مبدأ النقض لمراقبة حسن تطبيق القوانين من طرف محاكم الأصل ولذلك فهي محكمة قانون وليست محكمة درجة ثالثة للقضاء بمعني أنها لا تنظر في الوقائع", ahkem: "نظرها علي الجانب القانوني للنزاع لمراقبة حسن تطبيق القانون من طرف محاكم الأصل وتتركب المحكمة من رئيس أول")
+    var jalasetListE : Array<SessionEnvoye> = []
+    var mahamListE : Array<MissionEnvoye> = []
+    var jalasetListR : Array<SessionRecu> = []
+    var mahamListR : Array<MissionRecu> = []
     
-    var jalsa2 = Jalaset(date: "23-12-2020", affaire: "899", tribunal: "محكمة بن عروس", client: "عزيز حمادي", sujet: "تنظر محكمة التعقيب في الأحكام نهائية الدرجة، وذلك في خصوص سبع حالات أوردها الفصل 175 من مجلة المرافعات المدنية والتجارية، منها بالخصوص", ahkem: "تنظر محكمة التعقيب بدوائرها المجتمعة فيما يدعو إلى توحيد الآراء بين الدوائر وكذلك في الخطأ البيّن ")
+    @IBOutlet var send: UIImageView!
+    @IBOutlet var recieve: UIImageView!
     
     var SelectedIndex = -1
     var isCoollapse = false
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jalasetList.count
+        var count = 0
+        if(tableView == tableJalaset){
+            if(self.send.image == UIImage(named: "call_made")){
+                count = jalasetListE.count
+            }else if (self.recieve.image == UIImage(named: "call_received (1)")){
+                count = jalasetListR.count
+            }
+
+        }else {
+            if(self.send.image == UIImage(named: "call_made")){
+                count = mahamListE.count
+            }else if (self.recieve.image == UIImage(named: "call_received (1)")){
+                count = mahamListR.count
+            }
+            
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (self.SelectedIndex == indexPath.row && isCoollapse == true){
-            return 526
-        }else{
-            return 95
+        var height: CGFloat = 0
+        
+        if(tableView == tableJalaset){
+            if (self.SelectedIndex == indexPath.row && isCoollapse == true){
+                
+                height = 526
+            }else{
+                height = 95
+            }
+            
+        }else if (tableView == tableMaham){
+            if (self.SelectedIndex == indexPath.row && isCoollapse == true){
+
+                height = 617
+            }else{
+                height = 95
+            }
         }
+        
+        return height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -65,60 +79,209 @@ class HistoriqueViewController: UIViewController,UITableViewDelegate,UITableView
         }
         self.SelectedIndex = indexPath.row
         tableView.reloadRows(at: [indexPath], with: .automatic)
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "jalasetCell")
-        let contentView = cell?.viewWithTag(0)
-        let view = contentView?.viewWithTag(7)
-        let view2 = contentView?.viewWithTag(9)
+        var cellToReturn = UITableViewCell() // Dummy value
 
-        view!.addShadowView()
-        view2!.addShadowView()
+        if (tableView == tableMaham){
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "mahamCell")
+            let contentView = cell1?.viewWithTag(0)
+            let view = contentView?.viewWithTag(10)
+            let view2 = contentView?.viewWithTag(11)
 
-        
-        let dat = contentView?.viewWithTag(1) as! UILabel
-        let aff = contentView?.viewWithTag(2) as! UILabel
-        let trib = contentView?.viewWithTag(3) as! UILabel
-        let clt = contentView?.viewWithTag(4) as! UILabel
-        let suj = contentView?.viewWithTag(5) as! UITextView
-        let ahk = contentView?.viewWithTag(6) as! UITextView
-        let taraf = contentView?.viewWithTag(10) as! UILabel
-        
-        suj.addShadowView()
-        ahk.addShadowView()
-        
-        dat.text = "جلسة " + jalasetList[indexPath.row].date
-        aff.text = "قضية عدد " + jalasetList[indexPath.row].affaire
-        trib.text = jalasetList[indexPath.row].tribunal
-        clt.text = "الحريف: " + jalasetList[indexPath.row].client
-        suj.text = jalasetList[indexPath.row].sujet
-        ahk.text = jalasetList[indexPath.row].ahkem
+            view!.addShadowView()
+            view2!.addShadowView()
 
-        return cell!
+            
+            let titre = contentView?.viewWithTag(1) as! UILabel
+            let aff = contentView?.viewWithTag(2) as! UILabel
+            let type = contentView?.viewWithTag(3) as! UILabel
+            let jiha = contentView?.viewWithTag(4) as! UILabel
+            let date = contentView?.viewWithTag(5) as! UITextView
+            let adresseJiha = contentView?.viewWithTag(6) as! UITextView
+            let note = contentView?.viewWithTag(7) as! UITextView
+            let aamel = contentView?.viewWithTag(8) as! UILabel
+            let tarafMoukabel = contentView?.viewWithTag(9) as! UILabel
+
+            date.addShadowView()
+            adresseJiha.addShadowView()
+            note.addShadowView()
+            
+            if(self.send.image == UIImage(named: "call_made")){
+                titre.text = mahamListE[indexPath.row].nomMission
+                aff.text = "قضية عدد " + String(mahamListE[indexPath.row].numeroAffaire)
+                type.text = mahamListE[indexPath.row].type
+                jiha.text = mahamListE[indexPath.row].partieConcernee
+                date.text = String(mahamListE[indexPath.row].dateMission.prefix(10))
+                adresseJiha.text = mahamListE[indexPath.row].adressePartieC
+                note.text = mahamListE[indexPath.row].notes
+                aamel.text = mahamListE[indexPath.row].requis
+                tarafMoukabel.text = mahamListE[indexPath.row].avocatMoukabel
+
+            }else if (self.recieve.image == UIImage(named: "call_received (1)")){
+                titre.text = mahamListR[indexPath.row].nomMission
+                aff.text = "قضية عدد " + String(mahamListR[indexPath.row].numeroAffaire)
+                type.text = mahamListR[indexPath.row].type
+                jiha.text = mahamListR[indexPath.row].partieConcernee
+                date.text = String(mahamListR[indexPath.row].dateMission.prefix(10))
+                adresseJiha.text = mahamListR[indexPath.row].adressePartieC
+                note.text = mahamListR[indexPath.row].notes
+                aamel.text = mahamListR[indexPath.row].requis
+                tarafMoukabel.text = mahamListR[indexPath.row].avocatMoukabel
+            }
+            cellToReturn = cell1!
+            
+        }else if (tableView == tableJalaset){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "jalasetCell")
+            let contentView = cell?.viewWithTag(0)
+            let view = contentView?.viewWithTag(7)
+            let view2 = contentView?.viewWithTag(9)
+
+            view!.addShadowView()
+            view2!.addShadowView()
+
+            
+            let dat = contentView?.viewWithTag(1) as! UILabel
+            let aff = contentView?.viewWithTag(2) as! UILabel
+            let trib = contentView?.viewWithTag(3) as! UILabel
+            let clt = contentView?.viewWithTag(4) as! UILabel
+            let suj = contentView?.viewWithTag(5) as! UITextView
+            let ahk = contentView?.viewWithTag(6) as! UITextView
+            let taraf = contentView?.viewWithTag(10) as! UILabel
+            
+            suj.addShadowView()
+            ahk.addShadowView()
+            
+            if(self.send.image == UIImage(named: "call_made")){
+                dat.text = "جلسة " + jalasetListE[indexPath.row].dateSession.prefix(10)
+                aff.text = "قضية عدد " + String(jalasetListE[indexPath.row].numeroAffaire)
+                trib.text = jalasetListE[indexPath.row].tribunal
+                clt.text = "الحريف: " + jalasetListE[indexPath.row].client
+                suj.text = jalasetListE[indexPath.row].sujetSession
+                ahk.text = jalasetListE[indexPath.row].Disp_prep
+                taraf.text = jalasetListE[indexPath.row].avocatMoukabel
+                
+            }else if (self.recieve.image == UIImage(named: "call_received (1)")){
+                dat.text = "جلسة " + jalasetListR[indexPath.row].dateSession.prefix(10)
+                aff.text = "قضية عدد " + String(jalasetListR[indexPath.row].numeroAffaire)
+                trib.text = jalasetListR[indexPath.row].tribunal
+                clt.text = "الحريف: " + jalasetListR[indexPath.row].client
+                suj.text = jalasetListR[indexPath.row].sujetSession
+                ahk.text = jalasetListR[indexPath.row].Disp_prep
+                taraf.text = jalasetListR[indexPath.row].avocatMoukabel
+            }
+            
+            cellToReturn = cell!
+        }
+        
+        return cellToReturn
     }
     
     @IBOutlet var maham: UIButton!
     @IBOutlet var jalaset: UIButton!
     
+    
+    func fetchSessionEnvoye() -> Void {
+        let sessionService = SessionService()
+        sessionService.getSessionsEnvoye(){ (sessions) in
+            self.jalasetListE = sessions
+            self.tableJalaset.reloadWithAnimation()
+        }
+    }
+    
+    func fetchMissionEnvoye() -> Void {
+        let missionService = MissionService()
+        missionService.getMissionsEnvoye(){ (missions) in
+            self.mahamListE = missions
+            self.tableMaham.reloadWithAnimation()
+        }
+    }
+    
+    func fetchSessionRecu() -> Void {
+        let sessionService = SessionService()
+        sessionService.getSessionsRecu(){ (sessions) in
+            self.jalasetListR = sessions
+            self.tableJalaset.reloadWithAnimation()
+        }
+    }
+    
+    func fetchMissionRecu() -> Void {
+        let missionService = MissionService()
+        missionService.getMissionsRecu(){ (missions) in
+            self.mahamListR = missions
+            self.tableMaham.reloadWithAnimation()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         maham.addShadowView()
         jalaset.addShadowView()
-        jalasetList.append(jalsa1)
-        jalasetList.append(jalsa2)
         
-        tableJalaset.estimatedRowHeight = 489
+        let tapRecu = UITapGestureRecognizer(target: self, action: #selector(tapRecus(_:)))
+        recieve.addGestureRecognizer(tapRecu)
+        recieve.isUserInteractionEnabled = true
+        
+        
+        let tapEnv = UITapGestureRecognizer(target: self, action: #selector(tapEnvoye(_:)))
+        send.addGestureRecognizer(tapEnv)
+        send.isUserInteractionEnabled = true
+        
+        
+        send.image = UIImage(named: "call_made")
+        recieve.image = UIImage(named: "call_received")
+        
+        fetchMissionEnvoye()
+        fetchSessionEnvoye()
+        fetchMissionRecu()
+        fetchSessionRecu()
+        
+        tableJalaset.estimatedRowHeight = 526
         tableJalaset.rowHeight = UITableViewAutomaticDimension
         tableJalaset.reloadWithAnimation()
+        
+        tableMaham.estimatedRowHeight = 617
+        tableMaham.rowHeight = UITableViewAutomaticDimension
+        tableMaham.reloadWithAnimation()
+        
+        
+        
+        maham.backgroundColor = UIColor(red:0.00, green:0.23, blue:0.20, alpha:1.0)
+        maham.setTitleColor(.white, for: .normal)
+        
+        jalaset.backgroundColor = .white
+        jalaset.setTitleColor(UIColor(red:0.00, green:0.23, blue:0.20, alpha:1.0), for: .normal)
+        
+        tableJalaset.isHidden = true
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableMaham.reloadWithAnimation()
+    }
+    
+    @objc func tapRecus(_ gesture:UITapGestureRecognizer) {
+        recieve.image = UIImage(named: "call_received (1)")
+        send.image = UIImage(named: "call_made (1)")
+        tableMaham.reloadWithAnimation()
+        tableJalaset.reloadWithAnimation()
+    }
+    
+    
+    @objc func tapEnvoye(_ gesture:UITapGestureRecognizer) {
+        send.image = UIImage(named: "call_made")
+        recieve.image = UIImage(named: "call_received")
+        tableMaham.reloadWithAnimation()
         tableJalaset.reloadWithAnimation()
     }
     
     @IBAction func MissionB(_ sender: Any) {
+        tableJalaset.isHidden = true
+        tableMaham.isHidden = false
+        tableMaham.reloadWithAnimation()
+        
         maham.backgroundColor = UIColor(red:0.00, green:0.23, blue:0.20, alpha:1.0)
         maham.setTitleColor(.white, for: .normal)
         
@@ -127,13 +290,15 @@ class HistoriqueViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     @IBAction func SessionB(_ sender: Any) {
+        tableMaham.isHidden = true
+        tableJalaset.isHidden = false
+        tableJalaset.reloadWithAnimation()
+
         jalaset.backgroundColor = UIColor(red:0.00, green:0.23, blue:0.20, alpha:1.0)
         jalaset.setTitleColor(.white, for: .normal)
         
-        
         maham.backgroundColor = .white
         maham.setTitleColor(UIColor(red:0.00, green:0.23, blue:0.20, alpha:1.0), for: .normal)
-        
     }
     
     /*

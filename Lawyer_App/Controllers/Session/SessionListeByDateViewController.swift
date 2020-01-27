@@ -17,7 +17,7 @@ class SessionListeByDateViewController: UIViewController, UITableViewDataSource,
     
 
     @IBAction func BackAction(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSession"), object: nil)
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchSession"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
     
