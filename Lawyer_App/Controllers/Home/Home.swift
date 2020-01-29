@@ -550,7 +550,8 @@ class Home: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
     
         let tomorrow:Date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
-        print("aaaaaaaaaaaaaaa" + tomorrow.description)
+        self.weekCalendar.showDay(withDate: date)
+        //print("aaaaaaaaaaaaaaa" + tomorrow.description)
         Home.rendezVousByDate = self.rendezvousListe.filter { (rendezVous) -> Bool in
             rendezVous.date.contains(String(tomorrow.description.prefix(10)))
         }
